@@ -1,0 +1,70 @@
+% Master file
+
+% Documentclass
+\def\style{0}
+
+\if\style0    % My own publication template
+    \documentclass[9pt, twocolumn, toc, lineno]{templates/pi/pi-article}
+\fi\if\style1 % Elsevier publications
+    \documentclass[12pt, preprint]{elsarticle}
+\fi\if\style2 % RSC publications
+    \documentclass[9pt, twoside, twocolumn]{article}
+\fi\if\style3 % ACS publications
+    \documentclass[journal=cmatex,manuscript=article]{achemso}
+\fi
+
+% Metadata
+\input{templates/metadata}
+
+% Preamble
+\if\style0
+    \input{templates/pi/pi-preamble}
+\fi\if\style1
+    \input{templates/els/els-preamble}
+\fi\if\style2
+    \input{templates/rsc/rsc-preamble}
+\fi\if\style3
+    \input{templates/acs/acs-preamble}
+\fi
+
+% Graphics
+\graphicspath{ {figs/} }
+
+% Defining how to use a wide (2col figure)
+\newenvironment{widefigure}{\begin{figure*}}{\end{figure*}}
+
+% SI
+\externaldocument{manuscript-SI}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+% Doc input
+\if\style0
+    \input{templates/pi/pi-doc}
+\fi\if\style1
+    \input{templates/els/els-doc}
+\fi\if\style2
+    \input{templates/rsc/rsc-doc}
+\fi\if\style3
+    \input{templates/acs/acs-doc}
+\fi
+
+\input{docs/.content}
+
+% Doc end input
+\if\style3
+    \input{templates/acs/acs-doc-end}
+\else
+\section*{Acknowledgements}
+    \input{docs/x-acknowledgements}
+\section*{Author contributions}
+    \input{docs/y-contributions}
+\fi
+
+\bibliography{refs/biblio}
+
+% End doc
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

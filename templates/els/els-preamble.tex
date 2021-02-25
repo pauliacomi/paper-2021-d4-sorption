@@ -1,0 +1,126 @@
+% !TEX root = ../../manuscript.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% In an Elsevier manuscript the preamble contains
+%%      - extra packages imported
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Latex preamble
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%% Fonts and language
+
+% UNICODE recognition:
+\usepackage[utf8]{inputenc}
+
+% Font encodings
+\usepackage[T1]{fontenc}
+
+% AMS maths packages
+\usepackage{
+    amsmath,
+    amsfonts,
+    amsthm,
+    amssymb
+}
+
+%%%%%%%%%%%%%%%%%%%%%% Graphics packages, tables and listings
+
+% Graphicx
+\usepackage{graphicx}
+
+% Floats
+\usepackage{float}
+
+% Color definitions
+\usepackage{xcolor}
+
+% For the floatbarrier macro
+\usepackage[section]{placeins}
+
+% Better tables
+\usepackage{
+    booktabs,
+    makecell,
+    array,
+    multirow,
+    tabularx
+}
+
+% Better captions
+\usepackage{caption}
+
+% Subfigures
+\usepackage{subcaption}
+
+% For code snippets
+\usepackage{listings}
+
+% Todo notes
+% Used for notes and annotations.
+\usepackage{todonotes}
+
+%%%%%%%%%%%%%%%%%%%%%% Science-related packages
+
+% In-line fractions
+\usepackage{xfrac}
+
+% The SIunitx package enables the \SI{}{} command.
+\usepackage{siunitx}
+\sisetup{detect-weight=true, detect-family=true}
+
+% Chemical formulas
+\usepackage[version=4]{mhchem}             % Formula subscripts using \ce{}
+
+%%%%%%%%%%%%%%%%%%%%%% Bibliography packages and settings
+
+%% natbib.sty is loaded by default. However, natbib options can be
+%% provided with \biboptions{...} command. Following options are
+%% valid:
+
+%%   round  -  round parentheses are used (default)
+%%   square -  square brackets are used   [option]
+%%   curly  -  curly braces are used      {option}
+%%   angle  -  angle brackets are used    <option>
+%%   semicolon  -  multiple citations separated by semi-colon
+%%   colon  - same as semicolon, an earlier confusion
+%%   comma  -  separated by comma
+%%   numbers-  selects numerical citations
+%%   super  -  numerical citations as superscripts
+%%   sort   -  sorts multiple citations according to order in ref. list
+%%   sort&compress   -  like sort, but also compresses numerical citations
+%%   compress - compresses without sorting
+%%
+%% \biboptions{comma,round}
+
+% \biboptions{}
+
+%%%%%%%%%%%%%%%%%%%%%% References and bookmarks
+
+% Xr:
+% To reference another document, in this case the SI
+\usepackage{xr, xr-hyper}
+
+%% Hyperlinking
+\usepackage{hyperref}
+\hypersetup{colorlinks=false,pdfborder=0 0 0}
+
+%% References
+\usepackage[
+    capitalise,
+    nameinlink,
+  ]{cleveref}
+\creflabelformat{equation}{#2\textup{#1}#3}
+
+%%%%%%%%%%%%%%%%%%%%%% Other
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers after \end{frontmatter}.
+\usepackage{lineno}
+
+% lipsum
+\usepackage{lipsum}

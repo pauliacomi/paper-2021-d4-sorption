@@ -1,0 +1,63 @@
+% Alt master file to be processed with Pandoc
+% Requires pandoc version 2.11+
+
+% Documentclass
+\documentclass[9pt, twocolumn, lineno]{templates/pi/pi-article}
+
+% Metadata
+\input{templates/metadata}
+
+% Preamble
+\input{templates/pi/pi-preamble}
+
+% Graphics
+\graphicspath{ {figs/} }
+\DeclareGraphicsExtensions{.png}
+
+% Fixes for Pandoc conversion
+%
+% Chemical equations are surrounded by math
+\renewcommand{\ce}[1]{\(\\ce{#1}\)}
+
+% copyright added
+\renewcommand{\textcopyright}[0]{©}
+
+% Remaking the figure* environment to a regular figure environment
+\newenvironment{widefigure}{\begin{figure}}{\end{figure}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+% Doc input
+\input{templates/pi/pi-doc}
+
+% Abstract
+\section{Abstract}
+\input{docs/0-abstract.tex}
+
+% Content
+\section{Main Content}
+\input{docs/.content.tex}
+
+% Doc end input
+\section*{Acknowledgements}
+\input{docs/x-acknowledgements}
+
+\section*{Author contributions}
+\input{docs/y-contributions}
+
+% SI at the end
+\section{Supplementary Information}
+\newcommand{\oldsection}[1]{\section{#1}}
+\renewcommand{\section}[1]{\subsection{#1}}
+\renewcommand{\subsection}[1]{\subsubsection{#1}}
+% \renewcommand{\subsubsection}[1]{\textit{#1}}
+\input{docs/SI/.si-content.tex}
+
+\section*{References}
+\bibliography{refs/biblio}
+
+% End doc
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

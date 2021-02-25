@@ -1,0 +1,35 @@
+% Master SI file
+
+% Documentclass
+\documentclass[11pt, SI]{templates/pi/pi-article}
+
+\graphicspath{ {figs/} }
+
+% Metadata
+\input{templates/metadata}
+
+% Preamble
+\input{templates/pi/pi-preamble}
+
+% Graphics
+\graphicspath{ {figs/} }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+% Doc input
+\input{templates/pi/pi-doc}
+
+\pagebreak
+\tableofcontents
+
+\pagebreak
+\input{docs/SI/.si-content}
+
+\pagebreak
+\bibliography{refs/biblio}
+
+% End doc
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

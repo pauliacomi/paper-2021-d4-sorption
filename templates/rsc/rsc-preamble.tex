@@ -1,0 +1,156 @@
+% !TEX root = ../../manuscript.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% In an RSC manuscript the preamble contains
+%%      - the RSC template
+%%      - extra packages imported
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Latex preamble
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%% TEMPLATE
+% RSC Template:
+\usepackage{extsizes}
+\usepackage[super,sort&compress,comma]{natbib}
+\usepackage[version=3]{mhchem}
+\usepackage[left=1.5cm, right=1.5cm, top=1.785cm, bottom=2.0cm]{geometry}
+\usepackage{balance}
+\usepackage{times,mathptmx}
+\usepackage{sectsty}
+\usepackage{graphicx}
+\usepackage{lastpage}
+\usepackage[
+  format=plain,
+  justification=justified,
+  singlelinecheck=false,
+  font={stretch=1.125,small,sf},
+  labelfont=bf,
+  labelsep=space
+]{caption}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{fnpos}
+\usepackage[english]{babel}
+\addto{\captionsenglish}{%
+  \renewcommand{\refname}{Notes and references}
+}
+\usepackage{array}
+\usepackage{droidsans}
+\usepackage{charter}
+\usepackage[T1]{fontenc}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{setspace}
+\usepackage[compact]{titlesec}
+
+%This line makes .eps figures into .pdf - please comment out if not required.
+% \usepackage{epstopdf}
+
+\definecolor{cream}{RGB}{222,217,201}
+
+%%%%%%%%%%%%%%%%%%%%%% Fonts and language
+
+% UNICODE recognition:
+\usepackage[utf8]{inputenc}
+
+% Font encodings
+% \usepackage[TS1,T1]{fontenc}
+
+% AMS maths packages
+\usepackage{
+    amsmath,
+    amsfonts,
+    amsthm,
+    amssymb
+}
+
+%%%%%%%%%%%%%%%%%%%%%% Graphics packages, tables and listings
+
+% Graphicx
+% \usepackage{graphicx}
+
+% Floats
+% \usepackage{float}
+
+% Color definitions
+% \usepackage{xcolor}
+
+% For the floatbarrier macro
+\usepackage[section]{placeins}
+
+% Better tables 
+\usepackage{
+    booktabs,
+    makecell,
+    % array,
+    multirow,
+    tabularx
+}
+
+% Better captions 
+% \usepackage{caption}
+
+% Subfigures
+\usepackage{subcaption}
+
+% For code snippets
+\usepackage{listings}
+
+% Todo notes
+% Used for notes and annotations.
+\usepackage{todonotes}
+
+%%%%%%%%%%%%%%%%%%%%%% Science-related packages
+
+% In-line fractions
+\usepackage{xfrac}
+
+% The SIunitx package enables the \SI{}{} command.
+\usepackage{siunitx}
+\sisetup{detect-weight=true, detect-family=true}
+
+% The mchem package for formula subscripts using \ce{}
+% \usepackage[version=3]{mhchem} 
+
+%%%%%%%%%%%%%%%%%%%%%% Bibliography packages and settings
+
+%%%%%%%%%%%%%%%%%%%%%% References and bookmarks
+
+% Xr:
+% To reference another document, in this case the SI
+\usepackage{xr, xr-hyper}
+
+%% Hyperlinking
+\usepackage{hyperref}
+% \hypersetup{
+    % bookmarks=true,                         %% Acrobat bookmarks (default)
+    % bookmarksnumbered=true,                 %% Add numbers to bookmarks
+    % bookmarksopen=true,                     %% bookmarks default open
+    % bookmarksopenlevel=2,                   %% Level 2 bookmarks
+    % backref=true,                           %% add links in bib (default)
+    % pagebackref=true,                       %% in the bibliography (default)
+    % hyperindex=true,                        %% in the index (default)
+    % breaklinks=true,                        %% break lines if long
+    % colorlinks=false,                       %% colour links
+    % urlcolor=blue,                          %% link colour
+    % citecolor=blue,	                        %% bibliography link color
+    % linkcolor=blue,	                        %% internal link color
+    % anchorcolor=blue,                       %% anchor link color
+    % linktocpage=false,                      %% pagenumber link in TOC
+    % pdfborder={0 0 0}                       %% pdf border settings
+% }
+
+% Additional Setup
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{lipsum}
+
+%% References
+\usepackage[
+  capitalise,
+  nameinlink,
+]{cleveref}
+\creflabelformat{equation}{#2\textup{#1}#3}
