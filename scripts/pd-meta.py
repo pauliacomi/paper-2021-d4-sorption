@@ -1,3 +1,5 @@
+import argparse
+import pathlib
 import re
 
 NEWCOMAND_RE = re.compile(r"\\newcommand{[^}]*}{[^}]*}")  # a user new command
@@ -60,7 +62,7 @@ def write_meta(meta, metafile):
 
     with open(metafile, 'w', encoding='utf8') as f:
         f.write("---\n")
-        f.write(f"title: {meta['title']}\n")
+        f.write(f"title: \"{meta['title']}\"\n")
         f.write("author:\n")
         for a in meta['author']:
             f.write(f"  - {meta['author'][a]}:\n")
@@ -85,5 +87,19 @@ def write_meta(meta, metafile):
 
 if __name__ == "__main__":
 
-    meta = read_meta("templates/metadata.tex")
-    write_meta(meta, "templates/metadata-pd.yaml")
+    parser = argparse.ArgumentParser(description='Write metadata files.')
+    parser.add_argument(
+        '--tex',
+        type=str,
+        default=pathlib.Path(__file__).parent.parent / 'templates' /
+        'metadata.tex'
+    )
+    parser.add_argument(
+        '--yaml',
+        type=str,
+        default=pathlib.Path(__file__).parent.parent / 'templates' /
+        'metadata-pd.yaml'
+    )
+    args = parser.parse_args()
+    meta = read_meta(args.tex)
+    write_meta(meta, args.yaml)

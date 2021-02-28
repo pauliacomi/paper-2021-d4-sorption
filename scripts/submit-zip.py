@@ -1,6 +1,6 @@
 """Zip manuscript folder.
 
-Usage: zip [--output_dir=<output_dir>] [<directory>]
+Usage: zip [--source=<output_dir>] [--dest=<destination_dir>]
 """
 
 import argparse
