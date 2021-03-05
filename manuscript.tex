@@ -4,7 +4,7 @@
 \def\style{0}
 
 \if\style0    % My own publication template
-    \documentclass[9pt, twocolumn, toc, lineno]{templates/pi/pi-article}
+    \documentclass[9pt, twocolumn, lineno]{templates/pi/pi-article}
 \fi\if\style1 % Elsevier publications
     \documentclass[12pt, preprint]{elsarticle}
 \fi\if\style2 % RSC publications
@@ -12,12 +12,6 @@
 \fi\if\style3 % ACS publications
     \documentclass[journal=cmatex,manuscript=article]{achemso}
 \fi
-
-% Graphics
-\graphicspath{ {figs/} }
-
-% SI
-\externaldocument{manuscript-SI}
 
 % Metadata
 \input{templates/metadata}
@@ -32,6 +26,12 @@
 \fi\if\style3
     \input{templates/acs/acs-preamble}
 \fi
+
+% Graphics
+\graphicspath{ {figs/} }
+
+% SI
+\externaldocument{manuscript-SI}
 
 % Defining a 2 col figure (due to pandoc incompat)
 \newenvironment{widefigure}{\begin{figure*}}{\end{figure*}}
@@ -62,7 +62,7 @@
 \else
 \section*{Acknowledgements}
     \input{docs/x-acknowledgements}
-\section*{Author contributions}
+\section*{Conflicts of interest}
     \input{docs/y-contributions}
 \fi
 

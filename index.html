@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="generator" content="pandoc">
+
+    
+    
+    
+    <title>Breaking the Upper Bound of Siloxane Uptake: Metal-Organic Frameworks as an Adsorbent Platform</title>
+    <style type="text/css">
+      code {
+        white-space: pre;
+      }
+    </style>
+
+    
+    
+        <link rel="stylesheet" href="templates/pandoc/t-paper/html/template.css">
+    
+            
+    
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+      </script>
+    <script type="text/x-mathjax-config">
+      MathJax.Ajax.config.path["mhchem"] = "https://cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.2";
+      MathJax.Hub.Config({
+        TeX: {
+          extensions: ["[mhchem]/mhchem.js"]
+        }
+      });
+    </script>
+        
+    
+  </head>
+
+  <body>
+    <div class="wrapper">
+
+            <header>
+        <div class="navbar-left">
+          <input type="checkbox" id="navbar-check">
+          <label for="navbar-check" class="navbar-hamburger">☰</label>
+          <div class="navbar-items">
+            <h1 class="header">Breaking the Upper Bound of Siloxane Uptake: Metal-Organic Frameworks as an Adsorbent Platform</h1>
+            <a class="button" href="manuscript.pdf">Download PDF</a>
+            <a class="button" href="manuscript-SI.pdf">Download SI PDF</a>
+
+                        <nav id="TOC">
+              <ul>
+              <li><a href="#introduction">Introduction</a></li>
+              <li><a href="#methodology">Methodology</a>
+              <ul>
+              <li><a href="#methodology-computational">Computational methods</a></li>
+              <li><a href="#methodology-benchmark">MOF sorbents</a></li>
+              <li><a href="#methodology-characterization">Material characterization</a></li>
+              <li><a href="#methodology-d4sorption">D4 sorption experiments</a></li>
+              </ul></li>
+              <li><a href="#results-and-discussion">Results and discussion</a>
+              <ul>
+              <li><a href="#pre-screening">Pre-selection of hydrophobic MOFs</a></li>
+              <li><a href="#d4-screening">Prediction of the D4 uptake performance for the hydrophobic MOFs</a></li>
+              <li><a href="#assessment">Experimental assessment of the D4 sorption performance for the top MOF</a></li>
+              <li><a href="#adsorption-mechanism">Adsorption mechanism</a></li>
+              </ul></li>
+              <li><a href="#conclusions">Conclusions</a></li>
+              <li><a href="#acknowledgements">Acknowledgements</a></li>
+              <li><a href="#author-contributions">Author contributions</a></li>
+              <li><a href="#supplementary-information">Supplementary Information</a>
+              <ul>
+              <li><a href="#si-computational-details">Computational details</a>
+              <ul>
+              <li><a href="#force-field-parameters-for-d4">Force field parameters for D4</a></li>
+              <li><a href="#si-screening-dataset">Screening dataset</a></li>
+              <li><a href="#si-radial-distribution">Radial distribution functions for D4-PCN-777</a></li>
+              </ul></li>
+              <li><a href="#mof-samples">MOF samples</a>
+              <ul>
+              <li><a href="#mil-101cr">MIL-101(Cr)</a></li>
+              <li><a href="#dut-4">DUT-4</a></li>
+              <li><a href="#pcn-777">PCN-777</a></li>
+              </ul></li>
+              <li><a href="#d4-sorption-experiments">D4 sorption experiments</a>
+              <ul>
+              <li><a href="#d4-benchmarking-with-known-mofs">D4 benchmarking with known MOFs</a></li>
+              <li><a href="#isosteric-heat-of-sorption-of-d4">Isosteric heat of sorption of D4</a></li>
+              </ul></li>
+              <li><a href="#references">References</a></li>
+              </ul></li>
+              </ul>
+            </nav>
+            
+          </div>
+        </div>
+      </header>
+      
+      <div class="container">
+        <article typeof="ScholarlyArticle" vocab="http://schema.org/">
+
+          <h1 property="headline">Breaking the Upper Bound of Siloxane Uptake: Metal-Organic Frameworks as an Adsorbent Platform</h1>
+                    <p class="author-list">
+                        
+            <span property="author" typeof="Person">Ezgi Gulcay</span>
+            <sup>
+                                          1
+                            ,
+              *
+                            
+            </sup>,
+                        
+            <span property="author" typeof="Person">Paul Iacomi</span>
+            <sup>
+                                          1
+                            ,
+              *
+                            
+            </sup>,
+                        
+            <span property="author" typeof="Person">Kyung Ho Cho</span>
+            <sup>
+                                          2
+                            
+            </sup>,
+                        
+            <span property="author" typeof="Person">Jong-San Chang</span>
+            <sup>
+                                          2
+                            
+            </sup>,
+                        
+            <span property="author" typeof="Person">Guillaume Rioland</span>
+            <sup>
+                                          3
+                            
+            </sup>,
+                        
+            <span property="author" typeof="Person">Sabine Devautour</span>
+            <sup>
+                                          1
+                            
+            </sup>,
+                         
+            and
+            
+            <span property="author" typeof="Person">Guillaume Maurin</span>
+            <sup>
+                            <a href="mailto:guillaume.maurin1@umontpellier.fr">✉</a> 
+                                          1
+                            
+            </sup>          </p>
+          <div class="author-affiliations">
+                        <div class="affiliation"><sup>1</sup>ICGM, Univ. Montpellier, CNRS, ENSCM, F-34095 Montpellier, France
+            </div>
+                        <div class="affiliation"><sup>2</sup>Research Group for Nanocatalyst (RGN) and ConvergentCenter for Chemical Process (CCP), Korea Research Institute of ChemicalTechnology (KRICT), Gajeong-ro 141, Yuseong-gu, Daejeon 34114, South Korea
+            </div>
+                        <div class="affiliation"><sup>3</sup>Centre National d’Etudes Spatiales, DSO/AQ/LE, 18 AvenueEdouard Belin, 31401 Toulouse, Cedex 09, France
+            </div>
+                      </div>
+          <div class="author-info">
+                        <div class="author-contrib">
+              <sup>*</sup>These authors contributed
+              equally to this work
+            </div>
+                                    <div class="author-correspondence">
+              Correspondence: Guillaume Maurin <a
+                href="mailto:guillaume.maurin1@umontpellier.fr">&lt;guillaume.maurin1@umontpellier.fr&gt;</a> 
+            </div>
+                      </div>
+
+                    <span class="abstract" property="description"><p>Biogas, regarded as a promising renewable energy source, still needs to be upgraded. This calls for the removal of the most prominent contaminants, among others the octamethylcyclotetrasiloxane (D4) molecule. Herein, high throughput computational screening in tandem with synthesis and adsorption testing revealed the hydrophobic Zr-MOF PCN-777 as an optimal D4 adsorbent with record gravimetric (1.8 g/g) and volumetric (0.49 g/cm<sup>3</sup>) uptakes, alongside a reversible and fast adsorption/desorption process, good cyclability and easy regeneration. This MOF was demonstrated to encompass an ideal combination of mesoporous cages and chemical functionality to enable an optimal packing of the siloxane molecules and their efficient removal while maintaining the process highly reversible thanks to moderately high host/guest interactions. This work highlights the efficacy of an integrated workflow for accelerating adsorbent selection for a desired application, spanning the entire pipeline from method validation to computational screening, synthesis and adsorption testing towards the identification of the optimal adsorbents.</p></span>
+                    
+
+          
+          <div property="articleBody" class="article-body">
+            <h1 id="introduction">Introduction</h1>
+            <p>Biogas capture from landfill sites or wastewater treatment plants is identified as an appealing strategy to procure a renewable energy fuel, simultaneously promoting a reduction in greenhouse gas emissions and an increase in waste treatment profitability <span class="citation" data-cites="themelisMethaneGenerationLandfills2007"><a href="#ref-themelisMethaneGenerationLandfills2007" role="doc-biblioref">[1]</a></span>. The use of biogas as an energy green resource critically calls for a substantial increase of its <span class="math inline">\(\ce{CH4}\)</span> quality by removing gaseous and vapour impurities resulting from anaerobic digestion processes <span class="citation" data-cites="themelisMethaneGenerationLandfills2007"><a href="#ref-themelisMethaneGenerationLandfills2007" role="doc-biblioref">[1]</a></span>. One prominent class of biogas impurities are the linear (denoted “L”) and cyclic (denoted “D”) siloxanes, as degradation by-products of silicone polymers from packaging, construction, cosmetics, and household items <span class="citation" data-cites="takuwaCharacterizationTraceConstituents2009 ohannessianVolatileOrganicSilicon2008"><a href="#ref-takuwaCharacterizationTraceConstituents2009" role="doc-biblioref">[2]</a>, <a href="#ref-ohannessianVolatileOrganicSilicon2008" role="doc-biblioref">[3]</a></span>. This family of molecules is also known to damage subsequent energy recovery systems, e.g. combustion engines, fuel cells and steam reformers, via their decomposition into amorphous silica on heated surfaces that leads to abrasive solid deposits on critical machinery, and to inactivation of gas reforming catalysts <span class="citation" data-cites="wangRecentAdvancesTechnologies2019"><a href="#ref-wangRecentAdvancesTechnologies2019" role="doc-biblioref">[4]</a></span>. Octamethylcyclotetrasiloxane commonly labelled D4 is the most representative siloxane species present in biogas, which spans from 50 to 70% of the total siloxane content due to its relatively low water solubility (56 μg/l) and its significant vapour pressure (196 Pa at 303 K) <span class="citation" data-cites="ohannessianVolatileOrganicSilicon2008 wangRecentAdvancesTechnologies2019 dewilEnergyUseBiogas2006"><a href="#ref-ohannessianVolatileOrganicSilicon2008" role="doc-biblioref">[3]</a>–<a href="#ref-dewilEnergyUseBiogas2006" role="doc-biblioref">[5]</a></span>.</p>
+            <p>Multiple technologies have been proposed to mitigate the presence of siloxanes in biogas outlet streams, including mineral acid/base scrubbing, deep chilling, or iron oxide beds, often working in tandem to remove other impurities <span class="citation" data-cites="kuhnRequirementsTechniquesCosts2017"><a href="#ref-kuhnRequirementsTechniquesCosts2017" role="doc-biblioref">[6]</a></span>. The physisorption-based removal of D4 by porous filters is also a promising alternative, due to its relatively low potential energetic cost, while avoiding the use of environmentally hazardous chemicals <span class="citation" data-cites="chinStatisticalAnalysisTrace2020 ajharSiloxaneRemovalLandfill2010"><a href="#ref-chinStatisticalAnalysisTrace2020" role="doc-biblioref">[7]</a>, <a href="#ref-ajharSiloxaneRemovalLandfill2010" role="doc-biblioref">[8]</a></span>. A variety of conventional adsorbents has been envisaged for siloxane elimination, including activated carbons <span class="citation" data-cites="finocchioDecompositionHexamethylcyclotrisiloxaneSolid2008"><a href="#ref-finocchioDecompositionHexamethylcyclotrisiloxaneSolid2008" role="doc-biblioref">[9]</a></span>, zeolites <span class="citation" data-cites="montanariPurificationLandfillBiogases2010"><a href="#ref-montanariPurificationLandfillBiogases2010" role="doc-biblioref">[10]</a></span>, and silicas <span class="citation" data-cites="sigotAdsorptionOctamethylcyclotetrasiloxaneD42015"><a href="#ref-sigotAdsorptionOctamethylcyclotetrasiloxaneD42015" role="doc-biblioref">[11]</a></span>. However, these materials suffer from several drawbacks that limit their use, in particular insufficient uptake and/or incomplete regeneration under standard conditions. Moreover, downstream biogas commonly contains a proportion of water, which can compete with D4 sorption when using hydrophilic adsorbents <span class="citation" data-cites="kuhnRequirementsTechniquesCosts2017 schweigkoflerRemovalSiloxanesBiogases2001"><a href="#ref-kuhnRequirementsTechniquesCosts2017" role="doc-biblioref">[6]</a>, <a href="#ref-schweigkoflerRemovalSiloxanesBiogases2001" role="doc-biblioref">[12]</a></span>. Therefore, finding a high capacity adsorbent capable of removing siloxanes under moderate humidity conditions in a reversible manner remains a challenge.</p>
+            <figure>
+            <img src="figs/ensemble_schema.png" id="fig:overview" style="cursor:pointer" onclick="onClickImage(this)" style="width:95.0%" alt="Figure 1: Workflow of the strategy applied to identify the best MOFs for D4 adsorption, narrowing down candidates from top to bottom through synergistic computational (left) and experimental (right) actions. The final MOF candidate, PCN-777, is highlighted." /><figcaption aria-hidden="true">Figure 1: Workflow of the strategy applied to identify the best MOFs for D4 adsorption, narrowing down candidates from top to bottom through synergistic computational (left) and experimental (right) actions. The final MOF candidate, PCN-777, is highlighted.</figcaption>
+            </figure>
+            <p>Metal-Organic Frameworks (MOFs) are one of the most recent classes of porous adsorbents. These coordination polymers are built from the assembly of metal nodes and organic multidentate linkers to form architectures of different dimensionality from 1D to 4D <span class="citation" data-cites="fereyHybridPorousSolids2008 zhouIntroductionMetalOrganic2012 evansFourdimensionalMetalorganicFrameworks2020"><a href="#ref-fereyHybridPorousSolids2008" role="doc-biblioref">[13]</a>–<a href="#ref-evansFourdimensionalMetalorganicFrameworks2020" role="doc-biblioref">[15]</a></span>. Their near-infinite diversity, thanks to a wide set of building blocks, has made this class of porous solids promising for applications in gas/vapour adsorption/separation <span class="citation" data-cites="siegelmanChallengesOpportunitiesAdsorptionbased2019 linMicroporousMetalOrganicFramework2020"><a href="#ref-siegelmanChallengesOpportunitiesAdsorptionbased2019" role="doc-biblioref">[16]</a>, <a href="#ref-linMicroporousMetalOrganicFramework2020" role="doc-biblioref">[17]</a></span>, catalysis <span class="citation" data-cites="bavykinaMetalOrganicFrameworks2020"><a href="#ref-bavykinaMetalOrganicFrameworks2020" role="doc-biblioref">[18]</a></span>, and sensing <span class="citation" data-cites="allendorfElectronicDevicesUsing2020 woellnerAdsorptionDetectionHazardous2018"><a href="#ref-allendorfElectronicDevicesUsing2020" role="doc-biblioref">[19]</a>, <a href="#ref-woellnerAdsorptionDetectionHazardous2018" role="doc-biblioref">[20]</a></span> among others. Their high and uniform porosity combined with extensive chemical tunability of their pore walls suggest that MOFs may hold promise as candidates for siloxane adsorption. Insofar only two studies have attempted to investigate the potential of MOFs for D4 removal. Mito-Oka and co-workers <span class="citation" data-cites="mito-okaSiloxaneD4Capture2013"><a href="#ref-mito-okaSiloxaneD4Capture2013" role="doc-biblioref">[21]</a></span> proposed DUT-4 (<span class="math inline">\(\ce{[Al(OH)(2,6-ndc)}\)</span>, DUT: Dresden University of Technology), a wine rack-like MOF, as a first potential adsorbent. Although its hydrophobicity makes this MOF attractive for D4 elimination under humidity, its adsorption capacity of 0.15 g/g, estimated through single component by TGA measurements, is rather low and its regeneration can only be achieved at very high temperature, over 523 K, resulting from a high confinement of D4 (kinetic diameter of 8.6 Å) in its channels (9 Å × 9 Å). More recently, MIL-101(Cr) (<span class="math inline">\(\ce{Cr3O(OH)(H2O)2(btc)3}\)</span>, MIL: Material of Institute Lavoisier), a well-known highly porous MOF incorporating two types of mesoporous cages with diameters of 29 Å and 34 Å was demonstrated to exhibit a much higher D4 uptake of 0.95 g/g at 298 K, however its regeneration was only possible upon heating at 423 K under vacuum <span class="citation" data-cites="gargiuloChromiumbasedMIL101Metal2019"><a href="#ref-gargiuloChromiumbasedMIL101Metal2019" role="doc-biblioref">[22]</a></span>. Further, since MIL-101(Cr) is known to be highly hydrophilic <span class="citation" data-cites="zhaoSynthesisMIL101Cr2020"><a href="#ref-zhaoSynthesisMIL101Cr2020" role="doc-biblioref">[23]</a></span> we can expect a substantial drop of its D4 uptake performance even under low-relative humidity. Indeed, neither of these MOFs tested so far combines a large D4 uptake, low-energy regeneration and hydrophobicity to avoid a preferential adsorption of <span class="math inline">\(\ce{H2O}\)</span> over D4 under low to moderate relative humidity.</p>
+            <p>To date, only a very small number of MOFs has been sampled for this application, and therefore relied on researchers’ intuition to identify promising adsorbents. There are, however, a myriad of hydrophobic MOFs that can potentially perform better for D4 adsorption. Since it is unfeasible to individually test the performances of all the existing MOFs, several high throughput computational screening (HTCS) workflows have been devised which identified promising MOFs for diverse adsorption-related applications <span class="citation" data-cites="simonWhatAreBest2015 parkEstablishingUpperBounds2017 moghadamComputeraidedDiscoveryMetal2018 boydDatadrivenDesignMetal2019 shiMachineLearningSilico2020 yaoInverseDesignNanoporous2021"><a href="#ref-simonWhatAreBest2015" role="doc-biblioref">[24]</a>–<a href="#ref-yaoInverseDesignNanoporous2021" role="doc-biblioref">[29]</a></span>. However, such a computational strategy can only be successful if conducted in strong interplay with a careful analysis of the best-predicted MOF performers in terms of chemical/thermal stability under the target working conditions as well as ease of synthesis/activation. This enables the selection of the MOF candidate with the best overall compromise for further adsorption testing to confirm the expectation.</p>
+            <p>With this in mind, we herein devise a hand-in-hand computational-experimental strategy whose workflow is summarized in fig. <a href="#fig:overview">1</a>. As a first stage, the CoRE (Computation-Ready, Experimental) MOF 2019 database <span class="citation" data-cites="chungAdvancesUpdatesAnalytics2019"><a href="#ref-chungAdvancesUpdatesAnalytics2019" role="doc-biblioref">[30]</a></span> was computationally screened with the objective to identify hydrophobic materials showing a D4 uptake higher than the current MOF benchmark, e.g. MIL-101(Cr). From the top 56 best MOF performers, we selected the Zr carboxylate-based mesoporous PCN-777 (PCN for Porous Coordination Network) for further experimental testing. This MOF was demonstrated to exhibit not only a record D4 uptake (1.8 g/g) to date for a crystalline porous material, but also exceptional cycling and low-energy regeneration without the need for thermal treatment, while its confirmed hydrophobicity strongly suggests a preservation of its adsorption performance under low to moderate relative humidity conditions. An in-depth analysis of the adsorption mechanism further revealed the dominant host-guest interactions that control the adsorption of the first D4 molecules and their effective packing in the whole porosity up to saturation.</p>
+            <h1 id="methodology">Methodology</h1>
+            <h2 id="methodology-computational">Computational methods</h2>
+            <p>The CoRE (Computation-Ready, Experimental) MOF 2019 database <span class="citation" data-cites="chungAdvancesUpdatesAnalytics2019"><a href="#ref-chungAdvancesUpdatesAnalytics2019" role="doc-biblioref">[30]</a></span> was considered in this work. The geometric characterization of MOFs, including pore limiting diameters (PLDs), densities, <span class="math inline">\(\ce{N2}\)</span>-accessible surface areas (SAs), pore volumes (PVs) and void fractions (<span class="math inline">\(\phi\)</span>), were calculated by Zeo++ software <span class="citation" data-cites="willemsAlgorithmsToolsHighthroughput2012"><a href="#ref-willemsAlgorithmsToolsHighthroughput2012" role="doc-biblioref">[31]</a></span>. All Monte Carlo simulations were performed with the RASPA simulation package <span class="citation" data-cites="dubbeldamRASPAMolecularSimulation2016"><a href="#ref-dubbeldamRASPAMolecularSimulation2016" role="doc-biblioref">[32]</a></span>. Henry coefficients of <span class="math inline">\(\ce{H2O}\)</span> (<span class="math inline">\(K_{H,H_{2}O}\)</span>) and isosteric enthalpy of adsorption (<span class="math inline">\(\Delta H_{st,H_{2}O}^{0}\)</span>) values were initially computed at 298 K for all MOFs using the Widom particle insertion method <span class="citation" data-cites="frenkelUnderstandingMolecularSimulation2002"><a href="#ref-frenkelUnderstandingMolecularSimulation2002" role="doc-biblioref">[33]</a></span>. These simulations were carried out using 1 × 10<sup>5</sup> production cycles and 5 × 10<sup>4</sup> cycles for equilibration. We applied the same Widom insertion method to calculate isosteric enthalpy of adsorption at low coverage for D4 in DUT-4 and PCN-777 with the consideration of 1 × 10<sup>6</sup> production cycles and 5 × 10<sup>5</sup> steps for equilibration. Continuous fractional component Monte Carlo (CFCMC) simulations were performed to evaluate the saturation D4 uptake of all the selected hydrophobic MOFs at 298 K. All CFCMC simulations were carried out for a total of 1 × 10<sup>4</sup> cycles with 5 × 10<sup>3</sup> cycles for equilibration. A cycle consists of N Monte Carlo steps, where N is equal to the number of molecules (which fluctuates during a CFCMC simulation). For each cycle, random insertion, rotation, translation and continuous-fractional swap moves were attempted. The D4/MOF and <span class="math inline">\(\ce{H2O}\)</span>/MOF interactions were described by the sum of van der Waals (LJ) and Coulombic terms. The electrostatic interactions were calculated by the Ewald summation <span class="citation" data-cites="ewaldBerechnungOptischerUnd1921"><a href="#ref-ewaldBerechnungOptischerUnd1921" role="doc-biblioref">[34]</a></span> while a cut-off radius of 12.8 Å was considered for the van der Waals term. Cell lengths of the simulations were increased to at least 25.6 Å in each three dimensions and all MOF frameworks were considered as rigid in the simulations. Atomic charges for all atoms in the MOFs were estimated using Extended Charge Equilibration (Qeq) method as implemented in RASPA <span class="citation" data-cites="dubbeldamRASPAMolecularSimulation2016"><a href="#ref-dubbeldamRASPAMolecularSimulation2016" role="doc-biblioref">[32]</a></span> and their LJ parameters were taken from the UFF forcefield as currently employed <span class="citation" data-cites="qiaoHighthroughputComputationalScreening2017 keskinProgressOpportunitiesChallenges2009"><a href="#ref-qiaoHighthroughputComputationalScreening2017" role="doc-biblioref">[35]</a>, <a href="#ref-keskinProgressOpportunitiesChallenges2009" role="doc-biblioref">[36]</a></span>. H2O was modelled using TIP4P/2005 <span class="citation" data-cites="abascalGeneralPurposeModel2005"><a href="#ref-abascalGeneralPurposeModel2005" role="doc-biblioref">[37]</a></span>. D4 was described by a semi-flexible all atom model with intramolecular parameters taken from the consistent-valence force field (CVFF) <span class="citation" data-cites="dauber-osguthorpeStructureEnergeticsLigand1988"><a href="#ref-dauber-osguthorpeStructureEnergeticsLigand1988" role="doc-biblioref">[38]</a></span> (tbls. <a href="#tbl:ff-d4-bond">2</a>-<a href="#tbl:ff-d4-cross-bondbend">6</a>, SI) while the LJ parameters for all atoms were taken from the UFF forcefield as done in earlier work <span class="citation" data-cites="xuSolvationForceSimulations2014"><a href="#ref-xuSolvationForceSimulations2014" role="doc-biblioref">[39]</a></span> and their charges were calculated at the DFT level (tbl. <a href="#tbl:ff-d4-charge">7</a>, SI).</p>
+            <p>All the results of the HCTS are available as CSV files in the SI. A web-based explorer, which can be used to interactively display the dataset is available at <a href="https://pauliacomi.com/mof4d4" class="uri">https://pauliacomi.com/mof4d4</a>.</p>
+            <h2 id="methodology-benchmark">MOF sorbents</h2>
+            <p>The benchmark MIL-101(Cr) sample was taken from a previous work <span class="citation" data-cites="pillaiCapturePerformancesHybrid2017"><a href="#ref-pillaiCapturePerformancesHybrid2017" role="doc-biblioref">[40]</a></span>, with all textural characteristics as stated in reference. DUT-4 was purchased from Materials Center (TU Dresden, Germany). PXRD, TGA and <span class="math inline">\(\ce{N2}\)</span> physisorption measurements for DUT-4 are available in the SI (fig. <a href="#fig:dut4-summary">10</a>). BET surface areas of 3475 m<sup>2</sup>/g and 1610 m<sup>2</sup>/g were determined for MIL-101(Cr) and DUT-4, respectively. PCN-777 was synthesised by optimizing a previous published methodology <span class="citation" data-cites="fengHighlyStableZeotype2015"><a href="#ref-fengHighlyStableZeotype2015" role="doc-biblioref">[41]</a></span>. Full synthesis methodology, activation procedure and phase purity analysis using TGA, PXRD and <span class="math inline">\(\ce{N2}\)</span> physisorption are given in the SI. All samples were activated at 423 K under vacuum adsorption experiments.</p>
+            <h2 id="methodology-characterization">Material characterization</h2>
+            <p>PXRD patterns were recorded on a Panalytical X’Pert PRO PXRD diffractometer with a Cu <span class="math inline">\(K_{\alpha}\)</span> radiation source, in a Bragg-Brentano reflection geometry, using a spinning sample holder with a low-background silicon insert. <span class="math inline">\(\ce{N2}\)</span> isotherms at 77 K were recorded in a Micromeritics Tristar manometric analyser (displayed in fig. <a href="#fig:n2-phys">12</a>, SI). The Brunauer-Emmet-Teller area was calculated using the pyGAPS suite <span class="citation" data-cites="iacomiPyGAPSPythonbasedFramework2019"><a href="#ref-iacomiPyGAPSPythonbasedFramework2019" role="doc-biblioref">[42]</a></span>, with the application of the Rouquerol rules for isotherm region selection yielding a minimum Pearson correlation coefficient of <span class="math inline">\(R=0.997\)</span> (see fig. <a href="#fig:n2-analysis">13</a> for resulting fitting).</p>
+            <h2 id="methodology-d4sorption">D4 sorption experiments</h2>
+            <p>Sorption measurements were gravimetrically recorded using a dynamic method in a DVS Vacuum instrument (Surface Measurement Systems, UK). In this setup, a continuous adsorbate flow sourced from the headspace of a reservoir enters the sample enclosure, passes the suspended sample pan, and is entrained by a vacuum system. Pressure is controlled by a butterfly valve located before the outlet. Uptake is monitored by a magnetically suspended balance, capable of measuring mass changes at a resolution of 0.1 μg. The entire apparatus is kept in a temperature-controlled chamber to avoid any condensation points. For each experiment, a stainless-steel sample pan is first tared, then loaded with about 10 mg of sample. The sample is activated <em>in situ</em> under dynamic vacuum (1E-2 Pa) to 423 K. The adsorption-desorption isotherms for D4 and <span class="math inline">\(\ce{H2O}\)</span> and subsequent repeats were recorded at 303 K in the 0-10 Pa range of pressure. Adsorption cycling was similarly recorded, switching between two setpoints of low (0.5 Pa) and high pressure (10 Pa). The D4 used for the sorption experiments was sourced from Sigma Aldrich, with minimum 98% purity.</p>
+            <figure>
+            <img src="figs/screening.png" id="fig:d4-screening" style="cursor:pointer" onclick="onClickImage(this)" style="width:90.0%" alt="Figure 2: (a) Predicted D4 uptake performance at 298 K for the hydrophobic MOF database plotted as a function of computed \Delta  H_{st,H_{2}O}^{0}, and colour coded by void fraction, \phi. Top performing 10 candidates are represented by different symbols in the legend. (b) Relation between gravimetric (g/g) and volumetric (g/cm3) D4 uptake for all MOFs at 298 K. Marker size represents PV while colour denotes \phi. Dashed line represents the gravimetric and volumetric uptake of benchmark MIL-101(Cr)[22]. (c) The structure of our promising material identified for D4 uptake, PCN-777. Zr, N, O, C, and H atoms are depicted in light blue, dark blue, red, dark grey, and light grey, respectively." /><figcaption aria-hidden="true">Figure 2: (a) Predicted D4 uptake performance at 298 K for the hydrophobic MOF database plotted as a function of computed <span class="math inline">\(\Delta  H_{st,H_{2}O}^{0}\)</span>, and colour coded by void fraction, <span class="math inline">\(\phi\)</span>. Top performing 10 candidates are represented by different symbols in the legend. (b) Relation between gravimetric (g/g) and volumetric (g/cm<sup>3</sup>) D4 uptake for all MOFs at 298 K. Marker size represents PV while colour denotes <span class="math inline">\(\phi\)</span>. Dashed line represents the gravimetric and volumetric uptake of benchmark MIL-101(Cr)<span class="citation" data-cites="gargiuloChromiumbasedMIL101Metal2019"><a href="#ref-gargiuloChromiumbasedMIL101Metal2019" role="doc-biblioref">[22]</a></span>. (c) The structure of our promising material identified for D4 uptake, PCN-777. Zr, N, O, C, and H atoms are depicted in light blue, dark blue, red, dark grey, and light grey, respectively.</figcaption>
+            </figure>
+            <h1 id="results-and-discussion">Results and discussion</h1>
+            <h2 id="pre-screening">Pre-selection of hydrophobic MOFs</h2>
+            <p>We used the CoRE-MOF 2019 database <span class="citation" data-cites="chungAdvancesUpdatesAnalytics2019"><a href="#ref-chungAdvancesUpdatesAnalytics2019" role="doc-biblioref">[30]</a></span> (over 14 000 MOFs), recently updated to remove solvent molecules and disordered structures, to which we also added further 29 well-known MOFs owing to their good chemical/thermal stability and permanent accessible porosity (listed in tbl. <a href="#tbl:extra-mofs">8</a> SI). We first excluded all structures with PLDs lower than 6 Å, a threshold selected as the average between the kinetic diameter of D4 (8.6 Å) and the effective diameter of its constitutive inner Si-O ring (4.5 Å). A total of 1739 remaining non-disordered MOFs were further considered, their geometric and textural properties, i.e. PV, SA, and <span class="math inline">\(\phi\)</span>, as well as their density (<span class="math inline">\(\rho\)</span>) being summarized in fig. <a href="#fig:d4-screening-geometric">5</a>.</p>
+            <p>As siloxane-rich biogas streams often contain water vapour, the optimal D4 adsorbent should have a relatively low water affinity to avoid competing adsorption. Moreover, hydrophobic MOFs are known to possess increased resistance to the hydrolysis of the metal-linker bond <span class="citation" data-cites="burtchWaterStabilityAdsorption2014 wuEnhancingStabilityMetalorganic2010"><a href="#ref-burtchWaterStabilityAdsorption2014" role="doc-biblioref">[43]</a>, <a href="#ref-wuEnhancingStabilityMetalorganic2010" role="doc-biblioref">[44]</a></span>, alleviating long-term water stability concerns. Therefore, we screened the water affinity of the 1739 MOFs by computing their Henry coefficient of water (<span class="math inline">\(K_{H,H_{2}O}\)</span>) and the isosteric enthalpy of adsorption at infinite dilution (<span class="math inline">\(\Delta H_{st,H_{2}O}^{0}\)</span>) at 298 K using the Widom particle insertion method <span class="citation" data-cites="frenkelUnderstandingMolecularSimulation2002"><a href="#ref-frenkelUnderstandingMolecularSimulation2002" role="doc-biblioref">[33]</a></span>. This approach is generally applied in HTCS studies, providing a quick way to gauge the hydrophobicity/hydrophilicity of MOFs <span class="citation" data-cites="matito-martosDiscoveryOptimalPorous2018 qiaoHighthroughputComputationalScreening2017"><a href="#ref-qiaoHighthroughputComputationalScreening2017" role="doc-biblioref">[35]</a>, <a href="#ref-matito-martosDiscoveryOptimalPorous2018" role="doc-biblioref">[45]</a></span>. All the computational details including the force fields used to describe both MOFs and water are provided in the methodology section and SI. In the frame of biogas upgrading, an extremely hydrophobic adsorbent is not required since the water content usually ranges from 38% to 85% relative humidity <span class="citation" data-cites="wangRecentAdvancesTechnologies2019"><a href="#ref-wangRecentAdvancesTechnologies2019" role="doc-biblioref">[4]</a></span>, therefore the following thresholds were applied to select MOFs with moderate to high hydrophobicity: <span class="math inline">\(K_{H,H_{2}O}\)</span> &lt; 1 × 10<sup>−5</sup> mol/kg/Pa and <span class="math inline">\(\Delta H_{st,H_{2}O}^{0}\)</span> &lt; 33 kJ/mol (below the vaporization enthalpy of water ~40 kJ/mol) <span class="citation" data-cites="lemmonNISTStandardReference2018"><a href="#ref-lemmonNISTStandardReference2018" role="doc-biblioref">[46]</a></span>. As a frame of reference, the highly hydrophobic ZIF-8 is characterized by <span class="math inline">\(K_{H,H_{2}O} =\)</span> 2.5E-6 mol/kg/Pa and <span class="math inline">\(\Delta H_{st,H_{2}O}^{0} =\)</span> 30 kJ/mol <span class="citation" data-cites="moghadamEfficientIdentificationHydrophobic2016"><a href="#ref-moghadamEfficientIdentificationHydrophobic2016" role="doc-biblioref">[47]</a></span>. Overall, among the 1739 MOFs, 811 structures (47% of our material library) were predicted to fulfill these two criteria. This hydrophobic MOF dataset encompasses structures of density ranging from 0.24 g/cm<sup>3</sup> to 2.04 g/cm<sup>3</sup> and with a wide range of geometric and textural features: 6 Å &lt; PLD &lt; 36 Å, 0.42 &lt; <span class="math inline">\(\phi\)</span> &lt; 0.90, 0.27 cm<sup>3</sup>/g &lt; PV &lt; 3.72 cm<sup>3</sup>/g and 320 m<sup>2</sup>/g &lt; SA &lt; 6700 m<sup>2</sup>/g, as shown in fig. <a href="#fig:d4-screening-geometric">5</a>.</p>
+            <h2 id="d4-screening">Prediction of the D4 uptake performance for the hydrophobic MOFs</h2>
+            <p>The D4 adsorption uptakes for the selected MOFs were simulated using single point continuous fractional component Monte Carlo (CFCMC) <span class="citation" data-cites="rahbariRecentAdvancesContinuous2020"><a href="#ref-rahbariRecentAdvancesContinuous2020" role="doc-biblioref">[48]</a></span>. In these calculations, the framework atoms were maintained fixed in their crystallographic positions and D4 was modelled as a semi-flexible molecule with its Si-O ring maintained rigid. Full computational details, including force field parameters and partial charges for D4 are available in the methodology section and SI.</p>
+            <div id="tbl:top10">
+            <table>
+            <caption>Table 1: Top 10 promising hydrophobic MOF materials identified for D4 uptake at 298 K.</caption>
+            <tbody>
+            <tr class="odd">
+            <td style="text-align: center;">MOF</td>
+            <td style="text-align: center;">PLD</td>
+            <td style="text-align: center;">SA</td>
+            <td style="text-align: center;"><span class="math inline">\(\rho\)</span></td>
+            <td style="text-align: center;">PV</td>
+            <td style="text-align: center;"><span class="math inline">\(\phi\)</span></td>
+            <td style="text-align: center;"><span class="math inline">\(K_{H,H_{2}O}\)</span></td>
+            <td style="text-align: center;"><span class="math inline">\(\Delta H_{st,H_{2}O}^{0}\)</span></td>
+            <td style="text-align: center;">Gravimetric D4</td>
+            <td style="text-align: center;">Volumetric D4</td>
+            </tr>
+            <tr class="even">
+            <td style="text-align: center;"></td>
+            <td style="text-align: center;">(Å)</td>
+            <td style="text-align: center;">(m/g)</td>
+            <td style="text-align: center;">(g/cm<sup>3</sup>)</td>
+            <td style="text-align: center;">(cm<sup>3</sup>/g)</td>
+            <td style="text-align: center;"></td>
+            <td style="text-align: center;">(mol/kg/Pa)</td>
+            <td style="text-align: center;">(kJ/mol)</td>
+            <td style="text-align: center;">uptake (g/g)</td>
+            <td style="text-align: center;">uptake (g/cm<sup>3</sup>)</td>
+            </tr>
+            <tr class="odd">
+            <td style="text-align: center;">FOTNIN (PCN-777)</td>
+            <td style="text-align: center;">28.36</td>
+            <td style="text-align: center;">2990</td>
+            <td style="text-align: center;">0.27</td>
+            <td style="text-align: center;">3.31</td>
+            <td style="text-align: center;">0.90</td>
+            <td style="text-align: center;"><span class="math inline">\(2.80\times10^{-6}\)</span></td>
+            <td style="text-align: center;">7.82</td>
+            <td style="text-align: center;">2.68</td>
+            <td style="text-align: center;">0.72</td>
+            </tr>
+            <tr class="even">
+            <td style="text-align: center;">RUTNOK</td>
+            <td style="text-align: center;">14.65</td>
+            <td style="text-align: center;">6200</td>
+            <td style="text-align: center;">0.24</td>
+            <td style="text-align: center;">3.72</td>
+            <td style="text-align: center;">0.90</td>
+            <td style="text-align: center;"><span class="math inline">\(6.70\times10^{-6}\)</span></td>
+            <td style="text-align: center;">14.81</td>
+            <td style="text-align: center;">2.57</td>
+            <td style="text-align: center;">0.62</td>
+            </tr>
+            <tr class="odd">
+            <td style="text-align: center;">CUSYAR</td>
+            <td style="text-align: center;">12.18</td>
+            <td style="text-align: center;">5700</td>
+            <td style="text-align: center;">0.25</td>
+            <td style="text-align: center;">3.65</td>
+            <td style="text-align: center;">0.90</td>
+            <td style="text-align: center;"><span class="math inline">\(3.42\times10^{-6}\)</span></td>
+            <td style="text-align: center;">8.15</td>
+            <td style="text-align: center;">2.35</td>
+            <td style="text-align: center;">0.59</td>
+            </tr>
+            <tr class="even">
+            <td style="text-align: center;">WUHDAG</td>
+            <td style="text-align: center;">10.50</td>
+            <td style="text-align: center;">5500</td>
+            <td style="text-align: center;">0.29</td>
+            <td style="text-align: center;">2.99</td>
+            <td style="text-align: center;">0.87</td>
+            <td style="text-align: center;"><span class="math inline">\(4.69\times10^{-6}\)</span></td>
+            <td style="text-align: center;">16.28</td>
+            <td style="text-align: center;">2.01</td>
+            <td style="text-align: center;">0.58</td>
+            </tr>
+            <tr class="odd">
+            <td style="text-align: center;">HOHMEX</td>
+            <td style="text-align: center;">14.89</td>
+            <td style="text-align: center;">5000</td>
+            <td style="text-align: center;">0.32</td>
+            <td style="text-align: center;">2.74</td>
+            <td style="text-align: center;">0.87</td>
+            <td style="text-align: center;"><span class="math inline">\(4.66\times10^{-6}\)</span></td>
+            <td style="text-align: center;">13.24</td>
+            <td style="text-align: center;">1.97</td>
+            <td style="text-align: center;">0.63</td>
+            </tr>
+            <tr class="even">
+            <td style="text-align: center;">ECOKAJ</td>
+            <td style="text-align: center;">17.58</td>
+            <td style="text-align: center;">3600</td>
+            <td style="text-align: center;">0.33</td>
+            <td style="text-align: center;">2.68</td>
+            <td style="text-align: center;">0.87</td>
+            <td style="text-align: center;"><span class="math inline">\(6.89\times10^{-6}\)</span></td>
+            <td style="text-align: center;">17.20</td>
+            <td style="text-align: center;">1.97</td>
+            <td style="text-align: center;">0.65</td>
+            </tr>
+            <tr class="odd">
+            <td style="text-align: center;">DAJWET</td>
+            <td style="text-align: center;">26.59</td>
+            <td style="text-align: center;">5000</td>
+            <td style="text-align: center;">0.28</td>
+            <td style="text-align: center;">3.06</td>
+            <td style="text-align: center;">0.87</td>
+            <td style="text-align: center;"><span class="math inline">\(7.73\times10^{-6}\)</span></td>
+            <td style="text-align: center;">17.92</td>
+            <td style="text-align: center;">1.93</td>
+            <td style="text-align: center;">0.54</td>
+            </tr>
+            <tr class="even">
+            <td style="text-align: center;">RUBDUP</td>
+            <td style="text-align: center;">19.25</td>
+            <td style="text-align: center;">4200</td>
+            <td style="text-align: center;">0.30</td>
+            <td style="text-align: center;">2.90</td>
+            <td style="text-align: center;">0.87</td>
+            <td style="text-align: center;"><span class="math inline">\(3.79\times10^{-6}\)</span></td>
+            <td style="text-align: center;">11.62</td>
+            <td style="text-align: center;">1.93</td>
+            <td style="text-align: center;">0.58</td>
+            </tr>
+            <tr class="odd">
+            <td style="text-align: center;">WUHCUZ</td>
+            <td style="text-align: center;">12.21</td>
+            <td style="text-align: center;">5500</td>
+            <td style="text-align: center;">0.30</td>
+            <td style="text-align: center;">2.91</td>
+            <td style="text-align: center;">0.87</td>
+            <td style="text-align: center;"><span class="math inline">\(3.75\times10^{-6}\)</span></td>
+            <td style="text-align: center;">12.94</td>
+            <td style="text-align: center;">1.80</td>
+            <td style="text-align: center;">0.54</td>
+            </tr>
+            <tr class="even">
+            <td style="text-align: center;">ADATAC</td>
+            <td style="text-align: center;">10.28</td>
+            <td style="text-align: center;">5130</td>
+            <td style="text-align: center;">0.34</td>
+            <td style="text-align: center;">2.57</td>
+            <td style="text-align: center;">0.87</td>
+            <td style="text-align: center;"><span class="math inline">\(4.16\times10^{-6}\)</span></td>
+            <td style="text-align: center;">12.78</td>
+            <td style="text-align: center;">1.68</td>
+            <td style="text-align: center;">0.57</td>
+            </tr>
+            </tbody>
+            </table>
+            </div>
+            <p>As a validation stage of the computational method, the D4 uptakes for MIL-101(Cr) and DUT-4 were first predicted and compared with the available experimental data. The simulated uptake for MIL-101(Cr), the current best MOF performer, was found to be 1.03 g/g vs. 0.95 g/g as reported in the original experimental study <span class="citation" data-cites="gargiuloChromiumbasedMIL101Metal2019"><a href="#ref-gargiuloChromiumbasedMIL101Metal2019" role="doc-biblioref">[22]</a></span>. We equally confirmed the good agreement between the calculated and the experimental D4 uptake by recording an additional adsorption isotherm on a MIL-101(Cr) sample (see methodology section), finding a D4 capacity of 1.15 g/g at 298 K. The D4 uptake for DUT-4 was however predicted to be substantially higher (0.42 g/g) than the experimental value reported previously of 0.15 g/g <span class="citation" data-cites="mito-okaSiloxaneD4Capture2013"><a href="#ref-mito-okaSiloxaneD4Capture2013" role="doc-biblioref">[21]</a></span>. We therefore collected a D4 adsorption isotherm on a pristine DUT-4 sample (sourcing and textural properties in methodology section and SI), finding a D4 uptake of 0.5 g/g (fig. <a href="#fig:d4-benchmark">14</a>), more in line with our theoretical assessment. The lower D4 capacity reported in the original study is attributed to the method used to quantify the adsorbed amount, based on mass loss upon heating. It is likely that only a fraction of D4 was released, since D4 was demonstrated to strongly interact with DUT-4 due to a high confinement in its pores <span class="citation" data-cites="mito-okaSiloxaneD4Capture2013"><a href="#ref-mito-okaSiloxaneD4Capture2013" role="doc-biblioref">[21]</a></span>.</p>
+            <p>Overall, the good agreement between the simulated uptakes and experimental data for the previously investigated MOFs served to validate both the applicability of our computational method and the reliability of our experimental setup. This further highlights the importance of a dual experimental-computational approach even prior to starting the high-throughput screening. We then transitioned towards the search for better performers amongst the 811 identified hydrophobic MOFs. fig. <a href="#fig:d4-screening">2</a>a reports their computed D4 uptakes vs. their <span class="math inline">\(\Delta H_{st,H_{2}O}^{0}\)</span> values at 298 K, with a similar correlation depicted vs. <span class="math inline">\(K_{H,H_{2}O}\)</span> in fig. <a href="#fig:d4-screening-henryc">8</a>, SI. The dashed line represents the current known upper bound for D4 uptake in MOFs, considering MIL-101(Cr) as the benchmark sorbent (0.95 g/g) <span class="citation" data-cites="gargiuloChromiumbasedMIL101Metal2019"><a href="#ref-gargiuloChromiumbasedMIL101Metal2019" role="doc-biblioref">[22]</a></span>. 56 hydrophobic MOFs were predicted to be more attractive candidates than MIL-101(Cr) on the basis of gravimetric D4 uptake. Common geometric and textural features of these MOF candidates are void fractions <span class="math inline">\(\phi\)</span> larger than 0.81 and pore volumes (PV) higher than ~1.7 cm<sup>3</sup>/g. Typically, the relation between gravimetric D4 uptake and PV is shown in fig. <a href="#fig:d4-screening-grav-volum">7</a>.</p>
+            <p>The 10 best MOFs showing the highest D4 uptakes ranging from 1.68 to 2.68 g/g are highlighted in fig. <a href="#fig:d4-screening">2</a>a by their Cambridge Structural Database (CSD) <span class="citation" data-cites="allenCambridgeStructuralDatabase2002"><a href="#ref-allenCambridgeStructuralDatabase2002" role="doc-biblioref">[49]</a></span> refcode and listed in tbl. <a href="#tbl:top10">1</a>. Notably, all these identified candidates were found to be highly hydrophobic with associated <span class="math inline">\(K_{H,H_{2}O}\)</span> of about 5E-6 mol/kg/Pa and their <span class="math inline">\(\Delta H_{st,H_{2}O}^{0}\)</span> ranging from 8 to 18 kJ/mol which make these adsorbents also potentially effective under moderate humidity conditions. tbl. <a href="#tbl:top10">1</a> shows that the highly hydrophobic FOTNIN is predicted to exhibit the highest saturated D4 uptake (2.68 g/g), in relation with its high PV (3.31 cm<sup>3</sup>/g) and large mesoporous cages (33.7 Å × 28.4 Å). Remarkably, this gravimetric D4 loading translates into a spectacular improvement as compared to MIL-101(Cr) <span class="citation" data-cites="gargiuloChromiumbasedMIL101Metal2019"><a href="#ref-gargiuloChromiumbasedMIL101Metal2019" role="doc-biblioref">[22]</a></span>. RUTNOK (common name IRMOF-76 <span class="citation" data-cites="oisakiMetalOrganicFramework2010"><a href="#ref-oisakiMetalOrganicFramework2010" role="doc-biblioref">[50]</a></span>) gave almost a similar D4 uptake (2.57 g/g) as FOTNIN, in part due to similar PV (3.72 cm<sup>3</sup>/g) and <span class="math inline">\(\phi\)</span> (0.9). Other candidates exhibit high D4 uptakes, including CUSYAR (also known as MOF-210 <span class="citation" data-cites="furukawaUltrahighPorosityMetalOrganic2010"><a href="#ref-furukawaUltrahighPorosityMetalOrganic2010" role="doc-biblioref">[51]</a></span>), WUHDAG and WUHCUZ (NU-1104, and NU-1103 <span class="citation" data-cites="wangUltrahighSurfaceArea2015"><a href="#ref-wangUltrahighSurfaceArea2015" role="doc-biblioref">[52]</a></span>, respectively). Full structural properties of these 10 MOFs including organic ligands and metal sites are given in tbl. <strong>¿tbl:top-mofs-detail?</strong>.</p>
+            <p>In the scope of the practical application of a sorbent for a filter bed or column, volumetric uptake is a reliable metric due to its direct relation to equipment sizing. Trade-offs between gravimetric and volumetric uptakes have been previously reported for the storage of various fluids using porous materials <span class="citation" data-cites="moghadamComputeraidedDiscoveryMetal2018"><a href="#ref-moghadamComputeraidedDiscoveryMetal2018" role="doc-biblioref">[26]</a></span>. fig. <a href="#fig:d4-screening">2</a>b shows the relation between the computed gravimetric and volumetric D4 uptakes for the hydrophobic MOFs database. Unlike gravimetric uptake which increases indefinitely, the volumetric uptake in porous materials is limited by the density of the adsorbate fluid phase, to which it asymptotically approaches as framework density decreases (and void fraction increases) <span class="citation" data-cites="bobbittHighthroughputScreeningMetal2016"><a href="#ref-bobbittHighthroughputScreeningMetal2016" role="doc-biblioref">[53]</a></span>. Interestingly FOTNIN remains the top MOF performer in terms of volumetric uptake as well (0.72 g/cm<sup>3</sup>). This MOF (common name PCN-777 <span class="citation" data-cites="fengHighlyStableZeotype2015"><a href="#ref-fengHighlyStableZeotype2015" role="doc-biblioref">[41]</a></span>) is built from large planar tritopic linkers (4,4’,4’ ’-s-triazine-2,4,6-triyl-tri-benzoate or TATB) coordinated to <span class="math inline">\(\ce{Zr6}\)</span>-oxoclusters in an antiprismatic fashion, forming vertex-sharing supertetrahedra surrounding a mesoporous cage of 33.7 Å as depicted in fig. <a href="#fig:d4-screening">2</a>c. These cages are interconnected by hexagonal windows (30 Å) and are typically decorated by <span class="math inline">\(\ce{OH/H2O}\)</span> moieties coordinated to the remaining axial positions of the <span class="math inline">\(\ce{Zr6}\)</span> node.</p>
+            <figure>
+            <img src="figs/d4-experiment.png" id="fig:d4-experiment" style="cursor:pointer" onclick="onClickImage(this)" style="width:95.0%" alt="Figure 3: (a) Single component adsorption/desorption isotherms for D4 (blue) and \ce{H2O} (red) collected at 303 K for PCN-777 in the pressure range of 0-10 Pa (corresponding to 0–0.05 p/p0 for D4). Solid and open symbols represent adsorption and desorption branches, respectively. (b) Comparison of the D4 capacity of MOFs investigated in the present study with other classes of porous materials (data from [4]), with error bars placed at one standard deviation of mean capacity. (c) 5 D4 sorption-desorption cycles recorded after the first two isotherms on PCN-777, in the same pressure range. (d) PXRD of pristine PCN-777 (black) and samples recovered after D4 cycling (blue) and water adsorption (red)." /><figcaption aria-hidden="true">Figure 3: (a) Single component adsorption/desorption isotherms for D4 (blue) and <span class="math inline">\(\ce{H2O}\)</span> (red) collected at 303 K for PCN-777 in the pressure range of 0-10 Pa (corresponding to 0–0.05 p/p<sup>0</sup> for D4). Solid and open symbols represent adsorption and desorption branches, respectively. (b) Comparison of the D4 capacity of MOFs investigated in the present study with other classes of porous materials (data from <span class="citation" data-cites="wangRecentAdvancesTechnologies2019"><a href="#ref-wangRecentAdvancesTechnologies2019" role="doc-biblioref">[4]</a></span>), with error bars placed at one standard deviation of mean capacity. (c) 5 D4 sorption-desorption cycles recorded after the first two isotherms on PCN-777, in the same pressure range. (d) PXRD of pristine PCN-777 (black) and samples recovered after D4 cycling (blue) and water adsorption (red).</figcaption>
+            </figure>
+            <h2 id="assessment">Experimental assessment of the D4 sorption performance for the top MOF</h2>
+            <p>While HTCS enabled a rapid and effective screening on the performance indicator, additional criteria, such as thermal/chemical stability, synthesis route, activation conditions, precursor toxicity and linker availability need to be considered to select the optimal adsorbents. We therefore critically assessed PCN-777 prior to further experimental action. Our selection criteria for PCN-777 were (i) the excellent known stability of the oxo-Zr-carboxylate metal node, at the origin of the high chemical and thermal resistance of the framework, alongside with (ii) the commercially available linker and well-controlled synthesis procedure documented elsewhere <span class="citation" data-cites="fengHighlyStableZeotype2015 liuPhotocatalyticHydrogenProduction2018"><a href="#ref-fengHighlyStableZeotype2015" role="doc-biblioref">[41]</a>, <a href="#ref-liuPhotocatalyticHydrogenProduction2018" role="doc-biblioref">[54]</a></span>. Indeed, this material was synthesised accordingly (details provided in the methodology section).</p>
+            <p>The D4 adsorption isotherm for PCN-777 was first recorded up to 10 Pa at 303 K using a dynamic vapour sorption system (experimental details in the methodology section). The resulting isotherm, depicted in fig. <a href="#fig:d4-experiment">3</a>a, exhibits a characteristic type V shape <span class="citation" data-cites="thommesPhysisorptionGasesSpecial2015"><a href="#ref-thommesPhysisorptionGasesSpecial2015" role="doc-biblioref">[55]</a></span> with a sharp D4 uptake increase above 7 Pa up to a maximum of 1.8 g/g that translates into 0.49 g/cm<sup>3</sup>. This value is however lower than the predicted uptake due to two combined reasons: (i) an incomplete evacuation of the porosity (theoretical PV=3.3 cm<sup>3</sup>/g vs the experimental one of 2.2 cm<sup>3</sup>/g determined through <span class="math inline">\(\ce{N2}\)</span> physisorption at 77 K, in fig. <a href="#fig:n2-phys">12</a>, SI) commonly observed for mesoporous MOFs <span class="citation" data-cites="nelsonSupercriticalProcessingRoute2009 parkCrystalStructureGuest2007"><a href="#ref-nelsonSupercriticalProcessingRoute2009" role="doc-biblioref">[56]</a>, <a href="#ref-parkCrystalStructureGuest2007" role="doc-biblioref">[57]</a></span> and (ii) only a partial accessibility of the super-tetrahedral cages to D4 owing to their relatively small windows. Indeed, while optimized synthesis and activation procedures may recover more of the expected porosity, the attained D4 uptake constitutes a record among porous solids. This positions PCN-777 as the porous material with the highest currently known D4 uptake, almost twice higher than the benchmark MIL-101(Cr), 5–10 times that of the most promising silicas and zeolites, and above the best performing activated carbons as illustrated in fig. <a href="#fig:d4-experiment">3</a>b <span class="citation" data-cites="wangRecentAdvancesTechnologies2019"><a href="#ref-wangRecentAdvancesTechnologies2019" role="doc-biblioref">[4]</a></span>. Notably, the step-like adsorption behaviour is ideal from the application point of view of a breakthrough filter, as it ensures a narrow mass transfer zone and minimises the column dead zone at break point. Remarkably, the maximum uptake for PCN-777 is attained at low pressure of 7 Pa that makes this MOF highly promising for D4 removal in a gas phase concentration below 75 ppm.</p>
+            <p>Throughout desorption (dotted line with open symbols in fig. <a href="#fig:d4-experiment">3</a>a), a small hysteresis occurs with a width of about 1 Pa. Under complete vacuum, a minute amount of D4, about 0.1 g/g, i.e. 5% of total capacity, is retained in the structure. We attribute this capacity loss to D4 molecules irreversibly trapped in the super-tetrahedral cages or on a small fraction of defect sites. Overall, PCN-777 acts as a highly reversible D4-adsorbent. A second sorption cycle reveals the excellent repeatability of D4 sorption by this MOF, with identical condensation pressure and total uptake, the adsorption-desorption branches now overlapping in the very low-pressure region (fig. <a href="#fig:d4-experiment">3</a>a).</p>
+            <figure>
+            <img src="figs/mechanistic.png" id="fig:d4-mechanistic" style="cursor:pointer" onclick="onClickImage(this)" style="width:70.0%" alt="Figure 4: Representative snapshots of the preferential sitting of D4 in the pores of PCN-777 at 298 K for increasing loading at (a) 10% with highlighted interactions distance between D4 and the MOF framework, and at (b) 40%, (c) 65%, and (d) 100% fractional loading (\theta). Framework atoms (sticks) and D4 molecules (lines, and ball and sticks) are coded as Zr, N, O, Si, C, and H atoms in light blue, dark blue, red, yellow, dark grey, and light grey respectively. The separating distance is represented by dashed black lines and reported in Å." /><figcaption aria-hidden="true">Figure 4: Representative snapshots of the preferential sitting of D4 in the pores of PCN-777 at 298 K for increasing loading at (a) 10% with highlighted interactions distance between D4 and the MOF framework, and at (b) 40%, (c) 65%, and (d) 100% fractional loading (<span class="math inline">\(\theta\)</span>). Framework atoms (sticks) and D4 molecules (lines, and ball and sticks) are coded as Zr, N, O, Si, C, and H atoms in light blue, dark blue, red, yellow, dark grey, and light grey respectively. The separating distance is represented by dashed black lines and reported in Å.</figcaption>
+            </figure>
+            <p>To further investigate the D4 adsorption-desorption cyclability of PCN-777, a subsequent set of five cycles was recorded on the same sample, covering the entire uptake range from fully loaded to empty under a medium vacuum level of 0.5 Pa (see fig. <a href="#fig:d4-experiment">3</a>c). No further capacity loss is observed after the initial 5 wt% from cycle 1 to cycle 2 with a pressure drop sufficient to fully remove adsorbed D4 in every cycle without the need of thermal treatment. This is a leap forward compared to the previous MOF candidates, i.e. MIL-101(Cr) and DUT-4. The former was reported <span class="citation" data-cites="gargiuloChromiumbasedMIL101Metal2019"><a href="#ref-gargiuloChromiumbasedMIL101Metal2019" role="doc-biblioref">[22]</a></span> to be fully regenerable at only high temperatures (outgassed under vacuum at 423 K), and we note that vacuum alone was unable to fully desorb D4, with nearly 50% of siloxane remaining in the structure after desorption in our experiments (fig. <a href="#fig:d4-benchmark">14</a>, SI). D4 adsorption in DUT-4 is even more irreversible, owing to the strong confinement of the siloxane molecules in its pores <span class="citation" data-cites="mito-okaSiloxaneD4Capture2013"><a href="#ref-mito-okaSiloxaneD4Capture2013" role="doc-biblioref">[21]</a></span>, with essentially no desorption observed under vacuum (fig. <a href="#fig:d4-benchmark">14</a>, SI). The global sorption kinetics was further qualitatively evaluated by observing the equilibration time throughout cycling steps. fig. <a href="#fig:d4-experiment">3</a>c reveals that an adsorption/desorption cycle can be achieved in less than 30 minutes. Such a fast kinetics is a clear advantage for practical use. In addition, the water adsorption collected for PCN-777 further confirmed its predicted hydrophobicity and revealed that below $P=$7 Pa, water loading is negligible, i.e. under 0.02 g/g (see fig. <a href="#fig:d4-experiment">3</a>a). This observation strongly suggests that PCN-777 is expected to maintain its high-level performance for D4 removal under low to moderate humidity working conditions.</p>
+            <p>Finally, stability of PCN-777 after its use as a D4 adsorbent was evaluated by checking its crystallinity and porosity. PXRD patterns recorded after the D4 cycling experiments show similar Bragg peak positions and broadenings as the pristine material, testifying that no amorphisation or decrease of crystallinity were incurred (fig. <a href="#fig:d4-experiment">3</a>d). The same conclusion holds true for PCN-777 upon water adsorption. Further, <span class="math inline">\(\ce{N2}\)</span> adsorption isotherms collected at 77 K for PCN-777 after <span class="math inline">\(\ce{H2O}\)</span> and D4 adsorption both present a similar shape than that of the pristine solid (see fig. <a href="#fig:n2-phys">12</a>) while slightly lower pore volume (1.87 cm<sup>3</sup>/g vs 2.20 cm<sup>3</sup>/g) and BET area (1544 m<sup>2</sup>/g vs 1730 m<sup>2</sup>/g) were obtained for the material after D4 cycling, attributed to the small amount of D4 retained in the porous framework during the first adsorption cycle.</p>
+            <h2 id="adsorption-mechanism">Adsorption mechanism</h2>
+            <p>A careful analysis of the adsorption mechanism of D4 in PCN-777 was further explored by considering MC simulations in the canonical ensemble with increasing loading up to the saturation (see methodology section for computational details). At the initial stage of adsorption, the coordinated OH/<span class="math inline">\(\ce{H2O}\)</span> moieties of the MOF <span class="math inline">\(\ce{Zr6O4}\)</span> polyhedra pointing towards the pore were found to act as primary adsorption sites (fig. <a href="#fig:d4-mechanistic">4</a>a). The D4 molecule interacts mostly via its methyl group with an averaged separating <span class="math inline">\(\ce{H(CH3)-H(H2O)}\)</span> distance of 2.8 Å (see the radial distribution function plotted for the corresponding pair in fig. <a href="#fig:d4-rdf">9</a>a) as illustrated in fig. <a href="#fig:d4-mechanistic">4</a>a. This preferential sitting of D4 is associated with a moderately high simulated adsorption enthalpy of 83.5 kJ/mol in line with the isosteric heat of adsorption we assessed experimentally that ranges from 65 and 75 kJ/mol (fig. <a href="#fig:isosteric-enth">15</a>). Both values are slightly higher than the enthalpy of liquefaction of D4 at 303 K as 54.5 kJ/mol <span class="citation" data-cites="lemmonNISTStandardReference2018"><a href="#ref-lemmonNISTStandardReference2018" role="doc-biblioref">[46]</a></span>. We further demonstrated that this value remains substantially lower than the one simulated for DUT-4 (194.0 kJ/mol) for which the adsorption of D4 is governed by a high degree of confinement leading to an irreversible process. This observation clearly states that the adsorption energetics in PCN-777 offers a good compromise to ensure an efficient adsorption of D4 as well as an almost fully reversible and fast adsorption/desorption process. While increasing the loading, D4 molecules tend to form a monolayer near the wall of the cage owing to their interactions with both the organic linkers and inorganic nodes of the MOF as shown in fig. <a href="#fig:d4-mechanistic">4</a>b-c. Finally, at higher loading, the molecules form multilayers and further occupy the whole cage corresponding to the scenario of the capillary condensation (fig. <a href="#fig:d4-mechanistic">4</a>d). This effective packing is governed by guest-guest interactions involving averaged separating <span class="math inline">\(\ce{H(CH3)-H(CH3)}\)</span> distance of 2.7 Å at saturation (the radial distribution function plotted for this pair is shown in fig. <a href="#fig:d4-rdf">9</a>b). Such pore filling mechanism has been commonly observed in diverse mesoporous materials for a range of molecules <span class="citation" data-cites="rouquerolAdsorptionPowdersPorous2013"><a href="#ref-rouquerolAdsorptionPowdersPorous2013" role="doc-biblioref">[58]</a></span>. Indeed, PCN-777 exhibits an ideal combination of a large cage to enable an effective packing of the siloxane molecules and the presence of moieties accessible to D4 to favour host/guest interactions strong enough to ensure an efficient trapping of the D4 molecules initially adsorbed.</p>
+            <h1 id="conclusions">Conclusions</h1>
+            <p>In this work, a high throughput computational screening first identified a series of hydrophobic MOFs with octamethylcyclotetrasiloxane uptakes outperforming by far the performance of the conventional adsorbents. The best-predicted MOF performer, PCN-777, was synthesized and its predicted exceptional adsorption capacity for this typical contaminant present in biogas was further experimentally confirmed. This stable MOF was demonstrated to exhibit record gravimetric (1.8 g/g) and volumetric (0.49 g/cm<sup>3</sup>) uptake alongside with a reversible and fast adsorption/desorption process, very good cyclability and easy regeneration under continuous pressure cycling owing to a step-like sorption isotherm. The attractiveness of PCN-777 was found to result from a synergistic combination of mesoporous cages and chemical functionality pointing towards the center of the cages to ensure moderately high host/guest interactions and favour an efficient removal of D4 at low pressure and an efficient packing of the siloxane molecules at higher pressure while maintaining the process highly reversible. Moreover, its hydrophobicity makes this MOF promising for the selective removal of siloxanes in moderate humidity conditions. In a broader sense, this study highlights the efficacy of an integrated workflow for accelerating the selection of adsorbents for a target application, spanning the entire pipeline from method validation to computational screening, synthesis, adsorption testing and finally identification of the optimal candidates.</p>
+            <h1 class="unnumbered" id="acknowledgements">Acknowledgements</h1>
+            <p>We thank Centre National d’Etudes Spatiales for research funding (R&amp;T n° R-S20/MT-0002-03 and PhD). PXRD experiments were performed with the support of the Balard Plateforme d’Analyses et de Caractérisation (PAC Balard).</p>
+            <h1 class="unnumbered" id="author-contributions">Author contributions</h1>
+            <p>There are no conflicts of interest to declare.</p>
+            <h1 id="supplementary-information">Supplementary Information</h1>
+            <h2 id="si-computational-details">Computational details</h2>
+            <h3 id="force-field-parameters-for-d4">Force field parameters for D4</h3>
+            <p>D4 was modelled as a semi-flexible molecule with an all atom atomistic model. All intramolecular bonds, angles, dihedrals, and cross terms parameters for methyl groups were taken from the consistent-valence force field (CVFF). <span class="citation" data-cites="dauber-osguthorpeStructureEnergeticsLigand1988"><a href="#ref-dauber-osguthorpeStructureEnergeticsLigand1988" role="doc-biblioref">[38]</a></span></p>
+            <p><strong>Harmonic Bond</strong></p>
+            <p><span><span class="math display">\[U = \frac{1}{2}p_{0}{(r - p_{1})}^{2}\qquad(1)\]</span></span></p>
+            <p>where <span class="math inline">\(p_0 / \kappa_B\)</span> in units K/Å², <span class="math inline">\(p_{1}\)</span> in Å.</p>
+            <div id="tbl:ff-d4-bond">
+            <table>
+            <caption>Table 2: D4 bonding potential parameters.</caption>
+            <thead>
+            <tr class="header">
+            <th style="text-align: left;">Pseudo atom</th>
+            <th style="text-align: left;">Type of bond</th>
+            <th style="text-align: left;"><span class="math inline">\(p_0 / \kappa_B\)</span> (K/Å²)</th>
+            <th style="text-align: left;"><span class="math inline">\(p_{1}\)</span> (Å)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            <td style="text-align: left;">Si-O</td>
+            <td style="text-align: left;">RIGID_BOND</td>
+            <td style="text-align: left;">-</td>
+            <td style="text-align: left;">-</td>
+            </tr>
+            <tr class="even">
+            <td style="text-align: left;">Si-C</td>
+            <td style="text-align: left;">HARMONIC_BOND</td>
+            <td style="text-align: left;">286248.126</td>
+            <td style="text-align: left;">1.809</td>
+            </tr>
+            <tr class="odd">
+            <td style="text-align: left;">C3-H</td>
+            <td style="text-align: left;">HARMONIC_BOND</td>
+            <td style="text-align: left;">409668.576</td>
+            <td style="text-align: left;">1.105</td>
+            </tr>
+            </tbody>
+            </table>
+            </div>
+            <p><strong>Harmonic Bend</strong></p>
+            <p><span><span class="math display">\[U = \frac{1}{2}p_{0}{(\theta_{\text{ijk}} - p_{1})}^{2}\qquad(2)\]</span></span></p>
+            <p>where <span class="math inline">\(p_0 / \kappa_B\)</span> in units K/rad², <span class="math inline">\(p_{1}\)</span> in degree.</p>
+            <div id="tbl:ff-d4-bend">
+            <table>
+            <caption>Table 3: D4 bending potential parameters.</caption>
+            <thead>
+            <tr class="header">
+            <th style="text-align: left;">Pseudo atom</th>
+            <th style="text-align: left;">Type of angle</th>
+            <th style="text-align: left;"><span class="math inline">\(p_0 / \kappa_B\)</span> (K/rad²)</th>
+            <th style="text-align: left;"><span class="math inline">\(p_1\)</span> (°)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            <td style="text-align: left;">Si-C-H</td>
+            <td style="text-align: left;">HARMONIC_BEND</td>
+            <td style="text-align: left;">41614.223</td>
+            <td style="text-align: left;">112.3</td>
+            </tr>
+            <tr class="even">
+            <td style="text-align: left;">C-Si-C</td>
+            <td style="text-align: left;">HARMONIC_BEND</td>
+            <td style="text-align: left;">53400.911</td>
+            <td style="text-align: left;">113.5</td>
+            </tr>
+            <tr class="odd">
+            <td style="text-align: left;">C-Si-O</td>
+            <td style="text-align: left;">HARMONIC_BEND</td>
+            <td style="text-align: left;">53040.094</td>
+            <td style="text-align: left;">117.3</td>
+            </tr>
+            <tr class="even">
+            <td style="text-align: left;">H-C-H</td>
+            <td style="text-align: left;">HARMONIC_BEND</td>
+            <td style="text-align: left;">47507.567</td>
+            <td style="text-align: left;">106.4</td>
+            </tr>
+            </tbody>
+            </table>
+            </div>
+            <p><strong>CVFF Dihedral</strong></p>
+            <p><span><span class="math display">\[U = p_{0}{(1 + cos(p_{1}\phi_{\text{ijk}} - p_{2}))}^{2}\qquad(3)\]</span></span></p>
+            <p>where <span class="math inline">\(p_0 / \kappa_B\)</span> in units K, <span class="math inline">\(p_2\)</span> in degree.</p>
+            <div id="tbl:ff-d4-dihedral">
+            <table>
+            <caption>Table 4: D4 dihedral potential parameters.</caption>
+            <thead>
+            <tr class="header">
+            <th style="text-align: left;">Pseudo atom</th>
+            <th style="text-align: left;">Type of torsion</th>
+            <th style="text-align: left;"><span class="math inline">\(p_0 / \kappa_B\)</span> (K)</th>
+            <th style="text-align: left;"><span class="math inline">\(p_1\)</span> (multiplicity)</th>
+            <th style="text-align: left;"><span class="math inline">\(p_2\)</span> (°)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            <td style="text-align: left;">H-C-Si-C</td>
+            <td style="text-align: left;">CVFF_DIHEDRAL</td>
+            <td style="text-align: left;">240.545</td>
+            <td style="text-align: left;">3</td>
+            <td style="text-align: left;">0</td>
+            </tr>
+            <tr class="even">
+            <td style="text-align: left;">H-C-Si-O</td>
+            <td style="text-align: left;">CVFF_DIHEDRAL</td>
+            <td style="text-align: left;">-60.136</td>
+            <td style="text-align: left;">3</td>
+            <td style="text-align: left;">0</td>
+            </tr>
+            <tr class="odd">
+            <td style="text-align: left;">C-Si-O-Si</td>
+            <td style="text-align: left;">CVFF_DIHEDRAL</td>
+            <td style="text-align: left;">240.545</td>
+            <td style="text-align: left;">3</td>
+            <td style="text-align: left;">0</td>
+            </tr>
+            </tbody>
+            </table>
+            </div>
+            <p><strong>CFF Bond Bond Cross</strong></p>
+            <p><span><span class="math display">\[U = p_{0}(r - p_{1})(r\prime - p_{2})\qquad(4)\]</span></span></p>
+            <p>where <span class="math inline">\(p_0 / \kappa_B\)</span> in units K/Å², <span class="math inline">\(p_1\)</span> and <span class="math inline">\(p_2\)</span> in Å</p>
+            <div id="tbl:ff-d4-cross-bond">
+            <table>
+            <caption>Table 5: D4 cross-term bonding potential parameters.</caption>
+            <thead>
+            <tr class="header">
+            <th style="text-align: left;">Pseudo atom</th>
+            <th style="text-align: left;">Type of bond-bond</th>
+            <th style="text-align: left;"><span class="math inline">\(p_0 / \kappa_B\)</span> (K/Å²)</th>
+            <th style="text-align: left;"><span class="math inline">\(p_1\)</span> (Å)</th>
+            <th style="text-align: left;"><span class="math inline">\(p_2\)</span> (Å)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            <td style="text-align: left;">Si-C-H</td>
+            <td style="text-align: left;">CFF_BOND_BOND_CROSS</td>
+            <td style="text-align: left;">14312.406</td>
+            <td style="text-align: left;">0</td>
+            <td style="text-align: left;">0</td>
+            </tr>
+            <tr class="even">
+            <td style="text-align: left;">C-Si-C</td>
+            <td style="text-align: left;">CFF_BOND_BOND_CROSS</td>
+            <td style="text-align: left;">7336.612</td>
+            <td style="text-align: left;">0</td>
+            <td style="text-align: left;">0</td>
+            </tr>
+            <tr class="odd">
+            <td style="text-align: left;">C-Si-O</td>
+            <td style="text-align: left;">CFF_BOND_BOND_CROSS</td>
+            <td style="text-align: left;">25257.188</td>
+            <td style="text-align: left;">0</td>
+            <td style="text-align: left;">0</td>
+            </tr>
+            </tbody>
+            </table>
+            </div>
+            <p><strong>CFF Bond Bend Cross</strong></p>
+            <p><span><span class="math display">\[U = {(\theta - p}_{0}) [p_{1}(r - p_{2}) + p_{3}(r\prime - p_{4})]\qquad(5)\]</span></span></p>
+            <p>where <span class="math inline">\(p_0\)</span> in degrees, <span class="math inline">\(p_1\)</span> and <span class="math inline">\(p_3\)</span> in units K/Å/rad, <span class="math inline">\(p_1\)</span> and <span class="math inline">\(p_2\)</span> in Å.</p>
+            <div id="tbl:ff-d4-cross-bondbend">
+            <table>
+            <caption>Table 6: D4 cross-term bonding-bending potential parameters.</caption>
+            <thead>
+            <tr class="header">
+            <th style="text-align: left;">Pseudo atom</th>
+            <th style="text-align: left;">Type of bond-angle</th>
+            <th style="text-align: left;">po (°)</th>
+            <th style="text-align: left;"><span class="math inline">\(p_1\)</span> (K/Å/rad)</th>
+            <th style="text-align: left;"><span class="math inline">\(p_2\)</span> (Å)</th>
+            <th style="text-align: left;"><span class="math inline">\(p_3\)</span> (K/Å/rad)</th>
+            <th style="text-align: left;"><span class="math inline">\(p_4\)</span> (Å)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            <td style="text-align: left;">Si-C-H</td>
+            <td style="text-align: left;">CFF_BOND_BEND_CROSS</td>
+            <td style="text-align: left;">0</td>
+            <td style="text-align: left;">14733.359</td>
+            <td style="text-align: left;">0</td>
+            <td style="text-align: left;">9742.06</td>
+            <td style="text-align: left;">0</td>
+            </tr>
+            <tr class="even">
+            <td style="text-align: left;">C-Si-C</td>
+            <td style="text-align: left;">CFF_BOND_BEND_CROSS</td>
+            <td style="text-align: left;">0</td>
+            <td style="text-align: left;">781.770</td>
+            <td style="text-align: left;">0</td>
+            <td style="text-align: left;">0</td>
+            <td style="text-align: left;">0</td>
+            </tr>
+            <tr class="odd">
+            <td style="text-align: left;">C-Si-O</td>
+            <td style="text-align: left;">CFF_BOND_BEND_CROSS</td>
+            <td style="text-align: left;">0</td>
+            <td style="text-align: left;">11425.871</td>
+            <td style="text-align: left;">0</td>
+            <td style="text-align: left;">27061.27</td>
+            <td style="text-align: left;">0</td>
+            </tr>
+            </tbody>
+            </table>
+            </div>
+            <p><strong>D4 LJ parameters and charges</strong></p>
+            <p>The electronic potential (ESP) derived partial charges of D4 were computed by density functional theory (DFT) calculations with PBE (Perdew-Burke-Ernzerhof) functional <span class="citation" data-cites="perdewGeneralizedGradientApproximation1996"><a href="#ref-perdewGeneralizedGradientApproximation1996" role="doc-biblioref">[59]</a></span> and DNP (double numeric plus polarization) basis set <span class="citation" data-cites="hehreSelfconsistentMolecularOrbital1972"><a href="#ref-hehreSelfconsistentMolecularOrbital1972" role="doc-biblioref">[60]</a></span>, using DMol<sup>3</sup> module <span class="citation" data-cites="delleyAllElectronNumerical1990"><a href="#ref-delleyAllElectronNumerical1990" role="doc-biblioref">[61]</a></span> in Materials Studio <span class="citation" data-cites="accelrysMaterialsStudio2001"><a href="#ref-accelrysMaterialsStudio2001" role="doc-biblioref">[62]</a></span> (tbl. <a href="#tbl:ff-d4-charge">7</a>).</p>
+            <div id="tbl:ff-d4-charge">
+            <table>
+            <caption>Table 7: Charges and Lennard-Jones parameters for all atoms of D4.</caption>
+            <thead>
+            <tr class="header">
+            <th style="text-align: left;">Pseudo atom</th>
+            <th style="text-align: left;">Charge (e<sup>-</sup>)</th>
+            <th style="text-align: left;"><span class="math inline">\(\epsilon / \kappa_B\)</span> (K)</th>
+            <th style="text-align: left;"><span class="math inline">\(\sigma\)</span> (Å)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            <td style="text-align: left;">Si</td>
+            <td style="text-align: left;">1.321</td>
+            <td style="text-align: left;">202.429</td>
+            <td style="text-align: left;">3.826</td>
+            </tr>
+            <tr class="even">
+            <td style="text-align: left;">O</td>
+            <td style="text-align: left;">-0.763</td>
+            <td style="text-align: left;">30.213</td>
+            <td style="text-align: left;">3.118</td>
+            </tr>
+            <tr class="odd">
+            <td style="text-align: left;">C</td>
+            <td style="text-align: left;">-0.889</td>
+            <td style="text-align: left;">52.873</td>
+            <td style="text-align: left;">3.431</td>
+            </tr>
+            <tr class="even">
+            <td style="text-align: left;">H</td>
+            <td style="text-align: left;">0.2032</td>
+            <td style="text-align: left;">22.156</td>
+            <td style="text-align: left;">2.571</td>
+            </tr>
+            </tbody>
+            </table>
+            </div>
+            <h3 id="si-screening-dataset">Screening dataset</h3>
+            <p>1710 non-disordered MOFs with pore limiting diameters &gt; 6 Å were screened from CoRE-MOF database, to which 29 well-known MOFs were added with proven stability and high porosity, including the MOF-74 isoreticular series <span class="citation" data-cites="gulcayBiocompatibleMOFsStorage2019"><a href="#ref-gulcayBiocompatibleMOFsStorage2019" role="doc-biblioref">[63]</a></span>, Cr-soc-MOF-1 <span class="citation" data-cites="nandiRevisitingWaterSorption2019"><a href="#ref-nandiRevisitingWaterSorption2019" role="doc-biblioref">[64]</a></span>, UiO-68 (UiO for University of Oslo), MOF-808, <span class="citation" data-cites="soaresComputationalEvaluationChemical2019"><a href="#ref-soaresComputationalEvaluationChemical2019" role="doc-biblioref">[65]</a></span> and a several structures originating from Dresden University of Technology (DUT) and Material of Institute Lavoisier (MIL). This additional list is given in tbl. <a href="#tbl:extra-mofs">8</a>.</p>
+            <p>The combined dataset of 1739 MOFs show a broad range of geometric and textural features: PLDs (6.0–71.5 Å), <span class="math inline">\(\ce{N2}\)</span> accessible SA (320–6770 m<sup>2</sup>/g), density (0.13–2.22 g/cm<sup>3</sup>), <span class="math inline">\(\phi\)</span> (0.42–0.94) and PVs (0.23–7.46 cm<sup>3</sup>/g).</p>
+            <div id="tbl:extra-mofs">
+            <table>
+            <caption>Table 8: Details of the 29 MOFs added to the COREMOF database.</caption>
+            <thead>
+            <tr class="header">
+            <th style="text-align: left;">MOFs</th>
+            <th style="text-align: left;">Reference</th>
+            <th style="text-align: left;">MOFs</th>
+            <th style="text-align: left;">Reference</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            <td style="text-align: left;">RAVWAO</td>
+            <td style="text-align: left;"><span class="citation" data-cites="gulcayBiocompatibleMOFsStorage2019"><a href="#ref-gulcayBiocompatibleMOFsStorage2019" role="doc-biblioref">[63]</a></span></td>
+            <td style="text-align: left;">DUT-5</td>
+            <td style="text-align: left;"><span class="citation" data-cites="senkovskaNewHighlyPorous2009"><a href="#ref-senkovskaNewHighlyPorous2009" role="doc-biblioref">[66]</a></span></td>
+            </tr>
+            <tr class="even">
+            <td style="text-align: left;">RAVWES</td>
+            <td style="text-align: left;"><span class="citation" data-cites="gulcayBiocompatibleMOFsStorage2019"><a href="#ref-gulcayBiocompatibleMOFsStorage2019" role="doc-biblioref">[63]</a></span></td>
+            <td style="text-align: left;">DUT-51-Zr</td>
+            <td style="text-align: left;"><span class="citation" data-cites="bonZrIvHf2012"><a href="#ref-bonZrIvHf2012" role="doc-biblioref">[67]</a></span></td>
+            </tr>
+            <tr class="odd">
+            <td style="text-align: left;">RAVWIW</td>
+            <td style="text-align: left;"><span class="citation" data-cites="gulcayBiocompatibleMOFsStorage2019"><a href="#ref-gulcayBiocompatibleMOFsStorage2019" role="doc-biblioref">[63]</a></span></td>
+            <td style="text-align: left;">DUT-67-Zr</td>
+            <td style="text-align: left;"><span class="citation" data-cites="bonZrHfBasedMetal2013"><a href="#ref-bonZrHfBasedMetal2013" role="doc-biblioref">[68]</a></span></td>
+            </tr>
+            <tr class="even">
+            <td style="text-align: left;">RAVWOC</td>
+            <td style="text-align: left;"><span class="citation" data-cites="gulcayBiocompatibleMOFsStorage2019"><a href="#ref-gulcayBiocompatibleMOFsStorage2019" role="doc-biblioref">[63]</a></span></td>
+            <td style="text-align: left;">MIL-68(Al)</td>
+            <td style="text-align: left;"><span class="citation" data-cites="yangProbingAdsorptionPerformance2012"><a href="#ref-yangProbingAdsorptionPerformance2012" role="doc-biblioref">[69]</a></span></td>
+            </tr>
+            <tr class="odd">
+            <td style="text-align: left;">RAVWUI</td>
+            <td style="text-align: left;"><span class="citation" data-cites="gulcayBiocompatibleMOFsStorage2019"><a href="#ref-gulcayBiocompatibleMOFsStorage2019" role="doc-biblioref">[63]</a></span></td>
+            <td style="text-align: left;">Cr-soc-MOF-1</td>
+            <td style="text-align: left;"><span class="citation" data-cites="nandiRevisitingWaterSorption2019"><a href="#ref-nandiRevisitingWaterSorption2019" role="doc-biblioref">[64]</a></span></td>
+            </tr>
+            <tr class="even">
+            <td style="text-align: left;">RAVXAP</td>
+            <td style="text-align: left;"><span class="citation" data-cites="gulcayBiocompatibleMOFsStorage2019"><a href="#ref-gulcayBiocompatibleMOFsStorage2019" role="doc-biblioref">[63]</a></span></td>
+            <td style="text-align: left;">MIP<sup>[4]</sup>-177</td>
+            <td style="text-align: left;"><span class="citation" data-cites="wangPhaseTransformableUltrastable2018"><a href="#ref-wangPhaseTransformableUltrastable2018" role="doc-biblioref">[70]</a></span></td>
+            </tr>
+            <tr class="odd">
+            <td style="text-align: left;">RAVXET</td>
+            <td style="text-align: left;"><span class="citation" data-cites="gulcayBiocompatibleMOFsStorage2019"><a href="#ref-gulcayBiocompatibleMOFsStorage2019" role="doc-biblioref">[63]</a></span></td>
+            <td style="text-align: left;">MIP-200</td>
+            <td style="text-align: left;"><span class="citation" data-cites="wangRobustLargeporeZirconium2018"><a href="#ref-wangRobustLargeporeZirconium2018" role="doc-biblioref">[71]</a></span></td>
+            </tr>
+            <tr class="even">
+            <td style="text-align: left;">RAVXIX</td>
+            <td style="text-align: left;"><span class="citation" data-cites="gulcayBiocompatibleMOFsStorage2019"><a href="#ref-gulcayBiocompatibleMOFsStorage2019" role="doc-biblioref">[63]</a></span></td>
+            <td style="text-align: left;">Zr-IPA<sup>[5]</sup></td>
+            <td style="text-align: left;"><span class="citation" data-cites="wangMesoporousZirconiumIsophthalateMultifunctional2020"><a href="#ref-wangMesoporousZirconiumIsophthalateMultifunctional2020" role="doc-biblioref">[72]</a></span></td>
+            </tr>
+            <tr class="odd">
+            <td style="text-align: left;">MIL-125</td>
+            <td style="text-align: left;"><span class="citation" data-cites="soaresComputationalEvaluationChemical2019"><a href="#ref-soaresComputationalEvaluationChemical2019" role="doc-biblioref">[65]</a></span></td>
+            <td style="text-align: left;">Ni-BPM<sup>[6]</sup></td>
+            <td style="text-align: left;"><span class="citation" data-cites="zhengMolecularInsightFluorocarbon2020"><a href="#ref-zhengMolecularInsightFluorocarbon2020" role="doc-biblioref">[73]</a></span></td>
+            </tr>
+            <tr class="even">
+            <td style="text-align: left;">MOF-808-acetate</td>
+            <td style="text-align: left;"><span class="citation" data-cites="soaresComputationalEvaluationChemical2019"><a href="#ref-soaresComputationalEvaluationChemical2019" role="doc-biblioref">[65]</a></span></td>
+            <td style="text-align: left;">Ni-BPP<sup>[7]</sup></td>
+            <td style="text-align: left;"><span class="citation" data-cites="zhengMolecularInsightFluorocarbon2020"><a href="#ref-zhengMolecularInsightFluorocarbon2020" role="doc-biblioref">[73]</a></span></td>
+            </tr>
+            <tr class="odd">
+            <td style="text-align: left;">MOF-808-formate</td>
+            <td style="text-align: left;"><span class="citation" data-cites="soaresComputationalEvaluationChemical2019"><a href="#ref-soaresComputationalEvaluationChemical2019" role="doc-biblioref">[65]</a></span></td>
+            <td style="text-align: left;">Ni-TPM<sup>[8]</sup></td>
+            <td style="text-align: left;"><span class="citation" data-cites="zhengMolecularInsightFluorocarbon2020"><a href="#ref-zhengMolecularInsightFluorocarbon2020" role="doc-biblioref">[73]</a></span></td>
+            </tr>
+            <tr class="even">
+            <td style="text-align: left;">NU<sup>[1]</sup>-1000</td>
+            <td style="text-align: left;"><span class="citation" data-cites="soaresComputationalEvaluationChemical2019"><a href="#ref-soaresComputationalEvaluationChemical2019" role="doc-biblioref">[65]</a></span></td>
+            <td style="text-align: left;">Ni-TPP<sup>[9]</sup></td>
+            <td style="text-align: left;"><span class="citation" data-cites="zhengMolecularInsightFluorocarbon2020"><a href="#ref-zhengMolecularInsightFluorocarbon2020" role="doc-biblioref">[73]</a></span></td>
+            </tr>
+            <tr class="odd">
+            <td style="text-align: left;">UiO<sup>[2]</sup>-68</td>
+            <td style="text-align: left;"><span class="citation" data-cites="soaresComputationalEvaluationChemical2019"><a href="#ref-soaresComputationalEvaluationChemical2019" role="doc-biblioref">[65]</a></span></td>
+            <td style="text-align: left;">Ni-MOF-74</td>
+            <td style="text-align: left;"><span class="citation" data-cites="zhengMolecularInsightFluorocarbon2020"><a href="#ref-zhengMolecularInsightFluorocarbon2020" role="doc-biblioref">[73]</a></span></td>
+            </tr>
+            <tr class="even">
+            <td style="text-align: left;">Zr6-AzoBDC<sup>[3]</sup></td>
+            <td style="text-align: left;"><span class="citation" data-cites="soaresComputationalEvaluationChemical2019"><a href="#ref-soaresComputationalEvaluationChemical2019" role="doc-biblioref">[65]</a></span></td>
+            <td style="text-align: left;">PCN<sup>[10]</sup>-224(Ni)</td>
+            <td style="text-align: left;"><span class="citation" data-cites="fengConstructionUltrastablePorphyrin2013"><a href="#ref-fengConstructionUltrastablePorphyrin2013" role="doc-biblioref">[74]</a></span></td>
+            </tr>
+            <tr class="odd">
+            <td style="text-align: left;">[1]NU: Northwestern University; [2]UiO: University of Oslo;</td>
+            <td style="text-align: left;"></td>
+            <td style="text-align: left;"></td>
+            <td style="text-align: left;"></td>
+            </tr>
+            <tr class="even">
+            <td style="text-align: left;">[3]AzoBDC: azobenzenedicarboxylate;</td>
+            <td style="text-align: left;"></td>
+            <td style="text-align: left;"></td>
+            <td style="text-align: left;"></td>
+            </tr>
+            <tr class="odd">
+            <td style="text-align: left;">[4]MIP: material of the Institute of Porous Materials from Paris;</td>
+            <td style="text-align: left;"></td>
+            <td style="text-align: left;"></td>
+            <td style="text-align: left;"></td>
+            </tr>
+            <tr class="even">
+            <td style="text-align: left;">[5]IPA: isophatale; [6]BPM: biphenyl-meta;</td>
+            <td style="text-align: left;"></td>
+            <td style="text-align: left;"></td>
+            <td style="text-align: left;"></td>
+            </tr>
+            <tr class="odd">
+            <td style="text-align: left;">[7]BPP: biphenyl-para; [8]TPM: triphenyl-meta;</td>
+            <td style="text-align: left;"></td>
+            <td style="text-align: left;"></td>
+            <td style="text-align: left;"></td>
+            </tr>
+            <tr class="even">
+            <td style="text-align: left;">[9]TPP: triphenyl-para; [10]PCN: Porous coordination network;</td>
+            <td style="text-align: left;"></td>
+            <td style="text-align: left;"></td>
+            <td style="text-align: left;"></td>
+            </tr>
+            </tbody>
+            </table>
+            </div>
+            <figure>
+            <img src="figs/dataset_geometric.png" id="fig:d4-screening-geometric" style="cursor:pointer" onclick="onClickImage(this)" style="width:80.0%" alt="Figure 5: Overview of the diversity of the MOF database with PLD &gt; 6 Å in terms of void fractions, accessible surface areas and PLDs. Data points are color coded by PLDs of MOFs. Pore volumes of all structures are represented by size." /><figcaption aria-hidden="true">Figure 5: Overview of the diversity of the MOF database with PLD &gt; 6 Å in terms of void fractions, accessible surface areas and PLDs. Data points are color coded by PLDs of MOFs. Pore volumes of all structures are represented by size.</figcaption>
+            </figure>
+            <figure>
+            <img src="figs/dataset_hydrophobic.png" id="fig:d4-screening-hydrophobic" style="cursor:pointer" onclick="onClickImage(this)" style="width:80.0%" alt="Figure 6: Overview of the diversity of the hydrophobic MOFs database in terms of void fraction and accessible surface areas. Data points are color coded by PLDs of MOFs. Pore volumes of all structures are represented by size." /><figcaption aria-hidden="true">Figure 6: Overview of the diversity of the hydrophobic MOFs database in terms of void fraction and accessible surface areas. Data points are color coded by PLDs of MOFs. Pore volumes of all structures are represented by size.</figcaption>
+            </figure>
+            <figure>
+            <img src="figs/dataset_gv.png" id="fig:d4-screening-grav-volum" style="cursor:pointer" onclick="onClickImage(this)" style="width:80.0%" alt="Figure 7: The relation of gravimetric D4 uptake of the 811 hydrophobic MOFs (g g-1) and their pore volumes (cm3 g-1), color coded by void fraction of the MOFs." /><figcaption aria-hidden="true">Figure 7: The relation of gravimetric D4 uptake of the 811 hydrophobic MOFs (g g<sup>-1</sup>) and their pore volumes (cm<sup>3</sup> g<sup>-1</sup>), color coded by void fraction of the MOFs.</figcaption>
+            </figure>
+            <figure>
+            <img src="figs/dataset_kh.png" id="fig:d4-screening-henryc" style="cursor:pointer" onclick="onClickImage(this)" style="width:80.0%" alt="Figure 8: Predicted D4 uptake performance at 298 K for the hydrophobic MOFs database plotted as a function of their computed Henry constant for water, color coded by void fraction, \phi. Top performing 10 candidates are represented by different symbols in the legend to the right." /><figcaption aria-hidden="true">Figure 8: Predicted D4 uptake performance at 298 K for the hydrophobic MOFs database plotted as a function of their computed Henry constant for water, color coded by void fraction, <span class="math inline">\(\phi\)</span>. Top performing 10 candidates are represented by different symbols in the legend to the right.</figcaption>
+            </figure>
+            <div id="tbl:top-mofs-detail">
+            <hr />
+            <p><img src="figs/top10/image6.jpeg" style="cursor:pointer" onclick="onClickImage(this)" style="height:3cm" alt="image" /><br />
+            <strong>Metal site:</strong> Zr<br />
+            <strong>PLD:</strong> 28.36 Å<br />
+            <strong>SA:</strong> 2990 m<sup>2</sup>/g<br />
+            <strong>Density:</strong> 0.27 g/cm<sup>3</sup><br />
+            <strong>PV:</strong> 3.31 cm<sup>3</sup>/g<br />
+            <strong><span class="math inline">\(\phi\)</span>:</strong> 0.90<br />
+            <strong>Gravimetric D4 uptake:</strong> 2.68 g/g<br />
+            <strong>Volumetric D4 uptake:</strong> 0.72 g/cm<sup>3</sup></p>
+            <p><img src="figs/top10/image7.jpeg" style="cursor:pointer" onclick="onClickImage(this)" style="height:3cm" alt="image" /><br />
+            4,7-bis(4-carboxylphenyl)-1,3-dimethylbenzimidazium-tetrafluoroborate<br />
+            <strong>Metal site:</strong> Zn<br />
+            <strong>PLD:</strong> 14.65 Å<br />
+            <strong>SA:</strong> 6200 m<sup>2</sup>/g<br />
+            <strong>Density:</strong> 0.24 g/cm<sup>3</sup><br />
+            <strong>PV:</strong> 3.72 cm<sup>3</sup>/g<br />
+            <strong><span class="math inline">\(\phi\)</span>:</strong> 0.90<br />
+            <strong>Gravimetric D4 uptake:</strong> 2.57 g/g<br />
+            <strong>Volumetric D4 uptake:</strong> 0.62 g/cm<sup>3</sup></p>
+            <p><img src="figs/top10/image8.jpeg" style="cursor:pointer" onclick="onClickImage(this)" style="height:3cm" alt="image" /><br />
+            <strong>Metal site:</strong> Zn<br />
+            <strong>PLD:</strong> 12.18 Å<br />
+            <strong>SA:</strong> 5700 m<sup>2</sup>/g<br />
+            <strong>Density:</strong> 0.25 g/cm<sup>3</sup><br />
+            <strong>PV:</strong> 3.65 cm<sup>3</sup>/g<br />
+            <strong><span class="math inline">\(\phi\)</span>:</strong> 0.90<br />
+            <strong>Gravimetric D4 uptake:</strong> 2.35 g/g<br />
+            <strong>Volumetric D4 uptake:</strong> 0.59 g/cm<sup>3</sup></p>
+            <p><img src="figs/top10/image9.jpeg" style="cursor:pointer" onclick="onClickImage(this)" style="height:3cm" alt="image" /><br />
+            <strong>Metal site:</strong> Zr<br />
+            <strong>PLD:</strong> 10.50 Å<br />
+            <strong>SA:</strong> 5500 m<sup>2</sup>/g<br />
+            <strong>Density:</strong> 0.29 g/cm<sup>3</sup><br />
+            <strong>PV:</strong> 2.99 cm<sup>3</sup>/g<br />
+            <strong><span class="math inline">\(\phi\)</span>:</strong> 0.87<br />
+            <strong>Gravimetric D4 uptake:</strong> 2.01 g/g<br />
+            <strong>Volumetric D4 uptake:</strong> 0.58 g/cm<sup>3</sup></p>
+            <p><img src="figs/top10/image10.jpeg" style="cursor:pointer" onclick="onClickImage(this)" style="height:3cm" alt="image" /><br />
+            <strong>Metal site:</strong> Cu<br />
+            <strong>PLD:</strong> 14.89 Å<br />
+            <strong>SA:</strong> 5000 m<sup>2</sup>/g<br />
+            <strong>Density:</strong> 0.32 g/cm<sup>3</sup><br />
+            <strong>PV:</strong> 2.74 cm<sup>3</sup>/g<br />
+            <strong><span class="math inline">\(\phi\)</span>:</strong> 0.87<br />
+            <strong>Gravimetric D4 uptake:</strong> 1.97 g/g<br />
+            <strong>Volumetric D4 uptake:</strong> 0.63 g/cm<sup>3</sup></p>
+            <p><img src="figs/top10/image11.jpeg" style="cursor:pointer" onclick="onClickImage(this)" style="height:3cm" alt="image" /><br />
+            <strong>Metal site:</strong> Zn<br />
+            <strong>PLD:</strong> 17.58 Å<br />
+            <strong>SA:</strong> 3600 m<sup>2</sup>/g<br />
+            <strong>Density:</strong> 0.33 g/cm<sup>3</sup><br />
+            <strong>PV:</strong> 2.68 cm<sup>3</sup>/g<br />
+            <strong><span class="math inline">\(\phi\)</span>:</strong> 0.87<br />
+            <strong>Gravimetric D4 uptake:</strong> 1.97 g/g<br />
+            <strong>Volumetric D4 uptake:</strong> 0.65 g/cm<sup>3</sup></p>
+            <p><img src="figs/top10/image12.jpeg" style="cursor:pointer" onclick="onClickImage(this)" style="height:3cm" alt="image" /><br />
+            <strong>Metal site:</strong> Mg<br />
+            <strong>PLD:</strong> 26.59 Å<br />
+            <strong>SA:</strong> 5000 m<sup>2</sup>/g<br />
+            <strong>Density:</strong> 0.28 g/cm<sup>3</sup><br />
+            <strong>PV:</strong> 3.06 cm<sup>3</sup>/g<br />
+            <strong><span class="math inline">\(\phi\)</span>:</strong> 0.87<br />
+            <strong>Gravimetric D4 uptake:</strong> 1.93 g/g<br />
+            <strong>Volumetric D4 uptake:</strong> 0.54 g/cm<sup>3</sup></p>
+            <p><img src="figs/top10/image13.jpeg" style="cursor:pointer" onclick="onClickImage(this)" style="height:3cm" alt="image" /><br />
+            <strong>Metal site:</strong> Zn<br />
+            <strong>PLD:</strong> 19.25 Å<br />
+            <strong>SA:</strong> 4200 m<sup>2</sup>/g<br />
+            <strong>Density:</strong> 0.30 g/cm<sup>3</sup><br />
+            <strong>PV:</strong> 2.90 cm<sup>3</sup>/g<br />
+            <strong><span class="math inline">\(\phi\)</span>:</strong> 0.87<br />
+            <strong>Gravimetric D4 uptake:</strong> 1.93 g/g<br />
+            <strong>Volumetric D4 uptake:</strong> 0.58 g/cm<sup>3</sup></p>
+            <p><img src="figs/top10/image14.jpeg" style="cursor:pointer" onclick="onClickImage(this)" style="height:3cm" alt="image" /><br />
+            4,4’,4“,4”’-((pyrene-1,3,6,8 tetrayltetrakis(benzene-4,1-diyl)) tetrakis(ethyne-2,1 diyl))tetrabenzoate<br />
+            <strong>Metal site:</strong> Zr<br />
+            <strong>PLD:</strong> 12.21 Å<br />
+            <strong>SA:</strong> 5500 m<sup>2</sup>/g<br />
+            <strong>Density:</strong> 0.30 g/cm<sup>3</sup><br />
+            <strong>PV:</strong> 2.91 cm<sup>3</sup>/g<br />
+            <strong><span class="math inline">\(\phi\)</span>:</strong> 0.87<br />
+            <strong>Gravimetric D4 uptake:</strong> 1.80 g/g<br />
+            <strong>Volumetric D4 uptake:</strong> 0.54 g/cm<sup>3</sup></p>
+            <p><img src="figs/top10/image15.jpeg" style="cursor:pointer" onclick="onClickImage(this)" style="height:3cm" alt="image" /><br />
+            5,5’,5“-(4,4’,4”-[1,3,5-phenyltris(methoxy)] tris-phenylazo) tris-isophthalic acid<br />
+            <strong>Metal site:</strong> Zn<br />
+            <strong>PLD:</strong> 10.28 Å<br />
+            <strong>SA:</strong> 5130 m<sup>2</sup>/g<br />
+            <strong>Density:</strong> 0.34 g/cm<sup>3</sup><br />
+            <strong>PV:</strong> 2.57 cm<sup>3</sup>/g<br />
+            <strong><span class="math inline">\(\phi\)</span>:</strong> 0.87<br />
+            <strong>Gravimetric D4 uptake:</strong> 1.68 g/g<br />
+            <strong>Volumetric D4 uptake:</strong> 0.57 g/cm<sup>3</sup><br />
+            ——————————————————————————————————— –</p>
+            <p>: Structural details of the top promising 10 hydrophobic materials which exhibit the highest D4 uptake.</p>
+            </div>
+            <h3 id="si-radial-distribution">Radial distribution functions for D4-PCN-777</h3>
+            <figure>
+            <img src="figs/d4-rdf.png" id="fig:d4-rdf" style="cursor:pointer" onclick="onClickImage(this)" style="width:90.0%" alt="Figure 9: All-atom averaged radial distribution functions between (a) H atom from \ce{CH3} group of D4 molecules and H atom from coordinated water of the framework at 10% total loading and (b) H atom from \ce{CH3} groups of D4 at 100% loading." /><figcaption aria-hidden="true">Figure 9: All-atom averaged radial distribution functions between (a) H atom from <span class="math inline">\(\ce{CH3}\)</span> group of D4 molecules and H atom from coordinated water of the framework at 10% total loading and (b) H atom from <span class="math inline">\(\ce{CH3}\)</span> groups of D4 at 100% loading.</figcaption>
+            </figure>
+            <h2 id="mof-samples">MOF samples</h2>
+            <h3 id="mil-101cr">MIL-101(Cr)</h3>
+            <p>The benchmark MIL-101(Cr) sample was taken from a previous work <span class="citation" data-cites="pillaiCapturePerformancesHybrid2017"><a href="#ref-pillaiCapturePerformancesHybrid2017" role="doc-biblioref">[40]</a></span>, with all textural characteristics as stated in reference.</p>
+            <h3 id="dut-4">DUT-4</h3>
+            <p>DUT-4 was purchased from Materials Center (TU Dresden, Germany).</p>
+            <figure>
+            <img src="figs/dut4_summary.png" id="fig:dut4-summary" style="cursor:pointer" onclick="onClickImage(this)" alt="Figure 10: Characterization of the DUT-4 sample, in duplicates as black and blue: (a) PXRD, alongside simulated pattern in red (b) TGA curves and (c) \ce{N2} physisorption isotherms at 77 K." /><figcaption aria-hidden="true">Figure 10: Characterization of the DUT-4 sample, in duplicates as black and blue: (a) PXRD, alongside simulated pattern in red (b) TGA curves and (c) <span class="math inline">\(\ce{N2}\)</span> physisorption isotherms at 77 K.</figcaption>
+            </figure>
+            <h3 id="pcn-777">PCN-777</h3>
+            <p><strong>Synthesis</strong></p>
+            <p>Procedure and activation KRICT</p>
+            <p><strong>Characterisation</strong></p>
+            <figure>
+            <img src="figs/pcn777_tga.png" id="fig:tga" style="cursor:pointer" onclick="onClickImage(this)" style="width:80.0%" alt="Figure 11: Thermogravimetric curve recorded on as-synthesised PCN-777." /><figcaption aria-hidden="true">Figure 11: Thermogravimetric curve recorded on as-synthesised PCN-777.</figcaption>
+            </figure>
+            <figure>
+            <img src="figs/n2-phys.png" id="fig:n2-phys" style="cursor:pointer" onclick="onClickImage(this)" style="width:60.0%" alt="Figure 12: Nitrogen sorption isotherms at 77 K for the pristine PCN-777, alongside those measured on samples after D4 and water sorption." /><figcaption aria-hidden="true">Figure 12: Nitrogen sorption isotherms at 77 K for the pristine PCN-777, alongside those measured on samples after D4 and water sorption.</figcaption>
+            </figure>
+            <figure>
+            <img src="figs/n2-analysis.png" id="fig:n2-analysis" style="cursor:pointer" onclick="onClickImage(this)" style="width:80.0%" alt="Figure 13: BET and Rouquerol plots displaying selection of applicable isotherm points for the pristine PCN-777 isotherm." /><figcaption aria-hidden="true">Figure 13: BET and Rouquerol plots displaying selection of applicable isotherm points for the pristine PCN-777 isotherm.</figcaption>
+            </figure>
+            <h2 id="d4-sorption-experiments">D4 sorption experiments</h2>
+            <h3 id="d4-benchmarking-with-known-mofs">D4 benchmarking with known MOFs</h3>
+            <p>Isotherms were recorded on benchmark materials MIL-101(Cr) and DUT-4 using the same methodology detailed in the main manuscript.</p>
+            <figure>
+            <img src="figs/benchmark-d4.png" id="fig:d4-benchmark" style="cursor:pointer" onclick="onClickImage(this)" style="width:50.0%" alt="Figure 14: D4 isotherms recorded on samples of MIL-101(Cr) (red) and DUT-4 (blue), used to validate our computational methodology for predicting total D4 capacity. Note the different desorption behavior (open symbols) of the two materials under secondary vacuum: partial desorption for MIL-101(Cr) and no desorption for DUT-4." /><figcaption aria-hidden="true">Figure 14: D4 isotherms recorded on samples of MIL-101(Cr) (red) and DUT-4 (blue), used to validate our computational methodology for predicting total D4 capacity. Note the different desorption behavior (open symbols) of the two materials under secondary vacuum: partial desorption for MIL-101(Cr) and no desorption for DUT-4.</figcaption>
+            </figure>
+            <h3 id="isosteric-heat-of-sorption-of-d4">Isosteric heat of sorption of D4</h3>
+            <p>A further isotherm was recorded at 313 K (40 °C) to allow for the calculation of the isosteric heat of adsorption through the Clausius-Clapeyron equation, as depicted in fig. <a href="#fig:isosteric-enth">15</a>.</p>
+            <figure>
+            <img src="figs/isosteric-enth.png" id="fig:isosteric-enth" style="cursor:pointer" onclick="onClickImage(this)" alt="Figure 15: D4 sorption isotherms on PCN-777 recorded at 303 K (blue) and at 313 K (green) in an absolute (a) and relative (b) pressure scale. (c) The calculated isosteric heat of adsorption as a function of D4 uptake." /><figcaption aria-hidden="true">Figure 15: D4 sorption isotherms on PCN-777 recorded at 303 K (blue) and at 313 K (green) in an absolute (a) and relative (b) pressure scale. (c) The calculated isosteric heat of adsorption as a function of D4 uptake.</figcaption>
+            </figure>
+            <h2 class="unnumbered" id="references">References</h2>
+            <div id="refs" class="references csl-bib-body" role="doc-bibliography">
+            <div id="ref-themelisMethaneGenerationLandfills2007" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[1] </div><div class="csl-right-inline">N. J. Themelis and P. A. Ulloa, <span>“Methane generation in landfills,”</span> <em>Renewable Energy</em>, vol. 32, no. 7, pp. 1243–1257, Jun. 2007, doi: <a href="https://doi.org/10.1016/j.renene.2006.04.020">10.1016/j.renene.2006.04.020</a>.</div>
+            </div>
+            <div id="ref-takuwaCharacterizationTraceConstituents2009" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[2] </div><div class="csl-right-inline">Y. Takuwa, T. Matsumoto, K. Oshita, M. Takaoka, S. Morisawa, and N. Takeda, <span>“Characterization of trace constituents in landfill gas and a comparison of sites in <span>Asia</span>,”</span> <em>J Mater Cycles Waste Manag</em>, vol. 11, no. 4, pp. 305–311, Dec. 2009, doi: <a href="https://doi.org/10.1007/s10163-009-0257-1">10.1007/s10163-009-0257-1</a>.</div>
+            </div>
+            <div id="ref-ohannessianVolatileOrganicSilicon2008" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[3] </div><div class="csl-right-inline">A. Ohannessian, V. Desjardin, V. Chatain, and P. Germain, <span>“Volatile organic silicon compounds: The most undesirable contaminants in biogases,”</span> <em>Water Science and Technology</em>, vol. 58, no. 9, pp. 1775–1781, Nov. 2008, doi: <a href="https://doi.org/10.2166/wst.2008.498">10.2166/wst.2008.498</a>.</div>
+            </div>
+            <div id="ref-wangRecentAdvancesTechnologies2019" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[4] </div><div class="csl-right-inline">G. Wang, Z. Zhang, and Z. Hao, <span>“Recent advances in technologies for the removal of volatile methylsiloxanes: <span>A</span> case in biogas purification process,”</span> <em>Critical Reviews in Environmental Science and Technology</em>, vol. 49, no. 24, pp. 2257–2313, Dec. 2019, doi: <a href="https://doi.org/10.1080/10643389.2019.1607443">10.1080/10643389.2019.1607443</a>.</div>
+            </div>
+            <div id="ref-dewilEnergyUseBiogas2006" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[5] </div><div class="csl-right-inline">R. Dewil, L. Appels, and J. Baeyens, <span>“Energy use of biogas hampered by the presence of siloxanes,”</span> <em>Energy Conversion and Management</em>, vol. 47, no. 13–14, pp. 1711–1722, Aug. 2006, doi: <a href="https://doi.org/10.1016/j.enconman.2005.10.016">10.1016/j.enconman.2005.10.016</a>.</div>
+            </div>
+            <div id="ref-kuhnRequirementsTechniquesCosts2017" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[6] </div><div class="csl-right-inline">J. N. Kuhn, A. C. Elwell, N. H. Elsayed, and B. Joseph, <span>“Requirements, techniques, and costs for contaminant removal from landfill gas,”</span> <em>Waste Management</em>, vol. 63, pp. 246–256, May 2017, doi: <a href="https://doi.org/10.1016/j.wasman.2017.02.001">10.1016/j.wasman.2017.02.001</a>.</div>
+            </div>
+            <div id="ref-chinStatisticalAnalysisTrace2020" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[7] </div><div class="csl-right-inline">K. F. Chin <em>et al.</em>, <span>“Statistical analysis of trace contaminants measured in biogas,”</span> <em>Sci. Total Environ.</em>, vol. 729, p. 138702, 2020.</div>
+            </div>
+            <div id="ref-ajharSiloxaneRemovalLandfill2010" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[8] </div><div class="csl-right-inline">M. Ajhar, M. Travesset, S. Yüce, and T. Melin, <span>“Siloxane removal from landfill and digester gas - a technology overview,”</span> <em>Bioresour. Technol.</em>, vol. 101, no. 9, pp. 2913–2923, 2010.</div>
+            </div>
+            <div id="ref-finocchioDecompositionHexamethylcyclotrisiloxaneSolid2008" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[9] </div><div class="csl-right-inline">E. Finocchio, G. Garuti, M. Baldi, and G. Busca, <span>“Decomposition of hexamethylcyclotrisiloxane over solid oxides,”</span> <em>Chemosphere</em>, vol. 72, no. 11, pp. 1659–1663, 2008.</div>
+            </div>
+            <div id="ref-montanariPurificationLandfillBiogases2010" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[10] </div><div class="csl-right-inline">T. Montanari <em>et al.</em>, <span>“Purification of landfill biogases from siloxanes by adsorption: <span>A</span> study of silica and <span>13X</span> zeolite adsorbents on hexamethylcyclotrisiloxane separation,”</span> <em>Chemical Engineering Journal</em>, vol. 165, no. 3, pp. 859–863, Dec. 2010, doi: <a href="https://doi.org/10.1016/j.cej.2010.10.032">10.1016/j.cej.2010.10.032</a>.</div>
+            </div>
+            <div id="ref-sigotAdsorptionOctamethylcyclotetrasiloxaneD42015" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[11] </div><div class="csl-right-inline">L. Sigot, G. Ducom, and P. Germain, <span>“Adsorption of octamethylcyclotetrasiloxane (<span>D4</span>) on silica gel (<span>SG</span>): <span>Retention</span> mechanism,”</span> <em>Microporous and Mesoporous Materials</em>, vol. 213, pp. 118–124, Sep. 2015, doi: <a href="https://doi.org/10.1016/j.micromeso.2015.04.016">10.1016/j.micromeso.2015.04.016</a>.</div>
+            </div>
+            <div id="ref-schweigkoflerRemovalSiloxanesBiogases2001" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[12] </div><div class="csl-right-inline">M. Schweigkofler and R. Niessner, <span>“Removal of siloxanes in biogases,”</span> <em>Journal of Hazardous Materials</em>, vol. 83, no. 3, pp. 183–196, May 2001, doi: <a href="https://doi.org/10.1016/S0304-3894(00)00318-6">10.1016/S0304-3894(00)00318-6</a>.</div>
+            </div>
+            <div id="ref-fereyHybridPorousSolids2008" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[13] </div><div class="csl-right-inline">G. Férey, <span>“Hybrid porous solids: Past, present, future,”</span> <em>Chem. Soc. Rev.</em>, vol. 37, no. 1, pp. 191–214, 2008, doi: <a href="https://doi.org/10.1039/B618320B">10.1039/B618320B</a>.</div>
+            </div>
+            <div id="ref-zhouIntroductionMetalOrganic2012" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[14] </div><div class="csl-right-inline">H.-C. Zhou, J. R. Long, and O. M. Yaghi, <span>“Introduction to <span>Metal</span><span><span>Organic Frameworks</span></span>,”</span> <em>Chemical Reviews</em>, vol. 112, no. 2, pp. 673–674, Feb. 2012, doi: <a href="https://doi.org/10.1021/cr300014x">10.1021/cr300014x</a>.</div>
+            </div>
+            <div id="ref-evansFourdimensionalMetalorganicFrameworks2020" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[15] </div><div class="csl-right-inline">J. D. Evans, V. Bon, I. Senkovska, H.-C. Lee, and S. Kaskel, <span>“Four-dimensional metal-organic frameworks,”</span> <em>Nat Commun</em>, vol. 11, no. 1, p. 2690, Dec. 2020, doi: <a href="https://doi.org/10.1038/s41467-020-16527-8">10.1038/s41467-020-16527-8</a>.</div>
+            </div>
+            <div id="ref-siegelmanChallengesOpportunitiesAdsorptionbased2019" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[16] </div><div class="csl-right-inline">R. L. Siegelman, P. J. Milner, E. J. Kim, S. C. Weston, and J. R. Long, <span>“Challenges and opportunities for adsorption-based <span>CO</span> <span><sub>2</sub></span> capture from natural gas combined cycle emissions,”</span> <em>Energy Environ. Sci.</em>, vol. 12, no. 7, pp. 2161–2173, 2019, doi: <a href="https://doi.org/10.1039/C9EE00505F">10.1039/C9EE00505F</a>.</div>
+            </div>
+            <div id="ref-linMicroporousMetalOrganicFramework2020" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[17] </div><div class="csl-right-inline">R.-B. Lin, S. Xiang, W. Zhou, and B. Chen, <span>“Microporous <span>Metal</span>-<span>Organic Framework Materials</span> for <span>Gas Separation</span>,”</span> <em>Chem</em>, vol. 6, no. 2, pp. 337–363, Feb. 2020, doi: <a href="https://doi.org/10.1016/j.chempr.2019.10.012">10.1016/j.chempr.2019.10.012</a>.</div>
+            </div>
+            <div id="ref-bavykinaMetalOrganicFrameworks2020" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[18] </div><div class="csl-right-inline">A. Bavykina, N. Kolobov, I. S. Khan, J. A. Bau, A. Ramirez, and J. Gascon, <span>“Metal<span><span>Organic Frameworks</span></span> in <span>Heterogeneous Catalysis</span>: <span>Recent Progress</span>, <span>New Trends</span>, and <span>Future Perspectives</span>,”</span> <em>Chem. Rev.</em>, vol. 120, no. 16, pp. 8468–8535, Aug. 2020, doi: <a href="https://doi.org/10.1021/acs.chemrev.9b00685">10.1021/acs.chemrev.9b00685</a>.</div>
+            </div>
+            <div id="ref-allendorfElectronicDevicesUsing2020" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[19] </div><div class="csl-right-inline">M. D. Allendorf, R. Dong, X. Feng, S. Kaskel, D. Matoga, and V. Stavila, <span>“Electronic <span>Devices Using Open Framework Materials</span>,”</span> <em>Chem. Rev.</em>, vol. 120, no. 16, pp. 8581–8640, Aug. 2020, doi: <a href="https://doi.org/10.1021/acs.chemrev.0c00033">10.1021/acs.chemrev.0c00033</a>.</div>
+            </div>
+            <div id="ref-woellnerAdsorptionDetectionHazardous2018" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[20] </div><div class="csl-right-inline">M. Woellner, S. Hausdorf, N. Klein, P. Mueller, M. W. Smith, and S. Kaskel, <span>“Adsorption and <span>Detection</span> of <span>Hazardous Trace Gases</span> by <span>Metal</span>-<span>Organic Frameworks</span>,”</span> <em>Adv. Mater.</em>, vol. 30, no. 37, p. 1704679, Sep. 2018, doi: <a href="https://doi.org/10.1002/adma.201704679">10.1002/adma.201704679</a>.</div>
+            </div>
+            <div id="ref-mito-okaSiloxaneD4Capture2013" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[21] </div><div class="csl-right-inline">Y. Mito-oka <em>et al.</em>, <span>“Siloxane <span>D4</span> capture by hydrophobic microporous materials,”</span> <em>J. Mater. Chem. A</em>, vol. 1, no. 27, p. 7885, 2013, doi: <a href="https://doi.org/10.1039/c3ta11217a">10.1039/c3ta11217a</a>.</div>
+            </div>
+            <div id="ref-gargiuloChromiumbasedMIL101Metal2019" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[22] </div><div class="csl-right-inline">N. Gargiulo <em>et al.</em>, <span>“Chromium-based <span>MIL</span>-101 metal organic framework as a fully regenerable <span>D4</span> adsorbent for biogas purification,”</span> <em>Renewable Energy</em>, vol. 138, pp. 230–235, Aug. 2019, doi: <a href="https://doi.org/10.1016/j.renene.2019.01.096">10.1016/j.renene.2019.01.096</a>.</div>
+            </div>
+            <div id="ref-zhaoSynthesisMIL101Cr2020" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[23] </div><div class="csl-right-inline">H. Zhao, Q. Li, Z. Wang, T. Wu, and M. Zhang, <span>“Synthesis of <span>MIL</span>-101(<span>Cr</span>) and its water adsorption performance,”</span> <em>Microporous and Mesoporous Materials</em>, vol. 297, p. 110044, May 2020, doi: <a href="https://doi.org/10.1016/j.micromeso.2020.110044">10.1016/j.micromeso.2020.110044</a>.</div>
+            </div>
+            <div id="ref-simonWhatAreBest2015" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[24] </div><div class="csl-right-inline">C. M. Simon, R. Mercado, S. K. Schnell, B. Smit, and M. Haranczyk, <span>“What <span>Are</span> the <span>Best Materials To Separate</span> a <span>Xenon</span>/<span>Krypton Mixture</span>?”</span> <em>Chem. Mater.</em>, vol. 27, no. 12, pp. 4459–4475, Jun. 2015, doi: <a href="https://doi.org/10.1021/acs.chemmater.5b01475">10.1021/acs.chemmater.5b01475</a>.</div>
+            </div>
+            <div id="ref-parkEstablishingUpperBounds2017" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[25] </div><div class="csl-right-inline">J. Park, R. P. Lively, and D. S. Sholl, <span>“Establishing upper bounds on <span>CO</span><span><sub>2</sub></span> swing capacity in sub-ambient pressure swing adsorption via molecular simulation of metal<span></span>organic frameworks,”</span> <em>J. Mater. Chem. A</em>, vol. 5, no. 24, pp. 12258–12265, 2017, doi: <a href="https://doi.org/10.1039/C7TA02916K">10.1039/C7TA02916K</a>.</div>
+            </div>
+            <div id="ref-moghadamComputeraidedDiscoveryMetal2018" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[26] </div><div class="csl-right-inline">P. Z. Moghadam <em>et al.</em>, <span>“Computer-aided discovery of a metal<span></span>organic framework with superior oxygen uptake,”</span> <em>Nat Commun</em>, vol. 9, no. 1, p. 1378, Dec. 2018, doi: <a href="https://doi.org/10.1038/s41467-018-03892-8">10.1038/s41467-018-03892-8</a>.</div>
+            </div>
+            <div id="ref-boydDatadrivenDesignMetal2019" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[27] </div><div class="csl-right-inline">P. G. Boyd <em>et al.</em>, <span>“Data-driven design of metal<span></span>organic frameworks for wet flue gas <span>CO2</span> capture,”</span> <em>Nature</em>, vol. 576, no. 7786, pp. 253–256, Dec. 2019, doi: <a href="https://doi.org/10.1038/s41586-019-1798-7">10.1038/s41586-019-1798-7</a>.</div>
+            </div>
+            <div id="ref-shiMachineLearningSilico2020" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[28] </div><div class="csl-right-inline">Z. Shi, H. Liang, W. Yang, J. Liu, Z. Liu, and Z. Qiao, <span>“Machine learning and in silico discovery of metal-organic frameworks: <span>Methanol</span> as a working fluid in adsorption-driven heat pumps and chillers,”</span> <em>Chemical Engineering Science</em>, vol. 214, p. 115430, Mar. 2020, doi: <a href="https://doi.org/10.1016/j.ces.2019.115430">10.1016/j.ces.2019.115430</a>.</div>
+            </div>
+            <div id="ref-yaoInverseDesignNanoporous2021" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[29] </div><div class="csl-right-inline">Z. Yao <em>et al.</em>, <span>“Inverse design of nanoporous crystalline reticular materials with deep generative models,”</span> <em>Nat Mach Intell</em>, Jan. 2021, doi: <a href="https://doi.org/10.1038/s42256-020-00271-1">10.1038/s42256-020-00271-1</a>.</div>
+            </div>
+            <div id="ref-chungAdvancesUpdatesAnalytics2019" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[30] </div><div class="csl-right-inline">Y. G. Chung <em>et al.</em>, <span>“Advances, updates, and analytics for the computation-ready, experimental <span>Metal</span><span><span>Organic</span></span> framework database: <span>CoRE MOF</span> 2019,”</span> <em>J. Chem. Eng. Data</em>, vol. 64, no. 12, pp. 5985–5998, 2019.</div>
+            </div>
+            <div id="ref-willemsAlgorithmsToolsHighthroughput2012" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[31] </div><div class="csl-right-inline">T. F. Willems, C. H. Rycroft, M. Kazi, J. C. Meza, and M. Haranczyk, <span>“Algorithms and tools for high-throughput geometry-based analysis of crystalline porous materials,”</span> <em>Microporous and Mesoporous Materials</em>, vol. 149, no. 1, pp. 134–141, Feb. 2012, doi: <a href="https://doi.org/10.1016/j.micromeso.2011.08.020">10.1016/j.micromeso.2011.08.020</a>.</div>
+            </div>
+            <div id="ref-dubbeldamRASPAMolecularSimulation2016" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[32] </div><div class="csl-right-inline">D. Dubbeldam, S. Calero, D. E. Ellis, and R. Q. Snurr, <span>“<span>RASPA</span>: <span>Molecular</span> simulation software for adsorption and diffusion in flexible nanoporous materials,”</span> <em>Mol. Simul.</em>, vol. 42, no. 2, pp. 81–101, 2016.</div>
+            </div>
+            <div id="ref-frenkelUnderstandingMolecularSimulation2002" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[33] </div><div class="csl-right-inline">D. Frenkel and B. Smit, <em>Understanding molecular simulation: <span>From</span> algorithms to applications</em>, vol. 1. <span>Academic press: London</span>, 2002.</div>
+            </div>
+            <div id="ref-ewaldBerechnungOptischerUnd1921" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[34] </div><div class="csl-right-inline">P. P. Ewald, <span>“Die berechnung optischer und elektrostatischer gitterpotentiale,”</span> <em>Ann. Phys.</em>, vol. 369, no. 3, pp. 253–287, 1921.</div>
+            </div>
+            <div id="ref-qiaoHighthroughputComputationalScreening2017" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[35] </div><div class="csl-right-inline">Z. Qiao, Q. Xu, A. K. Cheetham, and J. Jiang, <span>“High-throughput computational screening of metal-organic frameworks for thiol capture,”</span> <em>J. Phys. Chem. C</em>, vol. 121, no. 40, pp. 22208–22215, 2017.</div>
+            </div>
+            <div id="ref-keskinProgressOpportunitiesChallenges2009" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[36] </div><div class="csl-right-inline">S. Keskin, J. Liu, R. B. Rankin, J. K. Johnson, and D. S. Sholl, <span>“Progress, <span>Opportunities</span>, and <span>Challenges</span> for <span>Applying Atomically Detailed Modeling</span> to <span>Molecular Adsorption</span> and <span>Transport</span> in <span>Metal</span>-<span>Organic Framework Materials</span>,”</span> <em>Ind. Eng. Chem. Res.</em>, vol. 48, no. 5, pp. 2355–2371, Mar. 2009, doi: <a href="https://doi.org/10.1021/ie800666s">10.1021/ie800666s</a>.</div>
+            </div>
+            <div id="ref-abascalGeneralPurposeModel2005" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[37] </div><div class="csl-right-inline">J. L. Abascal and C. Vega, <span>“A general purpose model for the condensed phases of water: <span>TIP4P</span>/2005,”</span> <em>J. Chem. Phys.</em>, vol. 123, no. 23, pp. 234505–234517, 2005.</div>
+            </div>
+            <div id="ref-dauber-osguthorpeStructureEnergeticsLigand1988" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[38] </div><div class="csl-right-inline">P. Dauber-Osguthorpe, V. A. Roberts, D. J. Osguthorpe, J. Wolff, M. Genest, and A. T. Hagler, <span>“Structure and energetics of ligand binding to proteins: <span>Escherichia</span> coli dihydrofolate <span>Reductase</span>-<span>Trimethoprim</span>, a <span>Drug</span>-<span>Receptor</span> system,”</span> <em>Proteins: Struct., Funct., Bioinf.</em>, vol. 4, no. 1, pp. 31–47, 1988.</div>
+            </div>
+            <div id="ref-xuSolvationForceSimulations2014" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[39] </div><div class="csl-right-inline">R.-G. Xu and Y. Leng, <span>“Solvation force simulations in atomic force microscopy,”</span> <em>The Journal of Chemical Physics</em>, vol. 140, no. 21, p. 214702, Jun. 2014, doi: <a href="https://doi.org/10.1063/1.4879657">10.1063/1.4879657</a>.</div>
+            </div>
+            <div id="ref-pillaiCapturePerformancesHybrid2017" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[40] </div><div class="csl-right-inline">R. S. Pillai <em>et al.</em>, <span>“N <span><sub>2</sub></span> <span>Capture Performances</span> of the <span>Hybrid Porous MIL</span>-101(<span>Cr</span>): <span>From Prediction</span> toward <span>Experimental Testing</span>,”</span> <em>J. Phys. Chem. C</em>, vol. 121, no. 40, pp. 22130–22138, Oct. 2017, doi: <a href="https://doi.org/10.1021/acs.jpcc.7b07029">10.1021/acs.jpcc.7b07029</a>.</div>
+            </div>
+            <div id="ref-fengHighlyStableZeotype2015" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[41] </div><div class="csl-right-inline">D. Feng <em>et al.</em>, <span>“A <span>Highly Stable Zeotype Mesoporous Zirconium Metal</span>-<span>Organic Framework</span> with <span>Ultralarge Pores</span>,”</span> <em>Angew. Chem. Int. Ed.</em>, vol. 54, no. 1, pp. 149–154, Jan. 2015, doi: <a href="https://doi.org/10.1002/anie.201409334">10.1002/anie.201409334</a>.</div>
+            </div>
+            <div id="ref-iacomiPyGAPSPythonbasedFramework2019" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[42] </div><div class="csl-right-inline">P. Iacomi and P. L. Llewellyn, <span>“<span class="nocase">pyGAPS</span>: A <span>Python</span>-based framework for adsorption isotherm processing and material characterisation,”</span> <em>Adsorption</em>, vol. 25, no. 8, pp. 1533–1542, Sep. 2019, doi: <a href="https://doi.org/10.1007/s10450-019-00168-5">10.1007/s10450-019-00168-5</a>.</div>
+            </div>
+            <div id="ref-burtchWaterStabilityAdsorption2014" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[43] </div><div class="csl-right-inline">N. C. Burtch, H. Jasuja, and K. S. Walton, <span>“Water <span>Stability</span> and <span>Adsorption</span> in <span>Metal</span><span><span>Organic Frameworks</span></span>,”</span> <em>Chemical Reviews</em>, vol. 114, no. 20, pp. 10575–10612, Oct. 2014, doi: <a href="https://doi.org/10.1021/cr5002589">10.1021/cr5002589</a>.</div>
+            </div>
+            <div id="ref-wuEnhancingStabilityMetalorganic2010" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[44] </div><div class="csl-right-inline">T. Wu <em>et al.</em>, <span>“Enhancing the stability of metal-organic frameworks in humid air by incorporating water repellent functional groups,”</span> <em>Chem. Commun.</em>, vol. 46, no. 33, pp. 6120–6122, 2010.</div>
+            </div>
+            <div id="ref-matito-martosDiscoveryOptimalPorous2018" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[45] </div><div class="csl-right-inline">I. Matito-Martos <em>et al.</em>, <span>“Discovery of an <span>Optimal Porous Crystalline Material</span> for the <span>Capture</span> of <span>Chemical Warfare Agents</span>,”</span> <em>Chem. Mater.</em>, vol. 30, no. 14, pp. 4571–4579, Jul. 2018, doi: <a href="https://doi.org/10.1021/acs.chemmater.8b00843">10.1021/acs.chemmater.8b00843</a>.</div>
+            </div>
+            <div id="ref-lemmonNISTStandardReference2018" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[46] </div><div class="csl-right-inline">E. W. Lemmon, I. H. Bell, M. L. Huber, and M. O. McLinden, <span>“<span>NIST</span> standard reference database 23: <span>Reference</span> fluid thermodynamic and transport properties-refprop, version 10.0, national institute of standards and technology.”</span> 2018.</div>
+            </div>
+            <div id="ref-moghadamEfficientIdentificationHydrophobic2016" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[47] </div><div class="csl-right-inline">P. Z. Moghadam, D. Fairen-Jimenez, and R. Q. Snurr, <span>“Efficient identification of hydrophobic <span>MOFs</span>: <span>Application</span> in the capture of toxic industrial chemicals,”</span> <em>J. Mater. Chem. A</em>, vol. 4, no. 2, pp. 529–536, 2016.</div>
+            </div>
+            <div id="ref-rahbariRecentAdvancesContinuous2020" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[48] </div><div class="csl-right-inline">A. Rahbari, R. Hens, M. Ramdin, O. A. Moultos, D. Dubbeldam, and T. J. H. Vlugt, <span>“Recent advances in the continuous fractional component <span>Monte Carlo</span> methodology,”</span> <em>Molecular Simulation</em>, pp. 1–20, Oct. 2020, doi: <a href="https://doi.org/10.1080/08927022.2020.1828585">10.1080/08927022.2020.1828585</a>.</div>
+            </div>
+            <div id="ref-allenCambridgeStructuralDatabase2002" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[49] </div><div class="csl-right-inline">F. H. Allen, <span>“The cambridge structural database: <span>A</span> quarter of a million crystal structures and rising,”</span> <em>Acta Crystallogr., Sect. B: Struct. Sci.</em>, vol. 58, no. 3, pp. 380–388, 2002.</div>
+            </div>
+            <div id="ref-oisakiMetalOrganicFramework2010" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[50] </div><div class="csl-right-inline">K. Oisaki, Q. Li, H. Furukawa, A. U. Czaja, and O. M. Yaghi, <span>“A <span>Metal</span>-organic framework with covalently bound organometallic complexes,”</span> <em>J. Am. Chem. Soc.</em>, vol. 132, no. 27, pp. 9262–9264, 2010.</div>
+            </div>
+            <div id="ref-furukawaUltrahighPorosityMetalOrganic2010" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[51] </div><div class="csl-right-inline">H. Furukawa <em>et al.</em>, <span>“Ultrahigh <span>Porosity</span> in <span>Metal</span>-<span>Organic Frameworks</span>,”</span> <em>Science</em>, vol. 329, no. 5990, pp. 424–428, Jul. 2010, doi: <a href="https://doi.org/10.1126/science.1192160">10.1126/science.1192160</a>.</div>
+            </div>
+            <div id="ref-wangUltrahighSurfaceArea2015" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[52] </div><div class="csl-right-inline">T. C. Wang <em>et al.</em>, <span>“Ultrahigh surface area zirconium <span>MOFs</span> and insights into the applicability of the <span>BET</span> theory,”</span> <em>J. Am. Chem. Soc.</em>, vol. 137, no. 10, pp. 3585–3591, 2015.</div>
+            </div>
+            <div id="ref-bobbittHighthroughputScreeningMetal2016" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[53] </div><div class="csl-right-inline">N. S. Bobbitt, J. Chen, and R. Q. Snurr, <span>“High-throughput screening of <span>Metal</span><span><span>Organic</span></span> frameworks for hydrogen storage at cryogenic temperature,”</span> <em>J. Phys. Chem. C</em>, vol. 120, no. 48, pp. 27328–27341, 2016.</div>
+            </div>
+            <div id="ref-liuPhotocatalyticHydrogenProduction2018" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[54] </div><div class="csl-right-inline">H. Liu, C. Xu, D. Li, and H.-L. Jiang, <span>“Photocatalytic hydrogen production coupled with selective benzylamine oxidation over <span>MOF</span> composites,”</span> <em>Angew. Chem.</em>, vol. 130, no. 19, pp. 5477–5481, 2018.</div>
+            </div>
+            <div id="ref-thommesPhysisorptionGasesSpecial2015" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[55] </div><div class="csl-right-inline">M. Thommes <em>et al.</em>, <span>“Physisorption of gases, with special reference to the evaluation of surface area and pore size distribution (<span>IUPAC Technical Report</span>),”</span> <em>Pure and Applied Chemistry</em>, vol. 87, no. 9–10, pp. 1051–1069, 2015, doi: <a href="https://doi.org/10.1515/pac-2014-1117">10.1515/pac-2014-1117</a>.</div>
+            </div>
+            <div id="ref-nelsonSupercriticalProcessingRoute2009" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[56] </div><div class="csl-right-inline">A. P. Nelson, O. K. Farha, K. L. Mulfort, and J. T. Hupp, <span>“Supercritical <span>Processing</span> as a <span>Route</span> to <span>High Internal Surface Areas</span> and <span>Permanent Microporosity</span> in <span>Metal</span>-<span>Organic Framework Materials</span>,”</span> <em>Journal of the American Chemical Society</em>, vol. 131, no. 2, pp. 458–460, Jan. 2009, doi: <a href="https://doi.org/10.1021/ja808853q">10.1021/ja808853q</a>.</div>
+            </div>
+            <div id="ref-parkCrystalStructureGuest2007" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[57] </div><div class="csl-right-inline">Y. K. Park <em>et al.</em>, <span>“Crystal structure and guest uptake of a mesoporous metal-organic framework containing cages of 3.9 and 4.7 nm in diameter,”</span> <em>Angew. Chem., Int. Ed.</em>, vol. 46, no. 43, pp. 8230–8233, 2007.</div>
+            </div>
+            <div id="ref-rouquerolAdsorptionPowdersPorous2013" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[58] </div><div class="csl-right-inline">J. Rouquerol, F. Rouquerol, P. L. Llewellyn, G. Maurin, and K. Sing, <em>Adsorption by powders and porous solids : Principles, methodology and applications</em>. 2013.</div>
+            </div>
+            <div id="ref-perdewGeneralizedGradientApproximation1996" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[59] </div><div class="csl-right-inline">J. P. Perdew, K. Burke, and M. Ernzerhof, <span>“Generalized <span>Gradient Approximation Made Simple</span>,”</span> <em>Physical Review Letters</em>, vol. 77, no. 18, pp. 3865–3868, Oct. 1996, doi: <a href="https://doi.org/10.1103/PhysRevLett.77.3865">10.1103/PhysRevLett.77.3865</a>.</div>
+            </div>
+            <div id="ref-hehreSelfconsistentMolecularOrbital1972" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[60] </div><div class="csl-right-inline">W. J. Hehre, R. Ditchfield, and J. A. Pople, <span>“Self-consistent molecular orbital methods. <span>XII</span>. <span>Further</span> extensions of gaussian-type basis sets for use in molecular orbital studies of organic molecules,”</span> <em>J. Chem. Phys.</em>, vol. 56, no. 5, pp. 2257–2261, 1972.</div>
+            </div>
+            <div id="ref-delleyAllElectronNumerical1990" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[61] </div><div class="csl-right-inline">B. Delley, <span>“An <span>All</span>-electron numerical method for solving the local density functional for polyatomic molecules,”</span> <em>J. Chem. Phys.</em>, vol. 92, no. 1, pp. 508–517, 1990.</div>
+            </div>
+            <div id="ref-accelrysMaterialsStudio2001" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[62] </div><div class="csl-right-inline">Accelrys, <span>“Materials <span>Studio</span>.”</span> Accelrys Software Inc., 2001.</div>
+            </div>
+            <div id="ref-gulcayBiocompatibleMOFsStorage2019" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[63] </div><div class="csl-right-inline">E. Gulcay and I. Erucar, <span>“Biocompatible <span>MOFs</span> for storage and separation of <span>O2</span>: <span>A</span> molecular simulation study,”</span> <em>Ind. Eng. Chem. Res.</em>, vol. 58, no. 8, pp. 3225–3237, 2019.</div>
+            </div>
+            <div id="ref-nandiRevisitingWaterSorption2019" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[64] </div><div class="csl-right-inline">S. Nandi <em>et al.</em>, <span>“Revisiting the water sorption isotherm of <span>MOF</span> using electrical measurements,”</span> <em>Chem. Commun.</em>, vol. 55, no. 88, pp. 13251–13254, 2019.</div>
+            </div>
+            <div id="ref-soaresComputationalEvaluationChemical2019" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[65] </div><div class="csl-right-inline">C. V. Soares, A. Leitão, and G. Maurin, <span>“Computational evaluation of the chemical warfare agents capture performances of robust <span>MOFs</span>,”</span> <em>Microporous Mesoporous Mater.</em>, vol. 280, pp. 97–104, 2019.</div>
+            </div>
+            <div id="ref-senkovskaNewHighlyPorous2009" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[66] </div><div class="csl-right-inline">I. Senkovska, F. Hoffmann, M. Fröba, J. Getzschmann, W. Böhlmann, and S. Kaskel, <span>“New highly porous aluminium based metal-organic frameworks: <span>Al</span>(<span>OH</span>)(ndc) (ndc=2,6-naphthalene dicarboxylate) and <span>Al</span>(<span>OH</span>)(bpdc) (bpdc=4,4<span><span class="math inline">\({&#39;}\)</span></span>-biphenyl dicarboxylate),”</span> <em>Microporous and Mesoporous Materials</em>, vol. 122, no. 1–3, pp. 93–98, Jun. 2009, doi: <a href="https://doi.org/10.1016/j.micromeso.2009.02.020">10.1016/j.micromeso.2009.02.020</a>.</div>
+            </div>
+            <div id="ref-bonZrIvHf2012" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[67] </div><div class="csl-right-inline">V. Bon, V. Senkovskyy, I. Senkovska, and S. Kaskel, <span>“Zr(iv) and <span>Hf</span>(iv) based metal<span></span>organic frameworks with reo-topology,”</span> <em>Chem. Commun.</em>, vol. 48, no. 67, p. 8407, 2012, doi: <a href="https://doi.org/10.1039/c2cc34246d">10.1039/c2cc34246d</a>.</div>
+            </div>
+            <div id="ref-bonZrHfBasedMetal2013" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[68] </div><div class="csl-right-inline">V. Bon, I. Senkovska, I. A. Baburin, and S. Kaskel, <span>“Zr- and <span>Hf</span>-<span>Based Metal</span><span><span>Organic Frameworks</span></span>: <span>Tracking Down</span> the <span>Polymorphism</span>,”</span> <em>Crystal Growth &amp; Design</em>, vol. 13, no. 3, pp. 1231–1237, Mar. 2013, doi: <a href="https://doi.org/10.1021/cg301691d">10.1021/cg301691d</a>.</div>
+            </div>
+            <div id="ref-yangProbingAdsorptionPerformance2012" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[69] </div><div class="csl-right-inline">Q. Yang <em>et al.</em>, <span>“Probing the adsorption performance of the hybrid porous <span>MIL</span>-68(<span>Al</span>): A synergic combination of experimental and modelling tools,”</span> <em>Journal of Materials Chemistry</em>, vol. 22, no. 20, p. 10210, 2012, doi: <a href="https://doi.org/10.1039/c2jm15609a">10.1039/c2jm15609a</a>.</div>
+            </div>
+            <div id="ref-wangPhaseTransformableUltrastable2018" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[70] </div><div class="csl-right-inline">S. Wang <em>et al.</em>, <span>“A phase transformable ultrastable titanium-carboxylate framework for photoconduction,”</span> <em>Nature Communications</em>, vol. 9, no. 1, Dec. 2018, doi: <a href="https://doi.org/10.1038/s41467-018-04034-w">10.1038/s41467-018-04034-w</a>.</div>
+            </div>
+            <div id="ref-wangRobustLargeporeZirconium2018" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[71] </div><div class="csl-right-inline">S. Wang <em>et al.</em>, <span>“A robust large-pore zirconium carboxylate metal<span></span>organic framework for energy-efficient water-sorption-driven refrigeration,”</span> <em>Nat Energy</em>, vol. 3, no. 11, pp. 985–993, Nov. 2018, doi: <a href="https://doi.org/10.1038/s41560-018-0261-6">10.1038/s41560-018-0261-6</a>.</div>
+            </div>
+            <div id="ref-wangMesoporousZirconiumIsophthalateMultifunctional2020" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[72] </div><div class="csl-right-inline">S. Wang <em>et al.</em>, <span>“A <span>Mesoporous Zirconium</span>-<span>Isophthalate Multifunctional Platform</span>,”</span> <em>Matter</em>, p. S2590238520305634, Nov. 2020, doi: <a href="https://doi.org/10.1016/j.matt.2020.10.009">10.1016/j.matt.2020.10.009</a>.</div>
+            </div>
+            <div id="ref-zhengMolecularInsightFluorocarbon2020" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[73] </div><div class="csl-right-inline">J. Zheng <em>et al.</em>, <span>“Molecular <span>Insight</span> into <span>Fluorocarbon Adsorption</span> in <span>Pore Expanded Metal</span><span><span>Organic Framework Analogs</span></span>,”</span> <em>J. Am. Chem. Soc.</em>, vol. 142, no. 6, pp. 3002–3012, Feb. 2020, doi: <a href="https://doi.org/10.1021/jacs.9b11963">10.1021/jacs.9b11963</a>.</div>
+            </div>
+            <div id="ref-fengConstructionUltrastablePorphyrin2013" class="csl-entry" role="doc-biblioentry">
+            <div class="csl-left-margin">[74] </div><div class="csl-right-inline">D. Feng <em>et al.</em>, <span>“Construction of <span>Ultrastable Porphyrin Zr Metal</span><span><span>Organic Frameworks</span></span> through <span>Linker Elimination</span>,”</span> <em>J. Am. Chem. Soc.</em>, vol. 135, no. 45, pp. 17105–17110, Nov. 2013, doi: <a href="https://doi.org/10.1021/ja408084j">10.1021/ja408084j</a>.</div>
+            </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+  <!--  Image display zoom modal  -->
+    <div id="img-modal" class="img-modal" onclick="this.style.display='none'">
+      <span class="button">&times;</span>
+      <div class="img-modal-content animate-zoom">
+        <img id="img-modal-inner" style="width:100%">
+      </div>
+    </div>
+
+  </body>
+
+  <!--  Small navigation script  -->
+  <script>
+    window.onhashchange = function () {
+      hash = window.location.hash
+      let target = document.querySelector(hash)
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      })
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        let hashval = anchor.getAttribute('href')
+        let target = document.querySelector(hashval)
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        })
+        history.pushState(null, null, hashval)
+        e.preventDefault()
+      });
+    });
+  </script>
+
+  <!--  Image highlight script  -->
+  <script>
+    function onClickImage(element) {
+      document.getElementById("img-modal-inner").src = element.src;
+      document.getElementById("img-modal").style.display = "block";
+    }
+  </script>
+
+  </html>
