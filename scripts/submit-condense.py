@@ -183,8 +183,8 @@ def clean(text, style):
     text = META_RE.sub("", text)
 
     # remove advanced tex lines
-    text = re.sub(r"\\makeatletter", r'', text)
-    text = re.sub(r"\\makeatother", r'', text)
+    # text = re.sub(r"\\makeatletter", r'', text)
+    # text = re.sub(r"\\makeatother", r'', text)
 
     # pandoc unnecessary commands
     text = text.replace(

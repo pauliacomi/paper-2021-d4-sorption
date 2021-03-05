@@ -19,7 +19,7 @@
 \usepackage[version=3]{mhchem}
 \usepackage[left=1.5cm, right=1.5cm, top=1.785cm, bottom=2.0cm]{geometry}
 \usepackage{balance}
-\usepackage{times,mathptmx}
+\usepackage{mathptmx}
 \usepackage{sectsty}
 \usepackage{graphicx}
 \usepackage{lastpage}
@@ -78,14 +78,23 @@
 % Color definitions
 % \usepackage{xcolor}
 
+% Fixing wide figures
+\usepackage{dblfloatfix}
+
 % For the floatbarrier macro
-\usepackage[section]{placeins}
+\usepackage{placeins}
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\textfraction}{0.15}
+\renewcommand{\floatpagefraction}{0.7}
 
 % Better tables 
 \usepackage{
     booktabs,
     makecell,
-    % array,
     multirow,
     tabularx
 }
@@ -99,10 +108,6 @@
 % For code snippets
 \usepackage{listings}
 
-% Todo notes
-% Used for notes and annotations.
-\usepackage{todonotes}
-
 %%%%%%%%%%%%%%%%%%%%%% Science-related packages
 
 % In-line fractions
@@ -111,9 +116,6 @@
 % The SIunitx package enables the \SI{}{} command.
 \usepackage{siunitx}
 \sisetup{detect-weight=true, detect-family=true}
-
-% The mchem package for formula subscripts using \ce{}
-% \usepackage[version=3]{mhchem} 
 
 %%%%%%%%%%%%%%%%%%%%%% Bibliography packages and settings
 
@@ -125,23 +127,6 @@
 
 %% Hyperlinking
 \usepackage{hyperref}
-% \hypersetup{
-    % bookmarks=true,                         %% Acrobat bookmarks (default)
-    % bookmarksnumbered=true,                 %% Add numbers to bookmarks
-    % bookmarksopen=true,                     %% bookmarks default open
-    % bookmarksopenlevel=2,                   %% Level 2 bookmarks
-    % backref=true,                           %% add links in bib (default)
-    % pagebackref=true,                       %% in the bibliography (default)
-    % hyperindex=true,                        %% in the index (default)
-    % breaklinks=true,                        %% break lines if long
-    % colorlinks=false,                       %% colour links
-    % urlcolor=blue,                          %% link colour
-    % citecolor=blue,	                        %% bibliography link color
-    % linkcolor=blue,	                        %% internal link color
-    % anchorcolor=blue,                       %% anchor link color
-    % linktocpage=false,                      %% pagenumber link in TOC
-    % pdfborder={0 0 0}                       %% pdf border settings
-% }
 
 % Additional Setup
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
