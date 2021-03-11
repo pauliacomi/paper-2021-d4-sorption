@@ -10,7 +10,7 @@ author:
     institute:
     - a
     orcid: 0000-0001-5477-1503
-- Kyung Ho Cho:
+- Youngsang Ko:
     institute:
     - b
 - Jong-San Chang:
@@ -839,7 +839,14 @@ simulated pattern in red (b) TGA curves and (c) $\ce{N2}$ physisorption isotherm
 
 **Synthesis**
 
-Procedure and activation KRICT
+To synthesize the PCN-777, $\ce{ZrOCl2*8H2O}$ (1.08 g, 3.351 mmol) and
+4,4',4''-s-Triazine-2,4,6-triyl-tribenzoic acid (0.270 g, 0.612 mmol) were put into 36 ml
+N,N-Diethylformamide (DEF) in a 100 ml Teflon-lined autoclave reactor, alongside an amount of
+trifluoroacetic acid (1.8 ml) to form a reaction solution. After sonicating the reaction solution at
+room temperature for 10 min, the reactor was transferred to a convection oven followed by heating at
+423 K for 12 h. The PCN-777 crystalline solid was recovered by filtration after purification with
+100 ml N,N-Dimethylformamide (DMF) and acetone for 3 h at room temperature. The collected
+crystalline solid was dried at 393 K for 12 h.
 
 **Characterisation**
 
