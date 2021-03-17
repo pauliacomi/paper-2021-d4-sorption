@@ -4,9 +4,9 @@
 
 \subsection{Force field parameters for D4}\label{force-field-parameters-for-d4}
 
-D4 was modelled as a semi-flexible molecule with an all atom atomistic model.
+D4 was modelled as a semi-flexible molecule with an all-atom atomistic model.
 All intramolecular bonds, angles, dihedrals, and cross terms parameters for
-methyl groups were taken from the consistent-valence force field (CVFF).
+methyl groups were taken from the consistent-valence force field (CVFF) reminded below.
 \citep{dauber-osguthorpeStructureEnergeticsLigand1988}
 
 \textbf{Harmonic Bond}
@@ -134,13 +134,12 @@ density functional theory (DFT) calculations with PBE (Perdew-Burke-Ernzerhof)
 functional \citep{perdewGeneralizedGradientApproximation1996} and DNP (double
 numeric plus polarization) basis set
 \citep{hehreSelfconsistentMolecularOrbital1972}, using DMol\textsuperscript{3}
-module \citep{delleyAllElectronNumerical1990} in Materials Studio
-\citep{accelrysMaterialsStudio2001} (\cref{tbl:ff-d4-charge}).
+\citep{delleyAllElectronNumerical1990} (\cref{tbl:ff-d4-charge}).
 
 \begin{table}[H]
     \centering
     \caption{%
-        Charges and Lennard-Jones parameters for all atoms of D4.
+        Charges and LJ parameters for all atoms of D4.
     }\label{tbl:ff-d4-charge}
     \begin{tabular}{@{}llll@{}}
         Pseudo atom & Charge (e\textsuperscript{-}) & \(\epsilon / \kappa_B\) (K) & \(\sigma\) (Å) \\
@@ -156,20 +155,7 @@ module \citep{delleyAllElectronNumerical1990} in Materials Studio
 
 \subsection{Screening dataset}\label{si-screening-dataset}
 
-1710 non-disordered MOFs with pore limiting diameters \textgreater{} 6 Å were
-screened from CoRE-MOF database, to which 29 well-known MOFs were added with
-proven stability and high porosity, including the MOF-74 isoreticular series
-\citep{gulcayBiocompatibleMOFsStorage2019}, Cr-soc-MOF-1
-\citep{nandiRevisitingWaterSorption2019}, UiO-68 (UiO for University of Oslo),
-MOF-808, \citep{soaresComputationalEvaluationChemical2019} and a several
-structures originating from Dresden University of Technology (DUT) and Material
-of Institute Lavoisier (MIL). This additional list is given in \cref{tbl:extra-mofs}.
-
-The combined dataset of 1739 MOFs show a broad range of geometric and textural
-features: PLDs (6.0--71.5 Å), \ce{N2} accessible SA
-(320--\SI{6770}{\metre\squared\per\gram}), density (0.13--2.22
-\si{\gram\per\centi\metre\cubed}), \(\phi\) (0.42--0.94) and PVs (0.23--7.46
-\si{\centi\metre\cubed\per\gram}).
+\textbf{Material details.}
 
 \begin{table}[H]
     \centering
@@ -210,7 +196,7 @@ features: PLDs (6.0--71.5 Å), \ce{N2} accessible SA
         \bottomrule
         \multicolumn{4}{l}{{[}1{]}NU: Northwestern University; {[}2{]}UiO: University of Oslo;}\\
         \multicolumn{4}{l}{{[}3{]}AzoBDC: azobenzenedicarboxylate;}\\
-        \multicolumn{4}{l}{{[}4{]}MIP: material of the Institute of Porous Materials from Paris;}\\
+        \multicolumn{4}{l}{{[}4{]}MIP: Material of the Institute of Porous Materials from Paris;}\\
         \multicolumn{4}{l}{{[}5{]}IPA: isophatale; {[}6{]}BPM: biphenyl-meta;}\\
         \multicolumn{4}{l}{{[}7{]}BPP: biphenyl-para; {[}8{]}TPM: triphenyl-meta;}\\
         \multicolumn{4}{l}{{[}9{]}TPP: triphenyl-para; {[}10{]}PCN: Porous coordination network;}\\
@@ -221,10 +207,10 @@ features: PLDs (6.0--71.5 Å), \ce{N2} accessible SA
     \centering
     \includegraphics[width=0.8\textwidth]{dataset_geometric}
     \caption{%
-        Overview of the diversity of the MOF database with
-        PLD > 6 Å in terms of void fractions, accessible surface
-        areas and PLDs. Data points are color coded by PLDs of MOFs. Pore
-        volumes of all structures are represented by size.
+        Overview of the diversity of the MOF database with PLD > 6 Å in terms of
+        void fractions, N\textsubscript{2} accessible surface areas and PLDs. Data
+        points are color coded by PLDs of MOFs. Pore volumes of all structures are
+        represented by size.
     }\label{fig:d4-screening-geometric}
 \end{figure}
 
@@ -232,18 +218,18 @@ features: PLDs (6.0--71.5 Å), \ce{N2} accessible SA
     \centering
     \includegraphics[width=0.8\textwidth]{dataset_hydrophobic}
     \caption{%
-        Overview of the diversity of the hydrophobic MOFs
-        database in terms of void fraction and accessible surface areas. Data
+        Overview of the diversity of the hydrophobic MOFs database in terms of
+        void fraction and N\textsubscript{2} accessible surface areas. Data
         points are color coded by PLDs of MOFs. Pore volumes of all structures
         are represented by size.
-    }\label{fig:d4-screening-hydrophobic}
+        }\label{fig:d4-screening-hydrophobic}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{dataset_gv}
     \caption{%
-        The relation of gravimetric D4 uptake of the 811 hydrophobic MOFs
+        The relation between the gravimetric D4 uptake of the 811 hydrophobic MOFs
         (g g\textsuperscript{-1}) and their pore volumes
         (cm\textsuperscript{3} g\textsuperscript{-1}), color coded by void fraction of the
         MOFs.
@@ -255,7 +241,7 @@ features: PLDs (6.0--71.5 Å), \ce{N2} accessible SA
     \includegraphics[width=0.8\textwidth]{dataset_kh}
     \caption{%
         Predicted D4 uptake performance at 298 K for the hydrophobic MOFs
-        database plotted as a function of their computed Henry constant for
+        database plotted as a function of their computed Henry constant of
         water, color coded by void fraction, \(\phi\). Top performing 10
         candidates are represented by different symbols in the legend to the
         right.
@@ -396,7 +382,7 @@ features: PLDs (6.0--71.5 Å), \ce{N2} accessible SA
 \end{longtable}
 }
 
-\subsection{Radial distribution functions for D4-PCN-777}\label{si-radial-distribution}
+\subsection{Radial distribution functions for D4/PCN-777}\label{si-radial-distribution}
 
 \begin{figure}[H]
     \centering
@@ -464,7 +450,7 @@ collected crystalline solid was dried at \SI{393}{\kelvin} for 12 h.
     \includegraphics[width=0.6\textwidth]{n2-phys}
     \caption{%
         Nitrogen sorption isotherms at 77 K for the pristine
-        PCN-777, alongside those measured on samples after D4 and water
+        PCN-777, alongside with those measured on samples after D4 and water
         sorption.
     }\label{fig:n2-phys}
 \end{figure}

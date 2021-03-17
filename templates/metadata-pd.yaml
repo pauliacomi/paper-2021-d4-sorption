@@ -20,7 +20,7 @@ author:
   - Guillaume Rioland:
       institute:
         - c
-  - Sabine Devautour:
+  - Sabine Devautour-Vinot:
       institute:
         - a
       orcid: 0000-0002-3812-7379
@@ -51,5 +51,13 @@ xnos-number-by-section: false
 linkReferences: true # Make references hyperlinks to the referenced element
 autoEqnLabels: true # Automatically number all display equations (i.e. ones defined using $$...$$/\[...\]).
 cref: false
-
+figPrefix:
+    - "Fig."
+    - "Figs."
+eqnPrefix:
+    - "Eq."
+    - "Eqns."
+tblPrefix:
+    - "Tbl."
+    - "Tbls."
 ---

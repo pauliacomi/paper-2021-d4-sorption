@@ -78,7 +78,7 @@ woellnerAdsorptionDetectionHazardous2018} among others. Their high and uniform
 porosity combined with extensive chemical tunability of their pore walls suggest
 that MOFs may hold promise as candidates for siloxane adsorption. Insofar only
 two studies have attempted to investigate the potential of MOFs for D4 removal.
-Mito-Oka and co-workers \citep{mito-okaSiloxaneD4Capture2013} proposed DUT-4
+Mito-Oka and co-workers \citep{mito-okaSiloxaneD4Capture2013} proposed DUT-4(Al)
 (\ce{[Al(OH)(2,6-ndc)}, DUT: Dresden University of Technology), a wine rack-like
 MOF, as a first potential adsorbent. Although its hydrophobicity makes this MOF
 attractive for D4 elimination under humidity, its adsorption capacity of
@@ -100,11 +100,11 @@ low-energy regeneration and hydrophobicity to avoid a preferential adsorption of
 
 To date, only a very small number of MOFs has been sampled for this application,
 and therefore relied on researchers' intuition to identify promising adsorbents.
-There are, however, a myriad of hydrophobic MOFs that can potentially perform
-better for D4 adsorption. Since it is unfeasible to individually test the
-performances of all the existing MOFs, several high throughput computational
-screening (HTCS) workflows have been devised which identified promising MOFs for
-diverse adsorption-related applications \citep{simonWhatAreBest2015,
+There are, however, a myriad of hydrophobic MOFs that might perform better for
+D4 adsorption. Since it is unfeasible to individually test the performances of
+all the existing MOFs, several high throughput computational screening (HTCS)
+workflows have been devised which identified promising MOFs for diverse
+adsorption-related applications \citep{simonWhatAreBest2015,
 parkEstablishingUpperBounds2017, moghadamComputeraidedDiscoveryMetal2018,
 boydDatadrivenDesignMetal2019, shiMachineLearningSilico2020,
 yaoInverseDesignNanoporous2021}. However, such a computational strategy can only
@@ -119,9 +119,12 @@ strategy whose workflow is summarized in \cref{fig:overview}. As a first stage,
 the CoRE (Computation-Ready, Experimental) MOF 2019 database
 \citep{chungAdvancesUpdatesAnalytics2019} was computationally screened with the
 objective to identify hydrophobic materials showing a D4 uptake higher than the
-current MOF benchmark, e.g. MIL-101(Cr). From the top 56 best MOF performers, we
-selected the Zr carboxylate-based mesoporous PCN-777 (PCN for Porous
-Coordination Network) for further experimental testing. This MOF was
+current MOF benchmark, e.g. MIL-101(Cr). Notably, the microscopic models used to
+describe both MOF and D4 were validated by a good agreement between the
+simulated D4 uptake and our own experimental data collected on the two MOFs
+mentioned above, i.e. MIL-101(Cr) and DUT-4 (Al). From the top 56 predicted MOF
+performers, we selected the Zr carboxylate-based mesoporous PCN-777 (PCN for
+Porous Coordination Network) for further experimental testing. This MOF was
 demonstrated to exhibit not only a record D4 uptake (\SI{1.8}{\gram\per\gram})
 to date for a crystalline porous material, but also exceptional cycling and
 low-energy regeneration without the need for thermal treatment, while its
@@ -135,40 +138,42 @@ effective packing in the whole porosity up to saturation.
 
 \subsection{Computational methods}\label{methodology-computational}
 
-The CoRE (Computation-Ready, Experimental) MOF 2019 database
-\citep{chungAdvancesUpdatesAnalytics2019} was considered in this work. The
-geometric characterization of MOFs, including pore limiting diameters (PLDs),
-densities, \ce{N2}-accessible surface areas (SAs), pore volumes (PVs) and void
-fractions (\(\phi\)), were calculated by Zeo++ software
-\citep{willemsAlgorithmsToolsHighthroughput2012}. All Monte Carlo simulations
-were performed with the RASPA simulation package
+We used the CoRE-MOF 2019 database \citep{chungAdvancesUpdatesAnalytics2019}
+(over 14 000 MOFs), recently updated to remove solvent molecules and disordered
+structures, to which we also added further 29 well-known MOFs owing to their
+good chemical/thermal stability and permanent accessible porosity (listed in
+\cref{tbl:extra-mofs} SI). The geometric characterization of MOFs, including
+pore limiting diameters (PLDs), densities, \ce{N2}-accessible surface areas
+(SAs), pore volumes (PVs) and void fractions (\(\phi\)), were calculated by
+Zeo++ software \citep{willemsAlgorithmsToolsHighthroughput2012}. All Monte Carlo
+simulations were performed with the RASPA simulation package
 \citep{dubbeldamRASPAMolecularSimulation2016}. Henry coefficients of \ce{H2O}
 (\(K_{H,H_{2}O}\)) and isosteric enthalpy of adsorption (\(\Delta
-H_{st,H_{2}O}^{0}\)) values were initially computed at \SI{298}{\kelvin} for all
-MOFs using the Widom particle insertion method
+H_{st,H_{2}O}^{0}\)) were initially computed at \SI{298}{\kelvin} for all MOFs
+using the Widom particle insertion method
 \citep{frenkelUnderstandingMolecularSimulation2002}. These simulations were
 carried out using 1 × 10\textsuperscript{5} production cycles and 5 ×
 10\textsuperscript{4} cycles for equilibration. We applied the same Widom
 insertion method to calculate isosteric enthalpy of adsorption at low coverage
-for D4 in DUT-4 and PCN-777 with the consideration of 1 × 10\textsuperscript{6}
+for D4 in DUT-4(Al) and PCN-777 with the consideration of 1 × 10\textsuperscript{6}
 production cycles and 5 × 10\textsuperscript{5} steps for equilibration.
-Continuous fractional component Monte Carlo (CFCMC) simulations were performed
-to evaluate the saturation D4 uptake of all the selected hydrophobic MOFs at
-\SI{298}{\kelvin}. All CFCMC simulations were carried out for a total of 1 ×
-10\textsuperscript{4} cycles with 5 × 10\textsuperscript{3} cycles for
-equilibration. A cycle consists of N Monte Carlo steps, where N is equal to the
-number of molecules (which fluctuates during a CFCMC simulation). For each
-cycle, random insertion, rotation, translation and continuous-fractional swap
-moves were attempted. The D4/MOF and \ce{H2O}/MOF interactions were described by
-the sum of van der Waals (LJ) and Coulombic terms. The electrostatic
-interactions were calculated by the Ewald summation
-\citep{ewaldBerechnungOptischerUnd1921} while a cut-off radius of 12.8 Å was
-considered for the van der Waals term. Cell lengths of the simulations were
-increased to at least 25.6 Å in each three dimensions and all MOF frameworks
-were considered as rigid in the simulations. Atomic charges for all atoms in the
-MOFs were estimated using Extended Charge Equilibration (Qeq) method as
-implemented in RASPA \citep{dubbeldamRASPAMolecularSimulation2016} and their LJ
-parameters were taken from the UFF forcefield as currently employed
+Continuous fractional component Monte Carlo (CFCMC) simulations
+\citep{rahbariRecentAdvancesContinuous2020} were performed to evaluate the
+saturation D4 uptake of all the selected hydrophobic MOFs at \SI{298}{\kelvin}.
+All CFCMC simulations were carried out for a total of 1 × 10\textsuperscript{4}
+cycles with 5 × 10\textsuperscript{3} cycles for equilibration. A cycle consists
+of N Monte Carlo steps, where N is equal to the number of molecules (which
+fluctuates during a CFCMC simulation). For each cycle, random insertion,
+rotation, translation and continuous-fractional swap moves were attempted. The
+D4/MOF and \ce{H2O}/MOF interactions were described by the sum of van der Waals
+(Lennard-Jones) and Coulombic terms. The electrostatic interactions were
+calculated by the Ewald summation \citep{ewaldBerechnungOptischerUnd1921} while
+a cut-off radius of 12.8 Å was considered for the van der Waals term. Indeed,
+unit cell dimensions were increased to at least 25.6 Å in each three directions
+for all MOFs and their frameworks were treated as rigid. Atomic charges for all
+atoms in the MOFs were estimated using Extended Charge Equilibration (Qeq)
+method as implemented in RASPA \citep{dubbeldamRASPAMolecularSimulation2016} and
+their LJ parameters were taken from the UFF forcefield as currently employed
 \citep{qiaoHighthroughputComputationalScreening2017,
 keskinProgressOpportunitiesChallenges2009}. H2O was modelled using TIP4P/2005
 \citep{abascalGeneralPurposeModel2005}. D4 was described by a semi-flexible all
@@ -187,15 +192,16 @@ explorer, which can be used to interactively display the dataset is available at
 
 The benchmark MIL-101(Cr) sample was taken from a previous work
 \citep{pillaiCapturePerformancesHybrid2017}, with all textural characteristics
-as stated in reference. DUT-4 was purchased from Materials Center (TU Dresden,
-Germany). PXRD, TGA and \ce{N2} physisorption measurements for DUT-4 are
-available in the SI (\cref{fig:dut4-summary}). BET surface areas of
-\SI{3475}{\metre\squared\per\gram} and \SI{1610}{\metre\squared\per\gram} were
-determined for MIL-101(Cr) and DUT-4, respectively. PCN-777 was synthesised by
-optimizing a previous published methodology \citep{fengHighlyStableZeotype2015}.
-Full synthesis methodology, activation procedure and phase purity analysis using
-TGA, PXRD and \ce{N2} physisorption are given in the SI. All samples were
-activated at \SI{423}{\kelvin} under vacuum adsorption experiments.
+as stated in reference. DUT-4(Al) was purchased from Materials Center (TU Dresden,
+Germany). PXRD, TGA and \ce{N2} physisorption measurements for DUT-4(Al) are
+available in the SI (\cref{fig:dut4-summary}). Brunauer-Emmet-Teller (BET) areas
+of \SI{3475}{\metre\squared\per\gram} and \SI{1610}{\metre\squared\per\gram}
+were determined for MIL-101(Cr) and DUT-4(Al), respectively. PCN-777 was synthesised
+by optimizing a previous published methodology
+\citep{fengHighlyStableZeotype2015}. Full synthesis methodology, activation
+procedure and phase purity analysis using TGA, PXRD and \ce{N2} physisorption
+are given in the SI. All samples were activated at \SI{423}{\kelvin} under
+vacuum prior to adsorption experiments.
 
 \subsection{Material characterization}\label{methodology-characterization}
 
@@ -203,12 +209,11 @@ PXRD patterns were recorded on a Panalytical X'Pert PRO PXRD diffractometer with
 a Cu \(K_{\alpha}\) radiation source, in a Bragg-Brentano reflection geometry,
 using a spinning sample holder with a low-background silicon insert. \ce{N2}
 isotherms at \SI{77}{\kelvin} were recorded in a Micromeritics Tristar
-manometric analyser (displayed in \cref{fig:n2-phys}, SI). The
-Brunauer-Emmet-Teller area was calculated using the pyGAPS suite
-\citep{iacomiPyGAPSPythonbasedFramework2019}, with the application of the
-Rouquerol rules for isotherm region selection yielding a minimum Pearson
-correlation coefficient of \(R=0.997\) (see \cref{fig:n2-analysis} for resulting
-fitting).
+manometric analyser (displayed in \cref{fig:n2-phys}, SI). The BET areas were
+calculated using the pyGAPS suite \citep{iacomiPyGAPSPythonbasedFramework2019},
+with the application of the Rouquerol rules for isotherm region selection
+yielding a minimum Pearson correlation coefficient of \(R=0.997\) (see
+\cref{fig:n2-analysis} for resulting fitting).
 
 \subsection{D4 sorption experiments}\label{methodology-d4sorption}
 
@@ -243,7 +248,7 @@ purity.
         \SI{298}{\kelvin}. Marker size represents PV while colour denotes
         \(\phi\). Dashed line represents the gravimetric and volumetric uptake
         of benchmark MIL-101(Cr)\citep{gargiuloChromiumbasedMIL101Metal2019}.
-        (c) The structure of our promising material identified for D4 uptake,
+        (c) Illustration of the structure of our promising material identified for D4 uptake,
         PCN-777. Zr, N, O, C, and H atoms are depicted in light blue, dark blue,
         red, dark grey, and light grey, respectively.
     }\label{fig:d4-screening}
@@ -253,17 +258,12 @@ purity.
 
 \subsection{Pre-selection of hydrophobic MOFs}\label{pre-screening}
 
-We used the CoRE-MOF 2019 database \citep{chungAdvancesUpdatesAnalytics2019}
-(over 14 000 MOFs), recently updated to remove solvent molecules and disordered
-structures, to which we also added further 29 well-known MOFs owing to their
-good chemical/thermal stability and permanent accessible porosity (listed in
-\cref{tbl:extra-mofs} SI). We first excluded all structures with PLDs lower than
-6 Å, a threshold selected as the average between the kinetic diameter of D4 (8.6
-Å) and the effective diameter of its constitutive inner Si-O ring (4.5 Å). A
-total of 1739 remaining non-disordered MOFs were further considered, their
-geometric and textural properties, i.e. PV, SA, and \(\phi\), as well as their
-density (\(\rho\)) being summarized in \cref{fig:d4-screening-geometric}.
-
+We first excluded from our considered MOF database all structures with PLDs
+lower than 6 Å, a threshold selected as the average between the kinetic diameter
+of D4 (8.6 Å) and the effective diameter of its constitutive inner Si-O ring
+(4.5 Å). A total of 1739 remaining non-disordered MOFs were further considered,
+their geometric and textural properties, i.e. PV, SA, and \(\phi\), as well as
+their density (\(\rho\)) being summarized in \cref{fig:d4-screening-geometric}.
 As siloxane-rich biogas streams often contain water vapour, the optimal D4
 adsorbent should have a relatively low water affinity to avoid competing
 adsorption. Moreover, hydrophobic MOFs are known to possess increased resistance
@@ -304,14 +304,6 @@ SA < \SI{6700}{\metre\squared\per\gram}, as shown in
 
 \subsection{Prediction of the D4 uptake performance for the hydrophobic MOFs}\label{d4-screening}
 
-The D4 adsorption uptakes for the selected MOFs were simulated using single
-point continuous fractional component Monte Carlo (CFCMC)
-\citep{rahbariRecentAdvancesContinuous2020}. In these calculations, the
-framework atoms were maintained fixed in their crystallographic positions and D4
-was modelled as a semi-flexible molecule with its Si-O ring maintained rigid.
-Full computational details, including force field parameters and partial charges
-for D4 are available in the methodology section and SI.
-
 \begin{widetable}[htb]
     \centering\small
     \caption{%
@@ -322,7 +314,7 @@ for D4 are available in the methodology section and SI.
         MOF & PLD & SA & \(\rho\) & PV & \(\phi\) & \(K_{H,H_{2}O}\) & \(\Delta H_{st,H_{2}O}^{0}\) &
         Gravimetric D4 & Volumetric D4 \\
 
-        & (Å) & (\si{\metre\per\gram}) & (\si{\gram\per\centi\metre\cubed}) & (\si{\centi\metre\cubed\per\gram}) & 
+        & (Å) & (\si{\metre\squared\per\gram}) & (\si{\gram\per\centi\metre\cubed}) & (\si{\centi\metre\cubed\per\gram}) & 
         & (\si{\mol\per\kilo\gram\per\pascal}) & (\si{\kilo\joule\per\mol}) & uptake (\si{\gram\per\gram}) & uptake (\si{\gram\per\centi\metre\cubed}) \\
         \midrule
         FOTNIN (PCN-777) & 28.36 & 2990 & 0.27 & 3.31 & 0.90 & \(2.80\times10^{-6}\) & 7.82 & 2.68 & 0.72\\
@@ -340,38 +332,37 @@ for D4 are available in the methodology section and SI.
 \end{widetable}
 
 As a validation stage of the computational method, the D4 uptakes for
-MIL-101(Cr) and DUT-4 were first predicted and compared with the available
-experimental data. The simulated uptake for MIL-101(Cr), the current best MOF
-performer, was found to be \SI{1.03}{\gram\per\gram} vs.
-\SI{0.95}{\gram\per\gram} as reported in the original experimental study
-\citep{gargiuloChromiumbasedMIL101Metal2019}. We equally confirmed the good
-agreement between the calculated and the experimental D4 uptake by recording an
-additional adsorption isotherm on a MIL-101(Cr) sample (see methodology
-section), finding a D4 capacity of \SI{1.15}{\gram\per\gram} at
-\SI{298}{\kelvin}. The D4 uptake for DUT-4 was however predicted to be
-substantially higher (\SI{0.42}{\gram\per\gram}) than the experimental value
-reported previously of \SI{0.15}{\gram\per\gram}
-\citep{mito-okaSiloxaneD4Capture2013}. We therefore collected a D4 adsorption
-isotherm on a pristine DUT-4 sample (sourcing and textural properties in
-methodology section and SI), finding a D4 uptake of \SI{0.5}{\gram\per\gram}
-(\cref{fig:d4-benchmark}), more in line with our theoretical assessment. The
-lower D4 capacity reported in the original study is attributed to the method
-used to quantify the adsorbed amount, based on mass loss upon heating. It is
-likely that only a fraction of D4 was released, since D4 was demonstrated to
-strongly interact with DUT-4 due to a high confinement in its pores
-\citep{mito-okaSiloxaneD4Capture2013}.
+MIL-101(Cr) and DUT-4(Al) were first predicted using the CFCMC approach described in
+the methodology section and compared with the available experimental data. The
+simulated uptake for MIL-101(Cr), the current best MOF performer, was found to
+be \SI{1.03}{\gram\per\gram} vs. \SI{0.95}{\gram\per\gram} as reported in the
+original experimental study \citep{gargiuloChromiumbasedMIL101Metal2019}. We
+equally confirmed the good agreement between the calculated and the experimental
+D4 uptake by recording an additional adsorption isotherm on a MIL-101(Cr)
+sample, finding a D4 capacity of \SI{1.15}{\gram\per\gram} at \SI{298}{\kelvin}.
+The D4 uptake for DUT-4(Al) was however predicted to be substantially higher
+(\SI{0.42}{\gram\per\gram}) than the experimental value reported previously of
+\SI{0.15}{\gram\per\gram} \citep{mito-okaSiloxaneD4Capture2013}. We therefore
+collected a D4 adsorption isotherm on a pristine DUT-4(Al) sample, finding a D4
+uptake of \SI{0.5}{\gram\per\gram} (\cref{fig:d4-benchmark}), more in line with
+our theoretical assessment. The lower D4 capacity reported in the original study
+is attributed to the method used to quantify the adsorbed amount, based on mass
+loss upon heating. It is likely that only a fraction of D4 was released, since
+D4 was demonstrated to strongly interact with DUT-4(Al) due to a high confinement in
+its pores \citep{mito-okaSiloxaneD4Capture2013}.
 
-Overall, the good agreement between the simulated uptakes and experimental data
-for the previously investigated MOFs served to validate both the applicability
-of our computational method and the reliability of our experimental setup. This
-further highlights the importance of a dual experimental-computational approach
-even prior to starting the high-throughput screening. We then transitioned
-towards the search for better performers amongst the 811 identified hydrophobic
-MOFs. \cref{fig:d4-screening}a reports their computed D4 uptakes vs. their
-\(\Delta H_{st,H_{2}O}^{0}\) values at \SI{298}{\kelvin}, with a similar
-correlation depicted vs. \(K_{H,H_{2}O}\) in \cref{fig:d4-screening-henryc}, SI.
-The dashed line represents the current known upper bound for D4 uptake in MOFs,
-considering MIL-101(Cr) as the benchmark sorbent (\SI{0.95}{\gram\per\gram})
+Overall, the good agreement between the simulated uptakes and the corresponding
+experimental data for the previously investigated MOFs served to validate both
+the applicability of our computational method and the reliability of our
+experimental setup. This further highlights the importance of a dual
+experimental-computational approach even prior to starting the high-throughput
+screening. We then transitioned towards the search for better performers amongst
+the 811 identified hydrophobic MOFs. \cref{fig:d4-screening}a reports their
+computed D4 uptakes vs. their \(\Delta H_{st,H_{2}O}^{0}\) values at
+\SI{298}{\kelvin}, with a similar correlation depicted vs. \(K_{H,H_{2}O}\) in
+\cref{fig:d4-screening-henryc}, SI. The dashed line represents the current known
+upper bound for D4 uptake in MOFs, considering MIL-101(Cr) as the benchmark
+sorbent (\SI{0.95}{\gram\per\gram})
 \citep{gargiuloChromiumbasedMIL101Metal2019}. 56 hydrophobic MOFs were predicted
 to be more attractive candidates than MIL-101(Cr) on the basis of gravimetric D4
 uptake. Common geometric and textural features of these MOF candidates are void
@@ -415,14 +406,16 @@ is limited by the density of the adsorbate fluid phase, to which it
 asymptotically approaches as framework density decreases (and void fraction
 increases) \citep{bobbittHighthroughputScreeningMetal2016}. Interestingly FOTNIN
 remains the top MOF performer in terms of volumetric uptake as well
-(\SI{0.72}{\gram\per\centi\metre\cubed}). This MOF (common name PCN-777
-\citep{fengHighlyStableZeotype2015}) is built from large planar tritopic linkers
-(4,4',4'\,'-s-triazine-2,4,6-triyl-tri-benzoate or TATB) coordinated to
-\ce{Zr6}-oxoclusters in an antiprismatic fashion, forming vertex-sharing
-supertetrahedra surrounding a mesoporous cage of 33.7 Å as depicted in
-\cref{fig:d4-screening}c. These cages are interconnected by hexagonal windows
-(30 Å) and are typically decorated by \ce{OH/H2O} moieties coordinated to the
-remaining axial positions of the \ce{Zr6} node.
+(\SI{0.72}{\gram\per\centi\metre\cubed}, see \cref{fig:d4-screening}b). This MOF
+(common name PCN-777 \citep{fengHighlyStableZeotype2015}) is built from large
+planar tritopic linkers (4,4',4'\,'-s-triazine-2,4,6-triyl-tri-benzoate or TATB)
+coordinated to \ce{Zr6}-oxoclusters in an antiprismatic fashion, forming
+vertex-sharing supertetrahedra surrounding a mesoporous cage of 33.7 Å as
+depicted in \cref{fig:d4-screening}c. These cages are interconnected by
+hexagonal windows (30 Å) and are typically decorated by \ce{OH/H2O} moieties
+coordinated to the remaining axial positions of the \ce{Zr6} node.
+
+\subsection{Experimental assessment of the D4 sorption performance for the top MOF}\label{assessment}
 
 \begin{widefigure}[htb]
     \centering
@@ -438,12 +431,10 @@ remaining axial positions of the \ce{Zr6} node.
         \citet{wangRecentAdvancesTechnologies2019}), with error bars placed at
         one standard deviation of mean capacity. (c) 5 D4 sorption-desorption
         cycles recorded after the first two isotherms on PCN-777, in the same
-        pressure range. (d) PXRD of pristine PCN-777 (black) and samples
+        pressure range. (d) PXRD of pristine PCN-777 sample (black) and samples
         recovered after D4 cycling (blue) and water adsorption (red).
     }\label{fig:d4-experiment}
 \end{widefigure}
-
-\subsection{Experimental assessment of the D4 sorption performance for the top MOF}\label{assessment}
 
 While HTCS enabled a rapid and effective screening on the performance indicator,
 additional criteria, such as thermal/chemical stability, synthesis route,
@@ -471,29 +462,18 @@ through \ce{N2} physisorption at \SI{77}{\kelvin}, in \cref{fig:n2-phys}, SI)
 commonly observed for mesoporous MOFs
 \citep{nelsonSupercriticalProcessingRoute2009, parkCrystalStructureGuest2007}
 and (ii) only a partial accessibility of the super-tetrahedral cages to D4 owing
-to their relatively small windows. Indeed, while optimized synthesis and
-activation procedures may recover more of the expected porosity, the attained D4
-uptake constitutes a record among porous solids. This positions PCN-777 as the
-porous material with the highest currently known D4 uptake, almost twice higher
-than the benchmark MIL-101(Cr), 5--10 times that of the most promising silicas
-and zeolites, and above the best performing activated carbons as illustrated in
+to their relatively small windows. Indeed, while optimized activation procedures
+may recover more of the expected porosity, the attained D4 uptake constitutes a
+record among porous solids. This positions PCN-777 as the crystalline porous
+material with the highest currently known D4 uptake, almost twice higher than
+the benchmark MIL-101(Cr), 5--10 times that of the most promising silicas and
+zeolites, and above the best performing activated carbons as illustrated in
 \cref{fig:d4-experiment}b \citep{wangRecentAdvancesTechnologies2019}. Notably,
 the step-like adsorption behaviour is ideal from the application point of view
 of a breakthrough filter, as it ensures a narrow mass transfer zone and
 minimises the column dead zone at break point. Remarkably, the maximum uptake
 for PCN-777 is attained at low pressure of \SI{7}{\pascal} that makes this MOF
 highly promising for D4 removal in a gas phase concentration below 75 ppm.
-
-Throughout desorption (dotted line with open symbols in
-\cref{fig:d4-experiment}a), a small hysteresis occurs with a width of about
-\SI{1}{\pascal}. Under complete vacuum, a minute amount of D4, about
-\SI{0.1}{\gram\per\gram}, i.e. 5\% of total capacity, is retained in the
-structure. We attribute this capacity loss to D4 molecules irreversibly trapped
-in the super-tetrahedral cages or on a small fraction of defect sites. Overall,
-PCN-777 acts as a highly reversible D4-adsorbent. A second sorption cycle
-reveals the excellent repeatability of D4 sorption by this MOF, with identical
-condensation pressure and total uptake, the adsorption-desorption branches now
-overlapping in the very low-pressure region (\cref{fig:d4-experiment}a).
 
 \begin{widefigure}[htb]
     \centering
@@ -510,6 +490,17 @@ overlapping in the very low-pressure region (\cref{fig:d4-experiment}a).
     }\label{fig:d4-mechanistic}
 \end{widefigure}
 
+Throughout desorption (dotted line with open symbols in
+\cref{fig:d4-experiment}a), a small hysteresis occurs with a width of about
+\SI{1}{\pascal}. Under complete vacuum, a minute amount of D4, about
+\SI{0.1}{\gram\per\gram}, i.e. 5\% of total capacity, is retained in the
+structure. We attribute this capacity loss to D4 molecules irreversibly trapped
+in the super-tetrahedral cages or on a small fraction of defect sites. Overall,
+PCN-777 acts as a highly reversible D4-adsorbent. A second sorption cycle
+reveals the excellent repeatability of D4 sorption by this MOF, with identical
+condensation pressure and total uptake, the adsorption-desorption branches now
+overlapping in the very low-pressure region (\cref{fig:d4-experiment}a).
+
 To further investigate the D4 adsorption-desorption cyclability of PCN-777, a
 subsequent set of five cycles was recorded on the same sample, covering the
 entire uptake range from fully loaded to empty under a medium vacuum level of
@@ -517,12 +508,12 @@ entire uptake range from fully loaded to empty under a medium vacuum level of
 observed after the initial 5 wt\% from cycle 1 to cycle 2 with a pressure drop
 sufficient to fully remove adsorbed D4 in every cycle without the need of
 thermal treatment. This is a leap forward compared to the previous MOF
-candidates, i.e. MIL-101(Cr) and DUT-4. The former was reported
-\citep{gargiuloChromiumbasedMIL101Metal2019} to be fully regenerable at only
+candidates, i.e. MIL-101(Cr) and DUT-4(Al). The former was reported
+\citep{gargiuloChromiumbasedMIL101Metal2019} to be fully regenerable only at
 high temperatures (outgassed under vacuum at \SI{423}{\kelvin}), and we note
 that vacuum alone was unable to fully desorb D4, with nearly 50\% of siloxane
 remaining in the structure after desorption in our experiments
-(\cref{fig:d4-benchmark}, SI). D4 adsorption in DUT-4 is even more irreversible,
+(\cref{fig:d4-benchmark}, SI). D4 adsorption in DUT-4(Al) is even more irreversible,
 owing to the strong confinement of the siloxane molecules in its pores
 \citep{mito-okaSiloxaneD4Capture2013}, with essentially no desorption observed
 under vacuum (\cref{fig:d4-benchmark}, SI). The global sorption kinetics was
@@ -531,45 +522,44 @@ cycling steps. \cref{fig:d4-experiment}c reveals that an adsorption/desorption
 cycle can be achieved in less than 30 minutes. Such a fast kinetics is a clear
 advantage for practical use. In addition, the water adsorption collected for
 PCN-777 further confirmed its predicted hydrophobicity and revealed that below
-\(P=\)\SI{7}{\pascal}, water loading is negligible, i.e. under
+\(P=\) \SI{7}{\pascal}, water loading is negligible, i.e. under
 \SI{0.02}{\gram\per\gram} (see \cref{fig:d4-experiment}a). This observation
 strongly suggests that PCN-777 is expected to maintain its high-level
 performance for D4 removal under low to moderate humidity working conditions.
 
-Finally, stability of PCN-777 after its use as a D4 adsorbent was evaluated
-by checking its crystallinity and porosity. PXRD patterns recorded after the D4
+Stability of PCN-777 after its use as a D4 adsorbent was also evaluated by
+checking its crystallinity and porosity. PXRD patterns recorded after the D4
 cycling experiments show similar Bragg peak positions and broadenings as the
-pristine material, testifying that no amorphisation or decrease of
-crystallinity were incurred (\cref{fig:d4-experiment}d). The same conclusion
-holds true for PCN-777 upon water adsorption. Further, \ce{N2} adsorption
-isotherms collected at \SI{77}{\kelvin} for PCN-777 after \ce{H2O} and D4
-adsorption both present a similar shape than that of the pristine solid (see
-\cref{fig:n2-phys}) while slightly lower pore volume
-(\SI{1.87}{\centi\metre\cubed\per\gram} vs
+pristine material, testifying that no amorphisation or decrease of crystallinity
+were incurred (\cref{fig:d4-experiment}d). The same conclusion holds true for
+PCN-777 upon water adsorption. Further, \ce{N2} adsorption isotherms collected
+at \SI{77}{\kelvin} for PCN-777 after \ce{H2O} and D4 adsorption both present a
+similar shape than that of the pristine solid (see \cref{fig:n2-phys}). Slightly
+lower pore volume (\SI{1.87}{\centi\metre\cubed\per\gram} vs
 \SI{2.20}{\centi\metre\cubed\per\gram}) and BET area
 (\SI{1544}{\metre\squared\per\gram} vs \SI{1730}{\metre\squared\per\gram}) were
-obtained for the material after D4 cycling, attributed to the small amount of D4
-retained in the porous framework during the first adsorption cycle.
+obtained for the material after D4 cycling compared to the pristine solid,
+attributed to the small amount of D4 retained in the porous framework during the
+first adsorption cycle.
 
 \subsection{Adsorption mechanism}\label{adsorption-mechanism}
 
 A careful analysis of the adsorption mechanism of D4 in PCN-777 was further
 explored by considering MC simulations in the canonical ensemble with increasing
-loading up to the saturation (see methodology section for computational
-details). At the initial stage of adsorption, the coordinated OH/\ce{H2O}
-moieties of the MOF \ce{Zr6O4} polyhedra pointing towards the pore were found to
-act as primary adsorption sites (\cref{fig:d4-mechanistic}a). The D4 molecule
-interacts mostly via its methyl group with an averaged separating
-\ce{H(CH3)-H(H2O)} distance of 2.8 Å (see the radial distribution function
-plotted for the corresponding pair in \cref{fig:d4-rdf}a) as illustrated in
-\cref{fig:d4-mechanistic}a. This preferential sitting of D4 is associated with a
-moderately high simulated adsorption enthalpy of \SI{83.5}{\kilo\joule\per\mol}
-in line with the isosteric heat of adsorption we assessed experimentally that
-ranges from 65 and \SI{75}{\kilo\joule\per\mol} (\cref{fig:isosteric-enth}).
-Both values are slightly higher than the enthalpy of liquefaction of D4 at
-\SI{303}{\kelvin} as \SI{54.5}{\kilo\joule\per\mol}
+loading up to the saturation. At the initial stage of adsorption, the
+coordinated OH/\ce{H2O} moieties of the MOF \ce{Zr6} node pointing towards the
+pore were found to act as primary adsorption sites (\cref{fig:d4-mechanistic}a).
+The D4 molecule interacts mostly via its methyl group with an averaged
+separating \ce{H(CH3)-H(H2O)} distance of 2.8 Å (see the radial distribution
+function plotted for the corresponding pair in \cref{fig:d4-rdf}a) as
+illustrated in \cref{fig:d4-mechanistic}a. This preferential sitting of D4 is
+associated with a moderately high simulated adsorption enthalpy of
+\SI{83.5}{\kilo\joule\per\mol} in line with the isosteric heat of adsorption we
+assessed experimentally that ranges from 65 and \SI{75}{\kilo\joule\per\mol}
+(\cref{fig:isosteric-enth}). Both values are higher than the enthalpy of
+liquefaction of D4 at \SI{303}{\kelvin} as \SI{54.5}{\kilo\joule\per\mol}
 \citep{lemmonNISTStandardReference2018}. We further demonstrated that this value
-remains substantially lower than the one simulated for DUT-4
+remains substantially lower than the one simulated for DUT-4(Al)
 (\SI{194.0}{\kilo\joule\per\mol}) for which the adsorption of D4 is governed by
 a high degree of confinement leading to an irreversible process. This
 observation clearly states that the adsorption energetics in PCN-777 offers a
@@ -587,7 +577,7 @@ Such pore filling mechanism has been commonly observed in diverse mesoporous
 materials for a range of molecules \citep{rouquerolAdsorptionPowdersPorous2013}.
 Indeed, PCN-777 exhibits an ideal combination of a large cage to enable an
 effective packing of the siloxane molecules and the presence of moieties
-accessible to D4 to favour host/guest interactions strong enough to ensure an
+accessible to D4 to favour moderately high host/guest interactions to ensure an
 efficient trapping of the D4 molecules initially adsorbed.
 
 \section{Conclusions}\label{conclusions}
