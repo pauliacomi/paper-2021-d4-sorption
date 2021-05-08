@@ -13,6 +13,7 @@ author:
 - Youngsang Ko:
     institute:
     - b
+    orcid: 0000-0001-9602-5082
 - Jong-San Chang:
     institute:
     - b
@@ -218,7 +219,7 @@ SI) while the LJ parameters for all atoms were taken from the UFF forcefield as 
 [@xuSolvationForceSimulations2014] and their charges were calculated at the DFT level
 ([@tbl:ff-d4-charge], SI).
 
-All the results of the HCTS are available as CSV files in the SI. A web-based explorer, which can be
+All the results of the HTSC are available as CSV files in the SI. A web-based explorer, which can be
 used to interactively display the dataset is available at <https://pauliacomi.com/mof4d4>.
 
 ## MOF sorbents {#methodology-benchmark}
@@ -277,14 +278,16 @@ We first excluded from our considered MOF database all structures with PLDs lowe
 threshold selected as the average between the kinetic diameter of D4 (8.6 Å) and the effective
 diameter of its constitutive inner Si-O ring (4.5 Å). A total of 1739 remaining non-disordered MOFs
 were further considered, their geometric and textural properties, i.e. PV, SA, and $\phi$, as well
-as their density ($\rho$) being summarized in [@fig:d4-screening-geometric]. As siloxane-rich biogas
-streams often contain water vapour, the optimal D4 adsorbent should have a relatively low water
-affinity to avoid competing adsorption. Moreover, hydrophobic MOFs are known to possess increased
-resistance to the hydrolysis of the metal-linker bond
-[@burtchWaterStabilityAdsorption2014; @wuEnhancingStabilityMetalorganic2010], alleviating long-term
-water stability concerns. Therefore, we screened the water affinity of the 1739 MOFs by computing
-their Henry coefficient of water ($K_{H,H_{2}O}$) and the isosteric enthalpy of adsorption at
-infinite dilution ($\Delta H_{st,H_{2}O}^{0}$) at 298 K using the Widom particle insertion method
+as their density ($\rho$) being summarized in [@fig:d4-screening-geometric]. Before proceeding, we
+carefully inspected all identified structures to check that they do not exhibit any overlapping
+atoms, disorders, missing hydrogen atoms, and when they were not chemically correct, they were
+curated accordingly. As siloxane-rich biogas streams often contain water vapour, the optimal D4
+adsorbent should have a relatively low water affinity to avoid competing adsorption. Moreover,
+hydrophobic MOFs are known to possess increased resistance to the hydrolysis of the metal-linker
+bond [@burtchWaterStabilityAdsorption2014; @wuEnhancingStabilityMetalorganic2010], alleviating
+long-term water stability concerns. Therefore, we screened the water affinity of the 1739 MOFs by
+computing their Henry coefficient of water ($K_{H,H_{2}O}$) and the isosteric enthalpy of adsorption
+at infinite dilution ($\Delta H_{st,H_{2}O}^{0}$) at 298 K using the Widom particle insertion method
 [@frenkelUnderstandingMolecularSimulation2002]. This approach is generally applied in HTCS studies,
 providing a quick way to gauge the hydrophobicity/hydrophilicity of MOFs
 [@matito-martosDiscoveryOptimalPorous2018; @qiaoHighthroughputComputationalScreening2017]. All the
@@ -402,9 +405,10 @@ recovered after D4 cycling (blue) and water adsorption (red).
 While HTCS enabled a rapid and effective screening on the performance indicator, additional
 criteria, such as thermal/chemical stability, synthesis route, activation conditions, precursor
 toxicity and linker availability need to be considered to select the optimal adsorbents. We
-therefore critically assessed PCN-777 prior to further experimental action. Our selection criteria
-for PCN-777 were (i) the excellent known stability of the oxo-Zr-carboxylate metal node, at the
-origin of the high chemical and thermal resistance of the framework, alongside with (ii) the
+therefore critically assessed the top performing materials prior to further experimental action, as
+discussed in [@tbl:mof-properties], and determined PCN-777 as the best candidate. Our selection
+criteria for PCN-777 were (i) the excellent known stability of the oxo-Zr-carboxylate metal node, at
+the origin of the high chemical and thermal resistance of the framework, alongside (ii) the
 commercially available linker and well-controlled synthesis procedure documented elsewhere
 [@fengHighlyStableZeotype2015; @liuPhotocatalyticHydrogenProduction2018]. Indeed, this material was
 synthesised accordingly (details provided in the methodology section).
@@ -427,8 +431,9 @@ performing activated carbons as illustrated in [@fig:d4-experiment]b
 [@wangRecentAdvancesTechnologies2019]. Notably, the step-like adsorption behaviour is ideal from the
 application point of view of a breakthrough filter, as it ensures a narrow mass transfer zone and
 minimises the column dead zone at break point. Remarkably, the maximum uptake for PCN-777 is
-attained at low pressure of 7 Pa that makes this MOF highly promising for D4 removal in a gas phase
-concentration below 75 ppm.
+attained at a low pressure of 7 Pa that makes this MOF highly promising for D4 removal in a gas
+phase concentration below 75 ppm, the contamination limit of siloxanes found in biogas streams
+[@ohannessianVolatileOrganicSilicon2008; @wangRecentAdvancesTechnologies2019; @dewilEnergyUseBiogas2006].
 
 ![ Representative snapshots of the preferential sitting of D4 in the pores of PCN-777 at 298 K for
 increasing loading at (a) 10% with highlighted interactions distance between D4 and the MOF
@@ -515,17 +520,22 @@ MOFs with octamethylcyclotetrasiloxane uptakes outperforming by far the performa
 conventional adsorbents. The best-predicted MOF performer, PCN-777, was synthesized and its
 predicted exceptional adsorption capacity for this typical contaminant present in biogas was further
 experimentally confirmed. This stable MOF was demonstrated to exhibit record gravimetric (1.8 g/g)
-and volumetric (0.49 g/cm^3^) uptake alongside with a reversible and fast adsorption/desorption
-process, very good cyclability and easy regeneration under continuous pressure cycling owing to a
-step-like sorption isotherm. The attractiveness of PCN-777 was found to result from a synergistic
-combination of mesoporous cages and chemical functionality pointing towards the center of the cages
-to ensure moderately high host/guest interactions and favour an efficient removal of D4 at low
-pressure and an efficient packing of the siloxane molecules at higher pressure while maintaining the
-process highly reversible. Moreover, its hydrophobicity makes this MOF promising for the selective
-removal of siloxanes in moderate humidity conditions. In a broader sense, this study highlights the
-efficacy of an integrated workflow for accelerating the selection of adsorbents for a target
-application, spanning the entire pipeline from method validation to computational screening,
-synthesis, adsorption testing and finally identification of the optimal candidates.
+and volumetric (0.49 g/cm^3^) uptake alongside a reversible and fast adsorption/desorption process,
+very good cyclability and easy regeneration under continuous pressure cycling owing to a step-like
+sorption isotherm. The attractiveness of PCN-777 was found to result from a synergistic combination
+of mesoporous cages and chemical functionality pointing towards the center of the cages to ensure
+moderately high host/guest interactions and favour an efficient removal of D4 at low pressure and an
+efficient packing of the siloxane molecules at higher pressure while maintaining the process highly
+reversible. Moreover, its hydrophobicity makes this MOF promising for the selective removal of
+siloxanes in moderate humidity conditions. The next step will be to search for optimal MOF
+adsorbents for siloxane adsorption encompassing high affinity and large adsorption capacity at low
+very partial pressure while allowing an easy regeneration. As a further stage, for the specific
+applications in biogas upgrading, it will be required to test the capability of these materials to
+capture not only D4 but also other related siloxane contaminants, *e.g.* cyclic (D5) and linear (L2,
+L3) In a broader sense, this study highlights the efficacy of an integrated workflow for
+accelerating the selection of adsorbents for a target application, spanning the entire pipeline from
+method validation to computational screening, synthesis, adsorption testing and finally
+identification of the optimal candidates.
 
 # Acknowledgements {#acknowledgements .unnumbered}
 
@@ -812,7 +822,25 @@ candidates are represented by different symbols in the legend to the right.
   uptake.
 :::
 
+::: {#tbl:mof-properties}
+  Refcode                                                          Given name                                     Observation                                                                                                                                                                                         Reference
+  ---------------------------------------------------------------- ---------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ------------------------------------
+  RUTNOK                                                           IRMOF-76                                       Synthesis results in interpenetrated nets and the materials cannot be activated.                                                                                                                    [@oisakiMetalOrganicFramework2010]
+  CUSYAR                                                           MOF-210                                        Material requires supercritical                                                                                                                                                                     
+  ceCO2 activation, otherwise it collapses upon solvent removal.   [@furukawaUltrahighPorosityMetalOrganic2010]                                                                                                                                                                                                       
+  WUHDAG                                                           NU-1104                                        Complex tetratopic porphyrin linker, difficult to synthesize and scale, and supercritical                                                                                                           
+  ceCO2 activation is required.                                    [@wangUltrahighSurfaceArea2015]                                                                                                                                                                                                                    
+  HOHMEX                                                           SNU-6                                          The difference between our predicted and as-synthesized pore volume for this MOF was found as 2.74 vs 1.05 cm^3^/g, respectively. Moreover, air exposure was reported to reduce significantly its   
+  ceH2 capacity, highlighting water instability.                   [@parkMixedLigandMetalOrganicFrameworks2008]                                                                                                                                                                                                       
+  WIHCUZ                                                           NU-1103                                        Complex tetratopic conjugated pyrene core linker, difficult to synthesize and scale and supercritical                                                                                               
+  ceCO2 activation is required.                                    [@wangUltrahighSurfaceArea2015]                                                                                                                                                                                                                    
+
+  :  Discussion on MOF selection.
+:::
+
 ### Radial distribution functions for D4/PCN-777 {#si-radial-distribution}
+
+**Calculated at specified loading.**
 
 ![ All-atom averaged radial distribution functions between (a) H atom from $\ce{CH3}$ group of D4
 molecules and H atom from coordinated water of the framework at 10% total loading and (b) H atom

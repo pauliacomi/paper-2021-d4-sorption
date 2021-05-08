@@ -184,7 +184,7 @@ SI) while the LJ parameters for all atoms were taken from the UFF forcefield as
 done in earlier work \citep{xuSolvationForceSimulations2014} and their charges
 were calculated at the DFT level (\cref{tbl:ff-d4-charge}, SI).
 
-All the results of the HCTS are available as CSV files in the SI. A web-based
+All the results of the HTSC are available as CSV files in the SI. A web-based
 explorer, which can be used to interactively display the dataset is available at
 \url{https://pauliacomi.com/mof4d4}.
 
@@ -264,6 +264,9 @@ of D4 (8.6 Å) and the effective diameter of its constitutive inner Si-O ring
 (4.5 Å). A total of 1739 remaining non-disordered MOFs were further considered,
 their geometric and textural properties, i.e. PV, SA, and \(\phi\), as well as
 their density (\(\rho\)) being summarized in \cref{fig:d4-screening-geometric}.
+Before proceeding, we carefully inspected all identified structures to check
+that they do not exhibit any overlapping atoms, disorders, missing hydrogen
+atoms, and when they were not chemically correct, they were curated accordingly.
 As siloxane-rich biogas streams often contain water vapour, the optimal D4
 adsorbent should have a relatively low water affinity to avoid competing
 adsorption. Moreover, hydrophobic MOFs are known to possess increased resistance
@@ -440,13 +443,15 @@ While HTCS enabled a rapid and effective screening on the performance indicator,
 additional criteria, such as thermal/chemical stability, synthesis route,
 activation conditions, precursor toxicity and linker availability need to be
 considered to select the optimal adsorbents. We therefore critically assessed
-PCN-777 prior to further experimental action. Our selection criteria for PCN-777
-were (i) the excellent known stability of the oxo-Zr-carboxylate metal node, at
-the origin of the high chemical and thermal resistance of the framework,
-alongside with (ii) the commercially available linker and well-controlled
-synthesis procedure documented elsewhere \citep{fengHighlyStableZeotype2015,
-liuPhotocatalyticHydrogenProduction2018}. Indeed, this material was synthesised
-accordingly (details provided in the methodology section).
+the top performing materials prior to further experimental action, as discussed
+in \cref{tbl:mof-properties}, and determined PCN-777 as the best candidate. Our
+selection criteria for PCN-777 were (i) the excellent known stability of the
+oxo-Zr-carboxylate metal node, at the origin of the high chemical and thermal
+resistance of the framework, alongside (ii) the commercially available
+linker and well-controlled synthesis procedure documented elsewhere
+\citep{fengHighlyStableZeotype2015, liuPhotocatalyticHydrogenProduction2018}.
+Indeed, this material was synthesised accordingly (details provided in the
+methodology section).
 
 The D4 adsorption isotherm for PCN-777 was first recorded up to \SI{10}{\pascal}
 at \SI{303}{\kelvin} using a dynamic vapour sorption system (experimental
@@ -472,8 +477,11 @@ zeolites, and above the best performing activated carbons as illustrated in
 the step-like adsorption behaviour is ideal from the application point of view
 of a breakthrough filter, as it ensures a narrow mass transfer zone and
 minimises the column dead zone at break point. Remarkably, the maximum uptake
-for PCN-777 is attained at low pressure of \SI{7}{\pascal} that makes this MOF
-highly promising for D4 removal in a gas phase concentration below 75 ppm.
+for PCN-777 is attained at a low pressure of \SI{7}{\pascal} that makes this MOF
+highly promising for D4 removal in a gas phase concentration below 75 ppm, the
+contamination limit of siloxanes found in biogas streams
+\citep{ohannessianVolatileOrganicSilicon2008,
+wangRecentAdvancesTechnologies2019, dewilEnergyUseBiogas2006}.
 
 \begin{widefigure}[htb]
     \centering
@@ -589,17 +597,23 @@ best-predicted MOF performer, PCN-777, was synthesized and its predicted
 exceptional adsorption capacity for this typical contaminant present in biogas
 was further experimentally confirmed. This stable MOF was demonstrated to
 exhibit record gravimetric (\SI{1.8}{\gram\per\gram}) and volumetric
-(\SI{0.49}{\gram\per\centi\metre\cubed}) uptake alongside with a reversible and
-fast adsorption/desorption process, very good cyclability and easy regeneration
-under continuous pressure cycling owing to a step-like sorption isotherm. The
+(\SI{0.49}{\gram\per\centi\metre\cubed}) uptake alongside a reversible and fast
+adsorption/desorption process, very good cyclability and easy regeneration under
+continuous pressure cycling owing to a step-like sorption isotherm. The
 attractiveness of PCN-777 was found to result from a synergistic combination of
 mesoporous cages and chemical functionality pointing towards the center of the
 cages to ensure moderately high host/guest interactions and favour an efficient
 removal of D4 at low pressure and an efficient packing of the siloxane molecules
 at higher pressure while maintaining the process highly reversible. Moreover,
 its hydrophobicity makes this MOF promising for the selective removal of
-siloxanes in moderate humidity conditions. In a broader sense, this study
-highlights the efficacy of an integrated workflow for accelerating the selection
-of adsorbents for a target application, spanning the entire pipeline from method
-validation to computational screening, synthesis, adsorption testing and finally
+siloxanes in moderate humidity conditions. The next step will be to search for
+optimal MOF adsorbents for siloxane adsorption encompassing high affinity and
+large adsorption capacity at low very partial pressure while allowing an easy
+regeneration. As a further stage, for the specific applications in biogas
+upgrading, it will be required to test the capability of these materials to
+capture not only D4 but also other related siloxane contaminants, \textit{e.g.}
+cyclic (D5) and linear (L2, L3) In a broader sense, this study highlights the
+efficacy of an integrated workflow for accelerating the selection of adsorbents
+for a target application, spanning the entire pipeline from method validation to
+computational screening, synthesis, adsorption testing and finally
 identification of the optimal candidates.
