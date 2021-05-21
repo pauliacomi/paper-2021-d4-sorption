@@ -22,7 +22,7 @@ ax = pg.plot_iso(
     lgd_keys=['batch'],
     color=['C0', 'C1', 'C2'],
 )
-ax.set_ylabel(r"Loading ($g\ g^{-1}$)")
+ax.set_ylabel(r"Loading ($mmol\ g^{-1}$)")
 ax.set_xlabel(r"Pressure ($p/p^0$)")
 
 plt.savefig("../figs/n2-phys.svg")
@@ -47,3 +47,25 @@ figs[1].savefig("../figs/n2-roq.png", dpi=300)
 pg.t_plot(isoPCN, limits=[0.6, 2], verbose=True)
 pg.t_plot(isoD4, limits=[0.6, 2], verbose=True)
 pg.t_plot(isoH2O, limits=[0.6, 2], verbose=True)
+
+# %%
+
+fig, ax = plt.subplots(1, figsize=(6, 4))
+
+ax = pg.plot_iso(
+    [isoPCN],
+    ax=ax,
+    pressure_mode='relative',
+    loading_unit='mmol',
+    branch='all-nol',
+    lgd_pos='inner',
+    lgd_keys=['batch'],
+    color=['k'],
+)
+ax.set_ylabel(r"Loading ($mmol\ g^{-1}$)")
+ax.set_xlabel(r"Pressure ($p/p^0$)")
+
+plt.savefig("../figs/components/n2-phys-1.svg")
+plt.savefig("../figs/components/n2-phys-1.pdf")
+plt.savefig("../figs/components/n2-phys-1.png", dpi=300)
+# %%
