@@ -1,7 +1,9 @@
-# Manuscript factory
+# Screening MOFs for biogas upgrading of D4 siloxanes
 
-General publication template, with some quality-of-life features. The main
-objective is to easily interchange between:
+Published manuscript can be found here:
+> Gulcay, Ezgi, Paul Iacomi, Youngsang Ko, Jong-San Chang, Guillaume Rioland, Sabine Devautour-Vinot, and Guillaume Maurin. 
+> ‘Breaking the Upper Bound of Siloxane Uptake: Metal–Organic Frameworks as an Adsorbent Platform’. 
+> Journal of Materials Chemistry A, 2021, 10.1039.D1TA02275J. https://doi.org/10.1039/D1TA02275J.
 
 1. The main manuscript/SI file, written in Latex
 2. A host of other formats: 
@@ -12,12 +14,6 @@ objective is to easily interchange between:
 The Latex manuscript can also be stripped and simplified for a 1-file submission
 to a journal accepting this format. Check out the PDF
 [manuscript](./manuscript.pdf) and its [SI](./manuscript-SI.pdf).
-
-### General overview
-
-I wanted to have a way of sharing
-
-
 
 ### List of software required on path
 
@@ -113,38 +109,3 @@ layer of abstraction around `git` and `latexdiff`. For example:
 ```
 git latexdiff master HEAD --main manuscript.tex --pdf-viewer sumatrapdf --latexmk
 ```
-
-### FAQ
-
----
-*Q: You could have done it this way / it is not efficient / it is not standard.*
-
-A: Latex is a nightmare to code and I am not good at it. Let me know if you have
-a better solution!
-
----
-*Q: It doesn't work!.*
-
-A: I would be surprised if it **does** work.
-
----
-*Q: It erased my Nature paper!*
-
-A: Always have a backup.
-
----
-*Q: Why python?*
-
-A: Cross-compatible and easy. Also, I know python.
-
----
-*Q: Why use a custom solution and not latexpand?*
-
-A: Expanding is just one of the steps, it was easier to code from scratch.
-
----
-*Q: Why not code **this** feature ...*
-
-A: [PRs welcome](http://makeapullrequest.com/)
-
----
